@@ -30,7 +30,7 @@ def main_menu():
     gf.bg_x -= gf.screen_width / 500 #remove from bg_x one for the screen bg moving
     #--------------------------------------------------------#
     #title
-    title = title_font.render("LEGEND OF A GIANT", 1, gf.WHITE)
+    title = title_font.render("Rails And Potatoes", 1, gf.WHITE)
     gf.screen.blit(title, (
         gf.half_width - (title.get_width() // 2),
         gf.screen_height // 1000
