@@ -21,15 +21,15 @@ def download(url = "https://www.python.org/static/img/python-logo@2x.png", folde
 
 def assets_check():
     appdata = os.getenv('APPDATA') #get appdata
-    path = appdata + r"\.game_name\by_shakedkod.txt"
+    path = appdata + r"\.rails_and_potatoes\by_shakedkod.txt"
     if not os.path.exists(path):
         print (Fore.RED + "download assets, please wait...")
         download(
             url = r"https://www.dropbox.com/s/96gsss9rtvuqjo3/.assets.zip?dl=1",
-            foldername= ".game_name",
+            foldername= ".rails_and_potatoes",
             filename = "assets.zip"
             )
-        read_path = appdata + r"\.game_name\index\Assets"
+        read_path = appdata + r"\.rails_and_potatoes\index\Assets"
         os.chmod(read_path, S_IREAD)
         print (Fore.RESET + "")
         print (Fore.YELLOW + "assets" + Fore.GREEN + " loaded" + Fore.RESET + "")

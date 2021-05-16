@@ -8,10 +8,10 @@ def change_texture(filename = "menu.png", foldername = "bg"):
     #output: file path -> C:\users\name\appdata\roaming\.game_name\index\Assets\foldername\filename
     #the output need to be inputed in the pygame.image.load() function
     appdata = os.getenv('APPDATA') #find appdata
-    pack_path = appdata + "\\.game_name\\Resource pack\\active\Assets\\"
+    pack_path = appdata + "\\.rails_and_potatoes\\Resource pack\\active\Assets\\"
     pack_path += foldername + "\\" + filename
     if os.path.exists(pack_path):
         return pack_path
     else:
-        path = appdata + "\\.game_name\\index\\Assets\\"
+        path = appdata + "\\.rails_and_potatoes\\index\\Assets\\"
         return path + foldername + "\\" + filename
