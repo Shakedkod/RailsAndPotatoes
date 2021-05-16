@@ -4,8 +4,8 @@ from time import sleep
 from colorama import Fore
 from zipfile import ZipFile
 
-def download(url = "https://www.python.org/static/img/python-logo@2x.png", foldername = ".folder", filename = "name.png"):
-    """this fanc install to appdata what you want from the internet"""
+def download(url = "https://www.python.org/static/img/python-logo@2x.png", foldername = ".folder", filename = "name.zip"):
+    """this fanc install to appdata what you want(in a file that end with .zip) from the internet"""
     appdata = os.getenv('APPDATA') #get appdata
     check_path = appdata + "\\"
     check_path += foldername
