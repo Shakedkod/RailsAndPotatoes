@@ -1,4 +1,5 @@
-import os
+from os import path, getenv, remove
+from sys import exit
 #-----------------------------------------------------------#
 def change_texture(filename = "menu.png", foldername = "bg"):
     #input: (filename -> name.end) and (foldername -> name)
@@ -7,11 +8,15 @@ def change_texture(filename = "menu.png", foldername = "bg"):
     #else its return the regular file path
     #output: file path -> C:\users\name\appdata\roaming\.game_name\index\Assets\foldername\filename
     #the output need to be inputed in the pygame.image.load() function
-    appdata = os.getenv('APPDATA') #find appdata
+    appdata = getenv('APPDATA') #find appdata
     pack_path = appdata + "\\.rails_and_potatoes\\Resource pack\\active\Assets\\"
     pack_path += foldername + "\\" + filename
-    if os.path.exists(pack_path):
+    if path.exists(pack_path):
         return pack_path
-    else:
+    elif path.exists(appdata + "\\.rails_and_potatoes\\index\\Assets\\" + foldername + "\\" + filename):
         path = appdata + "\\.rails_and_potatoes\\index\\Assets\\"
         return path + foldername + "\\" + filename
+    else:
+        path = appdata + "\\.rails_and_potatoes\\by_shakedkod.txt"
+        remove(path)
+        exit("$ restart")
