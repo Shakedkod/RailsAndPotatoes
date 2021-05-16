@@ -1,4 +1,5 @@
-from os import path, getenv, remove
+from os import getenv, remove
+from os.path import exists
 from sys import exit
 #-----------------------------------------------------------#
 def change_texture(filename = "menu.png", foldername = "bg"):
@@ -11,9 +12,9 @@ def change_texture(filename = "menu.png", foldername = "bg"):
     appdata = getenv('APPDATA') #find appdata
     pack_path = appdata + "\\.rails_and_potatoes\\Resource pack\\active\Assets\\"
     pack_path += foldername + "\\" + filename
-    if path.exists(pack_path):
+    if exists(pack_path):
         return pack_path
-    elif path.exists(appdata + "\\.rails_and_potatoes\\index\\Assets\\" + foldername + "\\" + filename):
+    elif exists(appdata + "\\.rails_and_potatoes\\index\\Assets\\" + foldername + "\\" + filename):
         path = appdata + "\\.rails_and_potatoes\\index\\Assets\\"
         return path + foldername + "\\" + filename
     else:

@@ -22,12 +22,8 @@ def main_menu():
     #                                        backgrownd                                        #
     #------------------------------------------------------------------------------------------#
     #panorama
-    bg = pygame.transform.scale(bg_img, (gf.screen_width * 4, gf.screen_height * 2)) #change size
-    rel_x = gf.bg_x % bg.get_rect().width #relative x, nice
-    gf.screen.blit(bg, (rel_x - bg.get_rect().width, -(gf.screen_height // 3))) #show the bg on the screen
-    if rel_x < gf.screen_width: #if, yay
-        gf.screen.blit(bg, (rel_x, -(gf.screen_height // 3))) #show the bg on the screen
-    gf.bg_x -= gf.screen_width / 500 #remove from bg_x one for the screen bg moving
+    bg = pygame.transform.scale(bg_img, (gf.screen_width, gf.screen_height)) #change size
+    gf.screen.blit(bg, (0, 0))
     #--------------------------------------------------------#
     #title
     title = title_font.render("Rails And Potatoes", 1, gf.WHITE)
