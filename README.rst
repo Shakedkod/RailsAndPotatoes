@@ -12,7 +12,7 @@ Installation
 ------------
 ::
 
-   there is no installation
+   there is no installation yet
 
 
 
