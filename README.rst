@@ -24,6 +24,7 @@ Credits
 Thanks to everyone who has made or helped making this game.
 
 * Shaked
+* Omri: Game Design
 * Doron: Story And Game Design
 * Layrics(Mayan): The Music
 
