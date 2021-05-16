@@ -19,7 +19,8 @@ Credits
 
 Thanks to everyone who has made or helped making this game.
 
-* Shakedkod: 100% of the work(h)
+* Doron: Story And Game Design
+* Layrics(Mayan): The Music
 
 
 .. |Done| image:: https://img.shields.io/badge/Done-no-red
