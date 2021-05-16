@@ -1,0 +1,25 @@
+{
+  "name": "name",
+  "made by": "Shakedkod Studios",
+  "virson": 0.0,
+  "lang": "english",
+  "teamNames": [
+    "name1",
+    "name2",
+    "you get the point"
+  ],
+  "assets folder name": ".game_name",
+  "game start": {
+    "screen width": 900,
+    "screen height": 500,
+    "voulume": 1.0,
+    "screen name": "name here",
+    "icon path": "from this file"
+  },
+  "calculations": {
+    "screen width": 900,
+    "screen height": 500
+  },
+  "description": "",
+  "other": ""
+}

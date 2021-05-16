@@ -1,0 +1,19 @@
+0.make a website, with python
+1. chack all is working
+2. thank all of the team members
+3.upload the new assets in to the dropbox (in zip file, not the main file, just all the folders that are init (not .game_name, all the things that are in it)) and delete the old zip file from the dropbox
+4.change the link in line 28 of the download file in the system folder
+5.make it executable(
+    cmd -> cd C:\Users\Shaked\Desktop\LegendOfGiant -> pyinstaller LegendOfAGiant.py --noconsole --icon=icon.ico -> go to the .spec file and put there:
+    a.datas += Tree("C:/Users/ShakedKod/AppData/Local/Programs/Python/Python39/Lib/site-packages/moviepy", prefix='moviepy')
+    then go to the cmd and do -> pyinstaller LegendOfAGiant.spec
+    check if it working
+)
+6.make a download file(
+    to make an installer:
+    https://www.youtube.com/watch?v=cVN62zhiNH0
+    https://installforge.net/download/
+)
+7.make a github release with the source code for yael
+8.send to yael
+9.make zoom with yael to show the prodact and remaind her to not open it on an IDE so it wont close in a midle of a progect
