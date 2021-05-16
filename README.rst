@@ -2,7 +2,11 @@ Logo
 ------------
 |Done| |Python3| |Pygame|
 
-a game
+this is a puzzle game with great story and puzzles,
+
+in this game you will need rails and potatoes
+
+this game is open source
 
 Installation
 ------------
