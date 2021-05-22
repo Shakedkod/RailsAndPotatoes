@@ -1,3 +1,13 @@
+#import ast, json
+#
+#h = open("our.json", "r")
+#h2 = json.load(h)
+#h.close()
+#hhh = str(h2)
+#print (ast.literal_eval(hhh))
+
+
+
 import os
 from game.system import download
 from time import sleep
