@@ -35,14 +35,38 @@ def main_menu():
     #-------------------------------------------------------------------------------------------#
     #                                          buttons                                          #
     #-------------------------------------------------------------------------------------------#
+    #create
     play = en.Button(
-        gf.screen_width // 2,
-        gf.screen_height // 2,
-        200,
+        gf.screen_width // 1.5,
+        gf.screen_height // 3,
+        225,
         100
         )
+
+    options = en.Button(
+        gf.screen_width // 1.5,
+        gf.screen_height // 1.8,
+        225,
+        100
+        )
+    
+    exit = en.Button(
+        gf.screen_width // 1.5,
+        gf.screen_height // 1.3,
+        225,
+        100
+        )
+
+    #update
     play.update()
+    options.update()
+    exit.update()
     
+    #click
     if play.click():
-        print ("hallo!")
-    
+        gf.where = "play"
+        print (gf.where)
+    elif options.click():
+        gf.where = "opt"
+    elif exit.click():
+        gf.where = "exit"

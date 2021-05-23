@@ -5,7 +5,7 @@ os.system("cls") #*clear the console
 print (Fore.LIGHTGREEN_EX + "Loading, please wait..." + Fore.RESET + "")
 from pygame.locals import *
 from .system import settings as s, globals_file as gf
-from .menus import main_menu as menu, options
+from .menus import main_menu as menu, options as opt, map as play
 
 #init
 pygame.init() #init pygame
@@ -40,9 +40,14 @@ def Main(): #main
             if gf.where == "main menu":
                 menu.main_menu()
             elif gf.where == "opt":
-                pass #TODO go to options
-            else:
-                pass #TODO go the save menu
+                opt.options()
+            elif gf.where == "play":
+                play.map()
+            elif gf.where == "exit":
+                s.save_setings() #save the settings
+                run = False #stop the game
+                pygame.quit()
+                sys.exit() #exit the script
         else:
             pass #TODO Game
         
