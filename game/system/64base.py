@@ -16,3 +16,21 @@ def convert_64_to_dict(base64_string, cut = None):
     return_dict = ast.literal_eval(message)
     final_dict = return_dict[cut] if cut != None else return_dict
     return final_dict
+
+
+dicccct = {
+    "name": "level 1",
+    "num-id": 1,
+    "letter-id": "t",
+    "harrdnes": "e",
+    "tiles": {
+        "0": "",
+        "1": "",
+        "2": "",
+        "3": "",
+        "4": ""
+    },
+    "open": [
+        2
+    ]
+}
