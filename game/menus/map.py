@@ -16,7 +16,7 @@ def map():
     #-------------------------------------------------------------------------------------------#
     #                                        fonts input                                        #
     #-------------------------------------------------------------------------------------------#
-    title_font = pygame.font.Font(textures.change_texture("Blackwood Castle.ttf", "fonts"), gf.screen_width // 10)
+    title_font = pygame.font.Font(textures.change_texture("Blackwood Castle.ttf", "fonts"), gf.screen_width // 20)
     
     #------------------------------------------------------------------------------------------#
     #                                        backgrownd                                        #
@@ -37,8 +37,8 @@ def map():
     #-------------------------------------------------------------------------------------------#
     #create
     back = en.Button(
-        gf.screen_width // 100,
-        gf.screen_height // 100,
+        (gf.screen_width // 100) // 10,
+        (gf.screen_height // 100) // 10,
         168.75,
         75
         )
