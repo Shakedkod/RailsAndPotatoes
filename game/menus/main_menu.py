@@ -65,7 +65,6 @@ def main_menu():
     #click
     if play.click():
         gf.where = "play"
-        print (gf.where)
     elif options.click():
         gf.where = "opt"
     elif exit.click():
