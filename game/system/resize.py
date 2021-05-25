@@ -1,3 +1,4 @@
+from . import globals_file as gf
 # screen_starting_w / starting_w = x
 # screen_w / x = return
 def resize_x(starting_screen_width, size_for_the_starting_screen_width, screen_width):
@@ -33,7 +34,7 @@ def change_xy(screen_width, screen_height, width_before, height_before, obj):
     """
     for none static objects only!
     change the pos of the object based on the resizing of the screen
-    -> return object <-
+    -> return object, width_before and height_before <-
     """
     if (screen_width != width_before) or (screen_height != height_before):
         objx = obj.x
@@ -44,6 +45,6 @@ def change_xy(screen_width, screen_height, width_before, height_before, obj):
         firstsetpy = objy / height_before
         obj.x = firstsetpx * sw
         obj.y = firstsetpy * sh
-        width_before = sw
-        height_before = sh
+        gf.width_before = sw
+        gf.height_before = sh
         return obj

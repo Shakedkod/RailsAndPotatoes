@@ -4,7 +4,7 @@ import pygame, json, os, win32gui, win32con, sys
 os.system("cls") #*clear the console
 print (Fore.LIGHTGREEN_EX + "Loading, please wait..." + Fore.RESET + "")
 from pygame.locals import *
-from .system import settings as s, globals_file as gf
+from .system import settings as s, globals_file as gf, tiles
 from .menus import main_menu as menu, options as opt, map as play
 
 #init
@@ -30,7 +30,11 @@ def Main(): #main
     gf.height_before = gf.screen.get_height()
     gf.screen_width = gf.screen.get_width()
     gf.screen_height = gf.screen.get_height()
+    gf.Tiles = tiles.Tiles()
+    gf.Tiles.load_images(1)
+
     while gf.run: #the main loop
+        gf.Tiles.change_x_and_y()
         gf.screen_width = gf.screen.get_width()
         gf.screen_height = gf.screen.get_height()
         gf.mouse_x, gf.mouse_y = pygame.mouse.get_pos()
