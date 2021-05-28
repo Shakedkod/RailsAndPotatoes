@@ -34,7 +34,7 @@ def change_xy(screen_width, screen_height, width_before, height_before, obj):
     """
     for none static objects only!
     change the pos of the object based on the resizing of the screen
-    -> return object, width_before and height_before <-
+    -> return object <-
     """
     if (screen_width != width_before) or (screen_height != height_before):
         objx = obj.x
@@ -48,3 +48,42 @@ def change_xy(screen_width, screen_height, width_before, height_before, obj):
         gf.width_before = sw
         gf.height_before = sh
         return obj
+
+#-----------------------------------------------------------------------------------#
+def tiles_xy(self):
+    def change(self):
+        objx = self.x
+        objy = self.y
+        sw = gf.screen_width
+        sh = gf.screen_height
+        firstsetpx = objx / gf.width_before
+        firstsetpy = objy / gf.height_before
+        self.x = firstsetpx * sw
+        self.y = firstsetpy * sh
+        return self
+    
+    if (gf.screen_width != gf.width_before) or (gf.screen_height != gf.height_before):
+        #T1M1
+        self.T1M1F1 = change(self.T1M1F1)
+        self.T1M1F2 = change(self.T1M1F2)
+        self.T1M1F3 = change(self.T1M1F3)
+        self.T1M1F4 = change(self.T1M1F4)
+        #T1M2
+        self.T1M2F1 = change(self.T1M2F1)
+        self.T1M2F2 = change(self.T1M2F2)
+        self.T1M2F3 = change(self.T1M2F3)
+        self.T1M2F4 = change(self.T1M2F4)
+        #T1M3
+        self.T1M3F1 = change(self.T1M3F1)
+        self.T1M3F2 = change(self.T1M3F2)
+        self.T1M3F3 = change(self.T1M3F3)
+        self.T1M3F4 = change(self.T1M3F4)
+        #T1M4
+        self.T1M4F1 = change(self.T1M4F1)
+        self.T1M4F2 = change(self.T1M4F2)
+        self.T1M4F3 = change(self.T1M4F3)
+        self.T1M4F4 = change(self.T1M4F4)
+        
+        gf.width_before = gf.screen_width
+        gf.height_before = gf.screen_height
+        return self
