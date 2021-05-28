@@ -83,7 +83,12 @@ def tiles_xy(self):
         self.T1M4F2 = change(self.T1M4F2)
         self.T1M4F3 = change(self.T1M4F3)
         self.T1M4F4 = change(self.T1M4F4)
-        
+        #T2M1
+        self.T2M1F1 = change(self.T2M1F1)
+        self.T2M1F2 = change(self.T2M1F2)
+        self.T2M1F3 = change(self.T2M1F3)
+        self.T2M1F4 = change(self.T2M1F4)
+
         gf.width_before = gf.screen_width
         gf.height_before = gf.screen_height
         return self

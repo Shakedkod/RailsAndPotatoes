@@ -4,9 +4,9 @@ from . import resize, globals_file as gf, settings, textures
 class tile:
     def __init__(self, id = ["T1", "M1", "F1"]):
         #900 % 4 % 4 % 4
-        self.w = 14.0625
+        self.w = 14.0625 * 2
         #500 % 4 % 4 % 4
-        self.h = 7.8125
+        self.h = 7.8125 * 2
         self.width = resize.resize_x( #resize
             settings.starting_screen_width,
             self.w,
@@ -201,7 +201,46 @@ class tile:
         elif id[0] == "T2":
             #M1
             if id[1] == "M1":
-                pass
+                #F1
+                if id[2] == "F1":
+                    self.id = "T2M1F1"
+                    self.x = self.w * 4
+                    self.y = self.h * 0
+                    self.image = {
+                        "1": textures.change_texture(
+                            foldername = "tiles\\lvl1", filename = "T2M1F1.png"
+                            )
+                    }
+                #F2
+                elif id[2] == "F2":
+                    self.id = "T2M1F2"
+                    self.x = self.w * 5
+                    self.y = self.h * 0
+                    self.image = {
+                        "1": textures.change_texture(
+                            foldername = "tiles\\lvl1", filename = "T2M1F2.png"
+                            )
+                    }
+                #F3
+                elif id[2] == "F3":
+                    self.id = "T2M1F3"
+                    self.x = self.w * 4
+                    self.y = self.h * 1
+                    self.image = {
+                        "1": textures.change_texture(
+                            foldername = "tiles\\lvl1", filename = "T2M1F3.png"
+                            )
+                    }
+                #F4
+                elif id[2] == "F4":
+                    self.id = "T2M1F4"
+                    self.x = self.w * 5
+                    self.y = self.h * 1
+                    self.image = {
+                        "1": textures.change_texture(
+                            foldername = "tiles\\lvl1", filename = "T2M1F4.png"
+                            )
+                    }
             #M2
             elif id[1] == "M2":
                 pass
@@ -292,6 +331,10 @@ class Tiles:
         self.T1M4F4 = tile(id = ["T1", "M4", "F4"])
 
         #T2M1
+        self.T2M1F1 = tile(id = ["T2", "M1", "F1"])
+        self.T2M1F2 = tile(id = ["T2", "M1", "F2"])
+        self.T2M1F3 = tile(id = ["T2", "M1", "F3"])
+        self.T2M1F4 = tile(id = ["T2", "M1", "F4"])
 
 
     
@@ -319,6 +362,13 @@ class Tiles:
         self.T1M4F3.update(lvl)
         self.T1M4F4.update(lvl)
 
+        #############T2#############
+        #M1
+        self.T2M1F1.update(lvl)
+        self.T2M1F2.update(lvl)
+        self.T2M1F3.update(lvl)
+        self.T2M1F4.update(lvl)
+
     def change_x_and_y(self):
         self = resize.tiles_xy(self)
     
@@ -344,3 +394,10 @@ class Tiles:
         self.T1M4F2.load_images(lvl)
         self.T1M4F3.load_images(lvl)
         self.T1M4F4.load_images(lvl)
+        
+        #############T2#############
+        #M1
+        self.T2M1F1.load_images(lvl)
+        self.T2M1F2.load_images(lvl)
+        self.T2M1F3.load_images(lvl)
+        self.T2M1F4.load_images(lvl)
