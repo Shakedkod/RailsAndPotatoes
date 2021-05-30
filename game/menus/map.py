@@ -31,7 +31,7 @@ def map():
         gf.half_width - (title.get_width() // 2),
         gf.screen_height // 1000
     )) #blit the text onto the screen
-
+    
     gf.Tiles.update(1)
     
     #-------------------------------------------------------------------------------------------#

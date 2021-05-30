@@ -705,6 +705,692 @@ class tile:
                             foldername = "tiles\\lvl1", filename = "T4M4F4.png"
                             )
                     }
+        ############################################@########@############################################
+        ############################################@new part@############################################
+        ############################################@########@############################################
+        elif id[0] == "T5":
+            #M1
+            if id[1] == "M1":
+                #F1
+                if id[2] == "F1":
+                    self.id = "T5M1F1"
+                    self.x = self.w * 8
+                    self.y = self.h * 0
+                    self.image = {
+                        "1": textures.change_texture(
+                            foldername = "tiles\\lvl1", filename = "T5M1F1.png"
+                            )
+                    }
+                #F2
+                elif id[2] == "F2":
+                    self.id = "T5M1F2"
+                    self.x = self.w * 9
+                    self.y = self.h * 0
+                    self.image = {
+                        "1": textures.change_texture(
+                            foldername = "tiles\\lvl1", filename = "T5M1F2.png"
+                            )
+                    }
+                #F3
+                elif id[2] == "F3":
+                    self.id = "T5M1F3"
+                    self.x = self.w * 8
+                    self.y = self.h * 1
+                    self.image = {
+                        "1": textures.change_texture(
+                            foldername = "tiles\\lvl1", filename = "T5M1F3.png"
+                            )
+                    }
+                #F4
+                elif id[2] == "F4":
+                    self.id = "T5M1F4"
+                    self.x = self.w * 9
+                    self.y = self.h * 1
+                    self.image = {
+                        "1": textures.change_texture(
+                            foldername = "tiles\\lvl1", filename = "T5M1F4.png"
+                            )
+                    }
+            
+            
+            #M2
+            elif id[1] == "M2":
+                #F1
+                if id[2] == "F1":
+                    self.id = "T5M2F1"
+                    self.x = self.w * 10
+                    self.y = self.h * 0
+                    self.image = {
+                        "1": textures.change_texture(
+                            foldername = "tiles\\lvl1", filename = "T5M2F1.png"
+                            )
+                    }
+                #F2
+                elif id[2] == "F2":
+                    self.id = "T5M2F2"
+                    self.x = self.w * 11
+                    self.y = self.h * 0
+                    self.image = {
+                        "1": textures.change_texture(
+                            foldername = "tiles\\lvl1", filename = "T5M2F2.png"
+                            )
+                    }
+                #F3
+                elif id[2] == "F3":
+                    self.id = "T5M2F3"
+                    self.x = self.w * 10
+                    self.y = self.h * 1
+                    self.image = {
+                        "1": textures.change_texture(
+                            foldername = "tiles\\lvl1", filename = "T5M2F3.png"
+                            )
+                    }
+                #F4
+                elif id[2] == "F4":
+                    self.id = "T5M2F4"
+                    self.x = self.w * 11
+                    self.y = self.h * 1
+                    self.image = {
+                        "1": textures.change_texture(
+                            foldername = "tiles\\lvl1", filename = "T5M2F4.png"
+                            )
+                    }
+            
+            
+            #M3
+            elif id[1] == "M3": 
+                #F1
+                if id[2] == "F1":
+                    self.id = "T5M3F1"
+                    self.x = self.w * 8
+                    self.y = self.h * 2
+                    self.image = {
+                        "1": textures.change_texture(
+                            foldername = "tiles\\lvl1", filename = "T5M3F1.png"
+                            )
+                    }
+                #F2
+                elif id[2] == "F2":
+                    self.id = "T5M3F2"
+                    self.x = self.w * 9
+                    self.y = self.h * 2
+                    self.image = {
+                        "1": textures.change_texture(
+                            foldername = "tiles\\lvl1", filename = "T5M3F2.png"
+                            )
+                    }
+                #F3
+                elif id[2] == "F3":
+                    self.id = "T5M3F3"
+                    self.x = self.w * 8
+                    self.y = self.h * 3
+                    self.image = {
+                        "1": textures.change_texture(
+                            foldername = "tiles\\lvl1", filename = "T5M3F3.png"
+                            )
+                    }
+                #F4
+                elif id[2] == "F4":
+                    self.id = "T5M3F4"
+                    self.x = self.w * 9
+                    self.y = self.h * 3
+                    self.image = {
+                        "1": textures.change_texture(
+                            foldername = "tiles\\lvl1", filename = "T5M3F4.png"
+                            )
+                    }
+            
+            
+            #M4
+            elif id[1] == "M4":
+                #F1
+                if id[2] == "F1":
+                    self.id = "T5M4F1"
+                    self.x = self.w * 10
+                    self.y = self.h * 2
+                    self.image = {
+                        "1": textures.change_texture(
+                            foldername = "tiles\\lvl1", filename = "T5M4F1.png"
+                            )
+                    }
+                #F2
+                elif id[2] == "F2":
+                    self.id = "T5M4F2"
+                    self.x = self.w * 11
+                    self.y = self.h * 2
+                    self.image = {
+                        "1": textures.change_texture(
+                            foldername = "tiles\\lvl1", filename = "T5M4F2.png"
+                            )
+                    }
+                #F3
+                elif id[2] == "F3":
+                    self.id = "T5M4F3"
+                    self.x = self.w * 10
+                    self.y = self.h * 3
+                    self.image = {
+                        "1": textures.change_texture(
+                            foldername = "tiles\\lvl1", filename = "T5M4F3.png"
+                            )
+                    }
+                #F4
+                elif id[2] == "F4":
+                    self.id = "T5M4F4"
+                    self.x = self.w * 11
+                    self.y = self.h * 3
+                    self.image = {
+                        "1": textures.change_texture(
+                            foldername = "tiles\\lvl1", filename = "T5M4F4.png"
+                            )
+                    }
+        
+        elif id[0] == "T6":
+            #M1
+            if id[1] == "M1":
+                #F1
+                if id[2] == "F1":
+                    self.id = "T6M1F1"
+                    self.x = self.w * 12
+                    self.y = self.h * 0
+                    self.image = {
+                        "1": textures.change_texture(
+                            foldername = "tiles\\lvl1", filename = "T6M1F1.png"
+                            )
+                    }
+                #F2
+                elif id[2] == "F2":
+                    self.id = "T6M1F2"
+                    self.x = self.w * 13
+                    self.y = self.h * 0
+                    self.image = {
+                        "1": textures.change_texture(
+                            foldername = "tiles\\lvl1", filename = "T6M1F2.png"
+                            )
+                    }
+                #F3
+                elif id[2] == "F3":
+                    self.id = "T6M1F3"
+                    self.x = self.w * 12
+                    self.y = self.h * 1
+                    self.image = {
+                        "1": textures.change_texture(
+                            foldername = "tiles\\lvl1", filename = "T6M1F3.png"
+                            )
+                    }
+                #F4
+                elif id[2] == "F4":
+                    self.id = "T6M1F4"
+                    self.x = self.w * 13
+                    self.y = self.h * 1
+                    self.image = {
+                        "1": textures.change_texture(
+                            foldername = "tiles\\lvl1", filename = "T6M1F4.png"
+                            )
+                    }
+            #M2
+            elif id[1] == "M2":
+                #F1
+                if id[2] == "F1":
+                    self.id = "T6M2F1"
+                    self.x = self.w * 14
+                    self.y = self.h * 0
+                    self.image = {
+                        "1": textures.change_texture(
+                            foldername = "tiles\\lvl1", filename = "T6M2F1.png"
+                            )
+                    }
+                #F2
+                elif id[2] == "F2":
+                    self.id = "T6M2F2"
+                    self.x = self.w * 15
+                    self.y = self.h * 0
+                    self.image = {
+                        "1": textures.change_texture(
+                            foldername = "tiles\\lvl1", filename = "T6M2F2.png"
+                            )
+                    }
+                #F3
+                elif id[2] == "F3":
+                    self.id = "T6M2F3"
+                    self.x = self.w * 14
+                    self.y = self.h * 1
+                    self.image = {
+                        "1": textures.change_texture(
+                            foldername = "tiles\\lvl1", filename = "T6M2F3.png"
+                            )
+                    }
+                #F4
+                elif id[2] == "F4":
+                    self.id = "T6M2F4"
+                    self.x = self.w * 15
+                    self.y = self.h * 1
+                    self.image = {
+                        "1": textures.change_texture(
+                            foldername = "tiles\\lvl1", filename = "T6M2F4.png"
+                            )
+                    }
+            #M3
+            elif id[1] == "M3":
+                #F1
+                if id[2] == "F1":
+                    self.id = "T6M3F1"
+                    self.x = self.w * 12
+                    self.y = self.h * 2
+                    self.image = {
+                        "1": textures.change_texture(
+                            foldername = "tiles\\lvl1", filename = "T6M3F1.png"
+                            )
+                    }
+                #F2
+                elif id[2] == "F2":
+                    self.id = "T6M3F2"
+                    self.x = self.w * 13
+                    self.y = self.h * 2
+                    self.image = {
+                        "1": textures.change_texture(
+                            foldername = "tiles\\lvl1", filename = "T6M3F2.png"
+                            )
+                    }
+                #F3
+                elif id[2] == "F3":
+                    self.id = "T6M3F3"
+                    self.x = self.w * 12
+                    self.y = self.h * 3
+                    self.image = {
+                        "1": textures.change_texture(
+                            foldername = "tiles\\lvl1", filename = "T6M3F3.png"
+                            )
+                    }
+                #F4
+                elif id[2] == "F4":
+                    self.id = "T6M3F4"
+                    self.x = self.w * 13
+                    self.y = self.h * 3
+                    self.image = {
+                        "1": textures.change_texture(
+                            foldername = "tiles\\lvl1", filename = "T6M3F4.png"
+                            )
+                    }
+            #M4
+            elif id[1] == "M4":
+                #F1
+                if id[2] == "F1":
+                    self.id = "T6M4F1"
+                    self.x = self.w * 14
+                    self.y = self.h * 2
+                    self.image = {
+                        "1": textures.change_texture(
+                            foldername = "tiles\\lvl1", filename = "T6M4F1.png"
+                            )
+                    }
+                #F2
+                elif id[2] == "F2":
+                    self.id = "T6M4F2"
+                    self.x = self.w * 15
+                    self.y = self.h * 2
+                    self.image = {
+                        "1": textures.change_texture(
+                            foldername = "tiles\\lvl1", filename = "T6M4F2.png"
+                            )
+                    }
+                #F3
+                elif id[2] == "F3":
+                    self.id = "T6M4F3"
+                    self.x = self.w * 14
+                    self.y = self.h * 3
+                    self.image = {
+                        "1": textures.change_texture(
+                            foldername = "tiles\\lvl1", filename = "T6M4F3.png"
+                            )
+                    }
+                #F4
+                elif id[2] == "F4":
+                    self.id = "T6M4F4"
+                    self.x = self.w * 15
+                    self.y = self.h * 3
+                    self.image = {
+                        "1": textures.change_texture(
+                            foldername = "tiles\\lvl1", filename = "T6M4F4.png"
+                            )
+                    }
+        elif id[0] == "T7":
+            #M1
+            if id[1] == "M1":
+                #F1
+                if id[2] == "F1":
+                    self.id = "T7M1F1"
+                    self.x = self.w * 8
+                    self.y = self.h * 4
+                    self.image = {
+                        "1": textures.change_texture(
+                            foldername = "tiles\\lvl1", filename = "T7M1F1.png"
+                            )
+                    }
+                #F2
+                elif id[2] == "F2":
+                    self.id = "T7M1F2"
+                    self.x = self.w * 9
+                    self.y = self.h * 4
+                    self.image = {
+                        "1": textures.change_texture(
+                            foldername = "tiles\\lvl1", filename = "T7M1F2.png"
+                            )
+                    }
+                #F3
+                elif id[2] == "F3":
+                    self.id = "T7M1F3"
+                    self.x = self.w * 8
+                    self.y = self.h * 5
+                    self.image = {
+                        "1": textures.change_texture(
+                            foldername = "tiles\\lvl1", filename = "T7M1F3.png"
+                            )
+                    }
+                #F4
+                elif id[2] == "F4":
+                    self.id = "T7M1F4"
+                    self.x = self.w * 9
+                    self.y = self.h * 5
+                    self.image = {
+                        "1": textures.change_texture(
+                            foldername = "tiles\\lvl1", filename = "T7M1F4.png"
+                            )
+                    }
+            #M2
+            elif id[1] == "M2":
+                #F1
+                if id[2] == "F1":
+                    self.id = "T7M2F1"
+                    self.x = self.w * 10
+                    self.y = self.h * 4
+                    self.image = {
+                        "1": textures.change_texture(
+                            foldername = "tiles\\lvl1", filename = "T7M2F1.png"
+                            )
+                    }
+                #F2
+                elif id[2] == "F2":
+                    self.id = "T7M2F2"
+                    self.x = self.w * 11
+                    self.y = self.h * 4
+                    self.image = {
+                        "1": textures.change_texture(
+                            foldername = "tiles\\lvl1", filename = "T7M2F2.png"
+                            )
+                    }
+                #F3
+                elif id[2] == "F3":
+                    self.id = "T7M2F3"
+                    self.x = self.w * 10
+                    self.y = self.h * 5
+                    self.image = {
+                        "1": textures.change_texture(
+                            foldername = "tiles\\lvl1", filename = "T7M2F3.png"
+                            )
+                    }
+                #F4
+                elif id[2] == "F4":
+                    self.id = "T7M2F4"
+                    self.x = self.w * 11
+                    self.y = self.h * 5
+                    self.image = {
+                        "1": textures.change_texture(
+                            foldername = "tiles\\lvl1", filename = "T7M2F4.png"
+                            )
+                    }
+            #M3
+            elif id[1] == "M3":
+                #F1
+                if id[2] == "F1":
+                    self.id = "T7M3F1"
+                    self.x = self.w * 8
+                    self.y = self.h * 6
+                    self.image = {
+                        "1": textures.change_texture(
+                            foldername = "tiles\\lvl1", filename = "T7M3F1.png"
+                            )
+                    }
+                #F2
+                elif id[2] == "F2":
+                    self.id = "T7M3F2"
+                    self.x = self.w * 9
+                    self.y = self.h * 6
+                    self.image = {
+                        "1": textures.change_texture(
+                            foldername = "tiles\\lvl1", filename = "T7M3F2.png"
+                            )
+                    }
+                #F3
+                elif id[2] == "F3":
+                    self.id = "T7M3F3"
+                    self.x = self.w * 8
+                    self.y = self.h * 7
+                    self.image = {
+                        "1": textures.change_texture(
+                            foldername = "tiles\\lvl1", filename = "T7M3F3.png"
+                            )
+                    }
+                #F4
+                elif id[2] == "F4":
+                    self.id = "T7M3F4"
+                    self.x = self.w * 9
+                    self.y = self.h * 7
+                    self.image = {
+                        "1": textures.change_texture(
+                            foldername = "tiles\\lvl1", filename = "T7M3F4.png"
+                            )
+                    }
+            #M4
+            elif id[1] == "M4":
+                #F1
+                if id[2] == "F1":
+                    self.id = "T7M4F1"
+                    self.x = self.w * 10
+                    self.y = self.h * 6
+                    self.image = {
+                        "1": textures.change_texture(
+                            foldername = "tiles\\lvl1", filename = "T7M4F1.png"
+                            )
+                    }
+                #F2
+                elif id[2] == "F2":
+                    self.id = "T7M4F2"
+                    self.x = self.w * 11
+                    self.y = self.h * 6
+                    self.image = {
+                        "1": textures.change_texture(
+                            foldername = "tiles\\lvl1", filename = "T7M4F2.png"
+                            )
+                    }
+                #F3
+                elif id[2] == "F3":
+                    self.id = "T7M4F3"
+                    self.x = self.w * 10
+                    self.y = self.h * 7
+                    self.image = {
+                        "1": textures.change_texture(
+                            foldername = "tiles\\lvl1", filename = "T7M4F3.png"
+                            )
+                    }
+                #F4
+                elif id[2] == "F4":
+                    self.id = "T7M4F4"
+                    self.x = self.w * 11
+                    self.y = self.h * 7
+                    self.image = {
+                        "1": textures.change_texture(
+                            foldername = "tiles\\lvl1", filename = "T7M4F4.png"
+                            )
+                    }
+        elif id[0] == "T8":
+            #M1
+            if id[1] == "M1":
+                #F1
+                if id[2] == "F1":
+                    self.id = "T8M1F1"
+                    self.x = self.w * 12
+                    self.y = self.h * 4
+                    self.image = {
+                        "1": textures.change_texture(
+                            foldername = "tiles\\lvl1", filename = "T8M1F1.png"
+                            )
+                    }
+                #F2
+                elif id[2] == "F2":
+                    self.id = "T8M1F2"
+                    self.x = self.w * 13
+                    self.y = self.h * 4
+                    self.image = {
+                        "1": textures.change_texture(
+                            foldername = "tiles\\lvl1", filename = "T8M1F2.png"
+                            )
+                    }
+                #F3
+                elif id[2] == "F3":
+                    self.id = "T8M1F3"
+                    self.x = self.w * 12
+                    self.y = self.h * 5
+                    self.image = {
+                        "1": textures.change_texture(
+                            foldername = "tiles\\lvl1", filename = "T8M1F3.png"
+                            )
+                    }
+                #F4
+                elif id[2] == "F4":
+                    self.id = "T8M1F4"
+                    self.x = self.w * 13
+                    self.y = self.h * 5
+                    self.image = {
+                        "1": textures.change_texture(
+                            foldername = "tiles\\lvl1", filename = "T8M1F4.png"
+                            )
+                    }
+            #M2
+            elif id[1] == "M2":
+                #F1
+                if id[2] == "F1":
+                    self.id = "T8M2F1"
+                    self.x = self.w * 14
+                    self.y = self.h * 4
+                    self.image = {
+                        "1": textures.change_texture(
+                            foldername = "tiles\\lvl1", filename = "T8M2F1.png"
+                            )
+                    }
+                #F2
+                elif id[2] == "F2":
+                    self.id = "T8M2F2"
+                    self.x = self.w * 15
+                    self.y = self.h * 4
+                    self.image = {
+                        "1": textures.change_texture(
+                            foldername = "tiles\\lvl1", filename = "T8M2F2.png"
+                            )
+                    }
+                #F3
+                elif id[2] == "F3":
+                    self.id = "T8M2F3"
+                    self.x = self.w * 14
+                    self.y = self.h * 5
+                    self.image = {
+                        "1": textures.change_texture(
+                            foldername = "tiles\\lvl1", filename = "T8M2F3.png"
+                            )
+                    }
+                #F4
+                elif id[2] == "F4":
+                    self.id = "T8M2F4"
+                    self.x = self.w * 15
+                    self.y = self.h * 5
+                    self.image = {
+                        "1": textures.change_texture(
+                            foldername = "tiles\\lvl1", filename = "T8M2F4.png"
+                            )
+                    }
+            #M3
+            elif id[1] == "M3":
+                #F1
+                if id[2] == "F1":
+                    self.id = "T8M3F1"
+                    self.x = self.w * 12
+                    self.y = self.h * 6
+                    self.image = {
+                        "1": textures.change_texture(
+                            foldername = "tiles\\lvl1", filename = "T8M3F1.png"
+                            )
+                    }
+                #F2
+                elif id[2] == "F2":
+                    self.id = "T8M3F2"
+                    self.x = self.w * 13
+                    self.y = self.h * 6
+                    self.image = {
+                        "1": textures.change_texture(
+                            foldername = "tiles\\lvl1", filename = "T8M3F2.png"
+                            )
+                    }
+                #F3
+                elif id[2] == "F3":
+                    self.id = "T8M3F3"
+                    self.x = self.w * 12
+                    self.y = self.h * 7
+                    self.image = {
+                        "1": textures.change_texture(
+                            foldername = "tiles\\lvl1", filename = "T8M3F3.png"
+                            )
+                    }
+                #F4
+                elif id[2] == "F4":
+                    self.id = "T8M3F4"
+                    self.x = self.w * 13
+                    self.y = self.h * 7
+                    self.image = {
+                        "1": textures.change_texture(
+                            foldername = "tiles\\lvl1", filename = "T8M3F4.png"
+                            )
+                    }
+            #M4
+            elif id[1] == "M4":
+                #F1
+                if id[2] == "F1":
+                    self.id = "T8M4F1"
+                    self.x = self.w * 14
+                    self.y = self.h * 6
+                    self.image = {
+                        "1": textures.change_texture(
+                            foldername = "tiles\\lvl1", filename = "T8M4F1.png"
+                            )
+                    }
+                #F2
+                elif id[2] == "F2":
+                    self.id = "T8M4F2"
+                    self.x = self.w * 15
+                    self.y = self.h * 6
+                    self.image = {
+                        "1": textures.change_texture(
+                            foldername = "tiles\\lvl1", filename = "T8M4F2.png"
+                            )
+                    }
+                #F3
+                elif id[2] == "F3":
+                    self.id = "T8M4F3"
+                    self.x = self.w * 14
+                    self.y = self.h * 7
+                    self.image = {
+                        "1": textures.change_texture(
+                            foldername = "tiles\\lvl1", filename = "T8M4F3.png"
+                            )
+                    }
+                #F4
+                elif id[2] == "F4":
+                    self.id = "T8M4F4"
+                    self.x = self.w * 15
+                    self.y = self.h * 7
+                    self.image = {
+                        "1": textures.change_texture(
+                            foldername = "tiles\\lvl1", filename = "T8M4F4.png"
+                            )
+                    }
         
         
         #create the rect
@@ -824,6 +1510,90 @@ class Tiles:
         self.T4M4F3 = tile(id = ["T4", "M4", "F3"])
         self.T4M4F4 = tile(id = ["T4", "M4", "F4"])
 
+        #T5M1
+        self.T5M1F1 = tile(id = ["T5", "M1", "F1"])
+        self.T5M1F2 = tile(id = ["T5", "M1", "F2"])
+        self.T5M1F3 = tile(id = ["T5", "M1", "F3"])
+        self.T5M1F4 = tile(id = ["T5", "M1", "F4"])
+        #T5M2
+        self.T5M2F1 = tile(id = ["T5", "M2", "F1"])
+        self.T5M2F2 = tile(id = ["T5", "M2", "F2"])
+        self.T5M2F3 = tile(id = ["T5", "M2", "F3"])
+        self.T5M2F4 = tile(id = ["T5", "M2", "F4"])
+        #T5M3
+        self.T5M3F1 = tile(id = ["T5", "M3", "F1"])
+        self.T5M3F2 = tile(id = ["T5", "M3", "F2"])
+        self.T5M3F3 = tile(id = ["T5", "M3", "F3"])
+        self.T5M3F4 = tile(id = ["T5", "M3", "F4"])
+        #T5M4
+        self.T5M4F1 = tile(id = ["T5", "M4", "F1"])
+        self.T5M4F2 = tile(id = ["T5", "M4", "F2"])
+        self.T5M4F3 = tile(id = ["T5", "M4", "F3"])
+        self.T5M4F4 = tile(id = ["T5", "M4", "F4"])
+
+        #T6M1
+        self.T6M1F1 = tile(id = ["T6", "M1", "F1"])
+        self.T6M1F2 = tile(id = ["T6", "M1", "F2"])
+        self.T6M1F3 = tile(id = ["T6", "M1", "F3"])
+        self.T6M1F4 = tile(id = ["T6", "M1", "F4"])
+        #T6M2
+        self.T6M2F1 = tile(id = ["T6", "M2", "F1"])
+        self.T6M2F2 = tile(id = ["T6", "M2", "F2"])
+        self.T6M2F3 = tile(id = ["T6", "M2", "F3"])
+        self.T6M2F4 = tile(id = ["T6", "M2", "F4"])
+        #T6M3
+        self.T6M3F1 = tile(id = ["T6", "M3", "F1"])
+        self.T6M3F2 = tile(id = ["T6", "M3", "F2"])
+        self.T6M3F3 = tile(id = ["T6", "M3", "F3"])
+        self.T6M3F4 = tile(id = ["T6", "M3", "F4"])
+        #T6M4
+        self.T6M4F1 = tile(id = ["T6", "M4", "F1"])
+        self.T6M4F2 = tile(id = ["T6", "M4", "F2"])
+        self.T6M4F3 = tile(id = ["T6", "M4", "F3"])
+        self.T6M4F4 = tile(id = ["T6", "M4", "F4"])
+
+        #T7M1
+        self.T7M1F1 = tile(id = ["T7", "M1", "F1"])
+        self.T7M1F2 = tile(id = ["T7", "M1", "F2"])
+        self.T7M1F3 = tile(id = ["T7", "M1", "F3"])
+        self.T7M1F4 = tile(id = ["T7", "M1", "F4"])
+        #T7M2
+        self.T7M2F1 = tile(id = ["T7", "M2", "F1"])
+        self.T7M2F2 = tile(id = ["T7", "M2", "F2"])
+        self.T7M2F3 = tile(id = ["T7", "M2", "F3"])
+        self.T7M2F4 = tile(id = ["T7", "M2", "F4"])
+        #T7M3
+        self.T7M3F1 = tile(id = ["T7", "M3", "F1"])
+        self.T7M3F2 = tile(id = ["T7", "M3", "F2"])
+        self.T7M3F3 = tile(id = ["T7", "M3", "F3"])
+        self.T7M3F4 = tile(id = ["T7", "M3", "F4"])
+        #T7M4
+        self.T7M4F1 = tile(id = ["T7", "M4", "F1"])
+        self.T7M4F2 = tile(id = ["T7", "M4", "F2"])
+        self.T7M4F3 = tile(id = ["T7", "M4", "F3"])
+        self.T7M4F4 = tile(id = ["T7", "M4", "F4"])
+
+        #T8M1
+        self.T8M1F1 = tile(id = ["T8", "M1", "F1"])
+        self.T8M1F2 = tile(id = ["T8", "M1", "F2"])
+        self.T8M1F3 = tile(id = ["T8", "M1", "F3"])
+        self.T8M1F4 = tile(id = ["T8", "M1", "F4"])
+        #T8M2
+        self.T8M2F1 = tile(id = ["T8", "M2", "F1"])
+        self.T8M2F2 = tile(id = ["T8", "M2", "F2"])
+        self.T8M2F3 = tile(id = ["T8", "M2", "F3"])
+        self.T8M2F4 = tile(id = ["T8", "M2", "F4"])
+        #T8M3
+        self.T8M3F1 = tile(id = ["T8", "M3", "F1"])
+        self.T8M3F2 = tile(id = ["T8", "M3", "F2"])
+        self.T8M3F3 = tile(id = ["T8", "M3", "F3"])
+        self.T8M3F4 = tile(id = ["T8", "M3", "F4"])
+        #T8M4
+        self.T8M4F1 = tile(id = ["T8", "M4", "F1"])
+        self.T8M4F2 = tile(id = ["T8", "M4", "F2"])
+        self.T8M4F3 = tile(id = ["T8", "M4", "F3"])
+        self.T8M4F4 = tile(id = ["T8", "M4", "F4"])
+
 
     
     def update(self, lvl = 1):
@@ -915,6 +1685,94 @@ class Tiles:
         self.T4M4F2.update(lvl)
         self.T4M4F3.update(lvl)
         self.T4M4F4.update(lvl)
+
+        #############T5#############
+        #M1
+        self.T5M1F1.update(lvl)
+        self.T5M1F2.update(lvl)
+        self.T5M1F3.update(lvl)
+        self.T5M1F4.update(lvl)
+        #M2
+        self.T5M2F1.update(lvl)
+        self.T5M2F2.update(lvl)
+        self.T5M2F3.update(lvl)
+        self.T5M2F4.update(lvl)
+        #M3
+        self.T5M3F1.update(lvl)
+        self.T5M3F2.update(lvl)
+        self.T5M3F3.update(lvl)
+        self.T5M3F4.update(lvl)
+        #M4
+        self.T5M4F1.update(lvl)
+        self.T5M4F2.update(lvl)
+        self.T5M4F3.update(lvl)
+        self.T5M4F4.update(lvl)
+        
+        #############T6#############
+        #M1
+        self.T6M1F1.update(lvl)
+        self.T6M1F2.update(lvl)
+        self.T6M1F3.update(lvl)
+        self.T6M1F4.update(lvl)
+        #M2
+        self.T6M2F1.update(lvl)
+        self.T6M2F2.update(lvl)
+        self.T6M2F3.update(lvl)
+        self.T6M2F4.update(lvl)
+        #M3
+        self.T6M3F1.update(lvl)
+        self.T6M3F2.update(lvl)
+        self.T6M3F3.update(lvl)
+        self.T6M3F4.update(lvl)
+        #M4
+        self.T6M4F1.update(lvl)
+        self.T6M4F2.update(lvl)
+        self.T6M4F3.update(lvl)
+        self.T6M4F4.update(lvl)
+
+        #############T7#############
+        #M1
+        self.T7M1F1.update(lvl)
+        self.T7M1F2.update(lvl)
+        self.T7M1F3.update(lvl)
+        self.T7M1F4.update(lvl)
+        #M2
+        self.T7M2F1.update(lvl)
+        self.T7M2F2.update(lvl)
+        self.T7M2F3.update(lvl)
+        self.T7M2F4.update(lvl)
+        #M3
+        self.T7M3F1.update(lvl)
+        self.T7M3F2.update(lvl)
+        self.T7M3F3.update(lvl)
+        self.T7M3F4.update(lvl)
+        #M4
+        self.T7M4F1.update(lvl)
+        self.T7M4F2.update(lvl)
+        self.T7M4F3.update(lvl)
+        self.T7M4F4.update(lvl)
+
+        #############T8#############
+        #M1
+        self.T8M1F1.update(lvl)
+        self.T8M1F2.update(lvl)
+        self.T8M1F3.update(lvl)
+        self.T8M1F4.update(lvl)
+        #M2
+        self.T8M2F1.update(lvl)
+        self.T8M2F2.update(lvl)
+        self.T8M2F3.update(lvl)
+        self.T8M2F4.update(lvl)
+        #M3
+        self.T8M3F1.update(lvl)
+        self.T8M3F2.update(lvl)
+        self.T8M3F3.update(lvl)
+        self.T8M3F4.update(lvl)
+        #M4
+        self.T8M4F1.update(lvl)
+        self.T8M4F2.update(lvl)
+        self.T8M4F3.update(lvl)
+        self.T8M4F4.update(lvl)
 
 
     def change_x_and_y(self):
@@ -1008,3 +1866,91 @@ class Tiles:
         self.T4M4F2.load_images(lvl)
         self.T4M4F3.load_images(lvl)
         self.T4M4F4.load_images(lvl)
+
+        #############T5#############
+        #M1
+        self.T5M1F1.load_images(lvl)
+        self.T5M1F2.load_images(lvl)
+        self.T5M1F3.load_images(lvl)
+        self.T5M1F4.load_images(lvl)
+        #M2
+        self.T5M2F1.load_images(lvl)
+        self.T5M2F2.load_images(lvl)
+        self.T5M2F3.load_images(lvl)
+        self.T5M2F4.load_images(lvl)
+        #M3
+        self.T5M3F1.load_images(lvl)
+        self.T5M3F2.load_images(lvl)
+        self.T5M3F3.load_images(lvl)
+        self.T5M3F4.load_images(lvl)
+        #M4
+        self.T5M4F1.load_images(lvl)
+        self.T5M4F2.load_images(lvl)
+        self.T5M4F3.load_images(lvl)
+        self.T5M4F4.load_images(lvl)
+        
+        #############T6#############
+        #M1
+        self.T6M1F1.load_images(lvl)
+        self.T6M1F2.load_images(lvl)
+        self.T6M1F3.load_images(lvl)
+        self.T6M1F4.load_images(lvl)
+        #M2
+        self.T6M2F1.load_images(lvl)
+        self.T6M2F2.load_images(lvl)
+        self.T6M2F3.load_images(lvl)
+        self.T6M2F4.load_images(lvl)
+        #M3
+        self.T6M3F1.load_images(lvl)
+        self.T6M3F2.load_images(lvl)
+        self.T6M3F3.load_images(lvl)
+        self.T6M3F4.load_images(lvl)
+        #M4
+        self.T6M4F1.load_images(lvl)
+        self.T6M4F2.load_images(lvl)
+        self.T6M4F3.load_images(lvl)
+        self.T6M4F4.load_images(lvl)
+
+        #############T7#############
+        #M1
+        self.T7M1F1.load_images(lvl)
+        self.T7M1F2.load_images(lvl)
+        self.T7M1F3.load_images(lvl)
+        self.T7M1F4.load_images(lvl)
+        #M2
+        self.T7M2F1.load_images(lvl)
+        self.T7M2F2.load_images(lvl)
+        self.T7M2F3.load_images(lvl)
+        self.T7M2F4.load_images(lvl)
+        #M3
+        self.T7M3F1.load_images(lvl)
+        self.T7M3F2.load_images(lvl)
+        self.T7M3F3.load_images(lvl)
+        self.T7M3F4.load_images(lvl)
+        #M4
+        self.T7M4F1.load_images(lvl)
+        self.T7M4F2.load_images(lvl)
+        self.T7M4F3.load_images(lvl)
+        self.T7M4F4.load_images(lvl)
+
+        #############T8#############
+        #M1
+        self.T8M1F1.load_images(lvl)
+        self.T8M1F2.load_images(lvl)
+        self.T8M1F3.load_images(lvl)
+        self.T8M1F4.load_images(lvl)
+        #M2
+        self.T8M2F1.load_images(lvl)
+        self.T8M2F2.load_images(lvl)
+        self.T8M2F3.load_images(lvl)
+        self.T8M2F4.load_images(lvl)
+        #M3
+        self.T8M3F1.load_images(lvl)
+        self.T8M3F2.load_images(lvl)
+        self.T8M3F3.load_images(lvl)
+        self.T8M3F4.load_images(lvl)
+        #M4
+        self.T8M4F1.load_images(lvl)
+        self.T8M4F2.load_images(lvl)
+        self.T8M4F3.load_images(lvl)
+        self.T8M4F4.load_images(lvl)
