@@ -72,3 +72,60 @@ class Button:
         else:
             return False 
 #-----------------------------------------------------------------------------------------------#
+
+class Animation:
+    def __init__(self, x, y, starting_width, starting_height, frame_number, frames_dict = None):
+        """
+        first, init at the start(were we are 'loading' our images) with frame_number == 1
+        second, init in the loop with frame_number == name_of_initial_object.frame
+        """
+        self.x = x
+        self.y = y
+        self.starting_width = starting_width
+        self.starting_height = starting_height
+        self.width = resize.resize_x(
+            settings.starting_screen_width,
+            self.starting_width,
+            gf.screen_width
+        )
+        self.height = resize.resize_y(
+            settings.starting_screen_height,
+            self.starting_height,
+            gf.screen_height
+        )
+        self.rect = pygame.Rect(
+            self.x,
+            self.y,
+            self.width,
+            self.height
+        )
+        self.not_loaded_images = frames_dict
+        self.number_of_frames = len(self.not_loaded_images) - 1 #starting from 0, because of list
+        self.loaded_images = []
+        for key, value in self.not_loaded_images: #loading the images
+            self.loaded_images.append(
+                pygame.image.load(
+                    textures.change_texture(
+                        value[1],
+                        value[0]
+                        )
+                )
+            )
+        self.scaled_images = []
+        for image in self.loaded_images:
+            self.scaled_images.append(
+                pygame.transform.scale(
+                    image,
+                    (
+                        self.rect.width,
+                        self.rect.height
+                        )
+                )
+            )
+        self.frame = frame_number #were are we now?, you are asking me?...
+        
+    def update(self):
+        pass #TODO
+
+    def animate(self):
+        pass #TODO
