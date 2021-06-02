@@ -25,7 +25,7 @@ def assets_check():
     if not os.path.exists(path):
         print (Fore.RED + "download assets, please wait...")
         download(
-            url = r"https://www.dropbox.com/s/2fpzdib9yh8npcg/.assets.zip?dl=1",
+            url = r"https://www.dropbox.com/s/cc09m2o8qxs555n/.assets.zip?dl=1",
             foldername= ".rails_and_potatoes",
             filename = "assets.zip"
             )

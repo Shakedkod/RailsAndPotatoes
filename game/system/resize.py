@@ -303,7 +303,86 @@ def tiles_xy(self):
         self.T12M4F2 = change(self.T12M4F2)
         self.T12M4F3 = change(self.T12M4F3)
         self.T12M4F4 = change(self.T12M4F4)
-
+        #T13M1
+        self.T13M1F1 = change(self.T13M1F1)
+        self.T13M1F2 = change(self.T13M1F2)
+        self.T13M1F3 = change(self.T13M1F3)
+        self.T13M1F4 = change(self.T13M1F4)
+        #T13M2
+        self.T13M2F1 = change(self.T13M2F1)
+        self.T13M2F2 = change(self.T13M2F2)
+        self.T13M2F3 = change(self.T13M2F3)
+        self.T13M2F4 = change(self.T13M2F4)
+        #T13M3
+        self.T13M3F1 = change(self.T13M3F1)
+        self.T13M3F2 = change(self.T13M3F2)
+        self.T13M3F3 = change(self.T13M3F3)
+        self.T13M3F4 = change(self.T13M3F4)
+        #T13M4
+        self.T13M4F1 = change(self.T13M4F1)
+        self.T13M4F2 = change(self.T13M4F2)
+        self.T13M4F3 = change(self.T13M4F3)
+        self.T13M4F4 = change(self.T13M4F4)
+        #T14M1
+        self.T14M1F1 = change(self.T14M1F1)
+        self.T14M1F2 = change(self.T14M1F2)
+        self.T14M1F3 = change(self.T14M1F3)
+        self.T14M1F4 = change(self.T14M1F4)
+        #T14M2
+        self.T14M2F1 = change(self.T14M2F1)
+        self.T14M2F2 = change(self.T14M2F2)
+        self.T14M2F3 = change(self.T14M2F3)
+        self.T14M2F4 = change(self.T14M2F4)
+        #T14M3
+        self.T14M3F1 = change(self.T14M3F1)
+        self.T14M3F2 = change(self.T14M3F2)
+        self.T14M3F3 = change(self.T14M3F3)
+        self.T14M3F4 = change(self.T14M3F4)
+        #T14M4
+        self.T14M4F1 = change(self.T14M4F1)
+        self.T14M4F2 = change(self.T14M4F2)
+        self.T14M4F3 = change(self.T14M4F3)
+        self.T14M4F4 = change(self.T14M4F4)
+        #T15M1
+        self.T15M1F1 = change(self.T15M1F1)
+        self.T15M1F2 = change(self.T15M1F2)
+        self.T15M1F3 = change(self.T15M1F3)
+        self.T15M1F4 = change(self.T15M1F4)
+        #T15M2
+        self.T15M2F1 = change(self.T15M2F1)
+        self.T15M2F2 = change(self.T15M2F2)
+        self.T15M2F3 = change(self.T15M2F3)
+        self.T15M2F4 = change(self.T15M2F4)
+        #T15M3
+        self.T15M3F1 = change(self.T15M3F1)
+        self.T15M3F2 = change(self.T15M3F2)
+        self.T15M3F3 = change(self.T15M3F3)
+        self.T15M3F4 = change(self.T15M3F4)
+        #T15M4
+        self.T15M4F1 = change(self.T15M4F1)
+        self.T15M4F2 = change(self.T15M4F2)
+        self.T15M4F3 = change(self.T15M4F3)
+        self.T15M4F4 = change(self.T15M4F4)
+        #T16M1
+        self.T16M1F1 = change(self.T16M1F1)
+        self.T16M1F2 = change(self.T16M1F2)
+        self.T16M1F3 = change(self.T16M1F3)
+        self.T16M1F4 = change(self.T16M1F4)
+        #T16M2
+        self.T16M2F1 = change(self.T16M2F1)
+        self.T16M2F2 = change(self.T16M2F2)
+        self.T16M2F3 = change(self.T16M2F3)
+        self.T16M2F4 = change(self.T16M2F4)
+        #T16M3
+        self.T16M3F1 = change(self.T16M3F1)
+        self.T16M3F2 = change(self.T16M3F2)
+        self.T16M3F3 = change(self.T16M3F3)
+        self.T16M3F4 = change(self.T16M3F4)
+        #T16M4
+        self.T16M4F1 = change(self.T16M4F1)
+        self.T16M4F2 = change(self.T16M4F2)
+        self.T16M4F3 = change(self.T16M4F3)
+        self.T16M4F4 = change(self.T16M4F4)
 
         gf.width_before = gf.screen_width
         gf.height_before = gf.screen_height
