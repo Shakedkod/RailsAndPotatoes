@@ -1,5 +1,6 @@
 import pygame
-from game.system import resize, globals_file as gf, settings, textures
+from pygame.locals import *
+from . import resize, globals_file as gf, settings, textures
 #-----------------------------------------------------------------------------------------------#
 class Button:
     """this class is for buttons that you can click on them"""
@@ -129,3 +130,38 @@ class Animation:
 
     def animate(self):
         pass #TODO
+#-----------------------------------------------------------------------------------------------#
+
+class Clickable_Invisible_object:
+    def __init__(self, x, y, width, height):
+        self.x = x
+        self.y = y
+        self.starting_width = width
+        self.starting_height = height
+        self.width = resize.resize_x(
+            settings.starting_screen_width,
+            self.starting_width,
+            gf.screen_width
+        )
+        self.height = resize.resize_y(
+            settings.starting_screen_height,
+            self.starting_height,
+            gf.screen_height
+        )
+        gf.rect = pygame.Rect(
+            self.x,
+            self.y,
+            self.width,
+            self.height
+        )
+        self.hover = False
+    
+    def update(self):
+        self.mouse_hover()
+        return True if gf.click and self.hover else False
+
+    def mouse_hover(self):
+        if self.rect.collidepoint(gf.mouse_x, gf.mouse_y): #if the mouse is on the button
+            self.hover = True
+        else:
+            self.hover = False

@@ -1,4 +1,5 @@
 import pygame, json, os
+from pygame.locals import *
 from . import resize, globals_file as gf, settings, textures
 #-----------------------------------------------------------------------------------------------#
 class tile:

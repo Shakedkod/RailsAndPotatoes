@@ -48,38 +48,14 @@ def Main(): #main
             elif gf.where == "play":
                 play.map()
             elif gf.where == "exit":
-                #?play_time = (pygame.time.get_ticks() / (1000 * 60)) % 60
-                #?appdata = os.getenv('APPDATA') #get appdata
-                #?with open(appdata + "\\.rails_and_potatoes\\index\\player.data.json", "r") as f:
-                #?    data = json.load(f)
-                #?    f.close()
-                #?data["play time"] += play_time
-                #?with open(appdata + "\\.rails_and_potatoes\\index\\player.data.json", "w") as f:
-                #?    json.dump(data, f, indent=2)
-                #?    f.close()
-                #?s.save_setings() #save the settings
-                run = False #stop the game
-                pygame.quit()
-                sys.exit() #exit the script
+                gf.run = False #stop the game
         else:
             pass #TODO Game
         
         #*-----------------events-----------------*#
         for event in pygame.event.get():
             if event.type == QUIT: #if you closing the window 
-                #?play_time = (pygame.time.get_ticks() / (1000 * 60)) % 60
-                #?appdata = os.getenv('APPDATA') #get appdata
-                #?with open(appdata + "\\.rails_and_potatoes\\index\\player.data.json", "r") as f:
-                #?    data = json.load(f)
-                #?    f.close()
-                #?data["play time"] += play_time
-                #?with open(appdata + "\\.rails_and_potatoes\\index\\player.data.json", "w") as f:
-                #?    json.dump(data, f, indent=2)
-                #?    f.close()
-                #?s.save_setings() #save the settings
-                run = False #stop the game
-                pygame.quit()
-                sys.exit() #exit the script
+                gf.run = False #stop the game
             elif event.type == MOUSEBUTTONDOWN:
                 if event.button == 1:
                     gf.click = True
@@ -91,6 +67,17 @@ def Main(): #main
         gf.Clock.tick(60)
     
     if not gf.run: #quit
+        #?play_time = (pygame.time.get_ticks() / (1000 * 60)) % 60
+        #?appdata = os.getenv('APPDATA') #get appdata
+        #?with open(appdata + "\\.rails_and_potatoes\\index\\player.data.json", "r") as f:
+        #?    data = json.load(f)
+        #?    f.close()
+        #?data["play time"] += play_time
+        #?with open(appdata + "\\.rails_and_potatoes\\index\\player.data.json", "w") as f:
+        #?    json.dump(data, f, indent=2)
+        #?    f.close()
+        #?s.save_setings() #save the settings
+        
         pygame.quit()
         sys.exit() #exit the script
 

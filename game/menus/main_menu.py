@@ -1,4 +1,5 @@
 import pygame
+from pygame.locals import *
 from game.system import globals_file as gf, textures, entities as en
 #*-----------------------#init#--------------------------*#
 pygame.init() #init pygame
