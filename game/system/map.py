@@ -11,14 +11,23 @@ class Map:
         self.y = 0
         self.filename = filename
         self.foldername = foldername
-        self.image = None
-    
-    def update(self):
-        self.image = pygame.transform.scale(
+        self.loaded_image = pygame.image.load(
             t.change_texture(
                 foldername = self.foldername,
                 filename = self.filename
-                ),
+                )
+            )
+        self.image = pygame.transform.scale(
+            self.loaded_image,
+            (
+                gf.screen_width // 3,
+                gf.screen_height // 3
+                )
+            )
+    
+    def update(self):
+        self.image = pygame.transform.scale(
+            self.loaded_image,
             (
                 gf.screen_width // 3,
                 gf.screen_height // 3
