@@ -14,7 +14,7 @@ class Map:
         self.loaded_image = pygame.image.load(
             t.change_texture(
                 foldername = self.foldername,
-                filename = self.filename
+                filename = self.filename 
                 )
             )
         self.image = pygame.transform.scale(
