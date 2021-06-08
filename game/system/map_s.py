@@ -20,8 +20,8 @@ class Map:
         self.image = pygame.transform.scale(
             self.loaded_image,
             (
-                gf.screen_width // 3,
-                gf.screen_height // 3
+                gf.screen_width * 3,
+                gf.screen_height * 3
                 )
             )
     
@@ -29,8 +29,8 @@ class Map:
         self.image = pygame.transform.scale(
             self.loaded_image,
             (
-                gf.screen_width // 3,
-                gf.screen_height // 3
+                gf.screen_width * 3,
+                gf.screen_height * 3
                 )
             )
         self.were_is_the_click()
@@ -77,7 +77,7 @@ class Map:
                 self.image,
                 (
                     0,
-                    gf.screen_height // 3
+                    -1*(gf.screen_height // 3)
                     )
             )
         elif (self.x == 0) and (self.y == 2):
@@ -85,7 +85,7 @@ class Map:
                 self.image,
                 (
                     0,
-                    (gf.screen_height // 3) * 2
+                    -1*(gf.screen_height // 3) * 2
                     )
             )
         elif (self.x == 0) and (self.y == 3):
@@ -93,7 +93,7 @@ class Map:
                 self.image,
                 (
                     0,
-                    (gf.screen_height // 3) * 3
+                    -1*(gf.screen_height // 3) * 3
                     )
             )
         #------------------------------x == 1------------------------------#
@@ -101,7 +101,7 @@ class Map:
             gf.screen.blit(
                 self.image,
                 (
-                    gf.screen_width // 3,
+                    -1*(gf.screen_width // 3),
                     0
                     )
             )
@@ -109,7 +109,7 @@ class Map:
             gf.screen.blit(
                 self.image,
                 (
-                    gf.screen_width // 3,
+                    -1*(gf.screen_width // 3),
                     0
                     )
             )
@@ -117,24 +117,24 @@ class Map:
             gf.screen.blit(
                 self.image,
                 (
-                    gf.screen_width // 3,
-                    gf.screen_height // 3
+                    -1*(gf.screen_width // 3),
+                    -1*(gf.screen_height // 3)
                     )
             )
         elif (self.x == 1) and (self.y == 2):
             gf.screen.blit(
                 self.image,
                 (
-                    gf.screen_width // 3,
-                   ( gf.screen_height // 3) * 2
+                    -1*(gf.screen_width // 3),
+                    -1*((gf.screen_height // 3) * 2)
                     )
             )
         elif (self.x == 1) and (self.y == 3):
             gf.screen.blit(
                 self.image,
                 (
-                    gf.screen_width // 3,
-                   ( gf.screen_height // 3) * 3
+                    -1*(gf.screen_width // 3),
+                    -1*((gf.screen_height // 3) * 3)
                     )
             )
         #------------------------------x == 2------------------------------#
@@ -142,7 +142,7 @@ class Map:
             gf.screen.blit(
                 self.image,
                 (
-                    (gf.screen_width // 3) * 2,
+                    -1*((gf.screen_width // 3) * 2),
                     0
                     )
             )
@@ -150,24 +150,24 @@ class Map:
             gf.screen.blit(
                 self.image,
                 (
-                    (gf.screen_width // 3) * 2,
-                    gf.screen_height // 3
+                    -1*((gf.screen_width // 3) * 2),
+                    -1*(gf.screen_height // 3)
                     )
             )
         elif (self.x == 2) and (self.y == 2):
             gf.screen.blit(
                 self.image,
                 (
-                    (gf.screen_width // 3) * 2,
-                    (gf.screen_height // 3) * 2
+                    -1*((gf.screen_width // 3) * 2),
+                    -1*((gf.screen_height // 3) * 2)
                     )
             )
         elif (self.x == 2) and (self.y == 3):
             gf.screen.blit(
                 self.image,
                 (
-                    (gf.screen_width // 3) * 2,
-                    (gf.screen_height // 3) * 3
+                    -1*((gf.screen_width // 3) * 2),
+                    -1*((gf.screen_height // 3) * 3)
                     )
             )
         #------------------------------x == 3------------------------------#
@@ -175,7 +175,7 @@ class Map:
             gf.screen.blit(
                 self.image,
                 (
-                    (gf.screen_width // 3) * 3,
+                    -1*((gf.screen_width // 3) * 3),
                     0
                     )
             )
@@ -183,24 +183,24 @@ class Map:
             gf.screen.blit(
                 self.image,
                 (
-                    (gf.screen_width // 3) * 3,
-                    gf.screen_height // 3
+                    -1*((gf.screen_width // 3) * 3),
+                    -1*(gf.screen_height // 3)
                     )
             )
         elif (self.x == 3) and (self.y == 2):
             gf.screen.blit(
                 self.image,
                 (
-                    (gf.screen_width // 3) * 3,
-                    (gf.screen_height // 3) * 2
+                    -1*((gf.screen_width // 3) * 3),
+                    -1*((gf.screen_height // 3) * 2)
                     )
             )
         elif (self.x == 3) and (self.y == 3):
             gf.screen.blit(
                 self.image,
                 (
-                    (gf.screen_width // 3) * 3,
-                    (gf.screen_height // 3) * 3
+                    -1*((gf.screen_width // 3) * 3),
+                    -1*((gf.screen_height // 3) * 3)
                     )
             )
         #------------------------------#*==*#------------------------------#

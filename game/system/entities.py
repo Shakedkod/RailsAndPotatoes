@@ -148,7 +148,7 @@ class Clickable_Invisible_object:
             self.starting_height,
             gf.screen_height
         )
-        gf.rect = pygame.Rect(
+        self.rect = pygame.Rect(
             self.x,
             self.y,
             self.width,
@@ -158,7 +158,11 @@ class Clickable_Invisible_object:
     
     def update(self):
         self.mouse_hover()
-        return True if gf.click and self.hover else False
+        if gf.click and self.hover:
+            gf.click = False
+            return True
+        else:
+            return False
 
     def mouse_hover(self):
         if self.rect.collidepoint(gf.mouse_x, gf.mouse_y): #if the mouse is on the button

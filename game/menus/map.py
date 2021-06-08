@@ -1,6 +1,7 @@
 import pygame
 from pygame.locals import *
-from game.system import globals_file as gf, textures, entities as en
+from game.system import globals_file as gf, textures, entities as en, map_s as ms
+gf.classed_map = ms.Map(filename = "opt and play.png", foldername = "bg")
 #*-----------------------#init#--------------------------*#
 pygame.init() #init pygame
 pygame.font.init() #init
@@ -33,22 +34,23 @@ def map():
         gf.screen_height // 1000
     )) #blit the text onto the screen
     
-    gf.Tiles.update(1)
+    gf.classed_map.update()
+    #!gf.Tiles.update(1)
     
     #-------------------------------------------------------------------------------------------#
     #                                          buttons                                          #
     #-------------------------------------------------------------------------------------------#
     #create
-    #back = en.Button(
-    #    (gf.screen_width // 100) // 10,
-    #    (gf.screen_height // 100) // 10,
-    #    168.75,
-    #    75
-    #    )
-    #
-    ##update
-    #back.update()
-    #
-    ##click
-    #if back.click():
-    #    gf.where = "main menu"
+    back = en.Button(
+        (gf.screen_width // 100) // 10,
+        (gf.screen_height // 100) // 10,
+        168.75,
+        75
+        )
+    
+    #update
+    back.update()
+    
+    #click
+    if back.click():
+        gf.where = "main menu"
