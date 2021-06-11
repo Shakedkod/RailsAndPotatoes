@@ -4,14 +4,19 @@ import pygame, json, os, win32gui, win32con, sys
 os.system("cls") #*clear the console
 print (Fore.LIGHTGREEN_EX + "Loading, please wait..." + Fore.RESET + "")
 from pygame.locals import *
-from .system import settings as s, globals_file as gf, tiles
-from .menus import main_menu as menu, options as opt, map as play
+from .system import settings as s, globals_file as gf, tiles, music as m
 
 #init
 pygame.init() #init pygame
 pygame.display.init() #init pygame display
+pygame.mixer.pre_init(44100, -16, 2, 512)
+pygame.mixer.set_num_channels(64)
+pygame.mixer.init() #init pygame mixer
 s.get_setings() #update setings 
 gf.Clock = pygame.time.Clock() #seting up the clock
+
+# import
+from .menus import main_menu as menu, options as opt, map as play
 
 #TODO console close (add in the final release)
 #console_hiding_part = win32gui.GetForegroundWindow()
@@ -40,6 +45,7 @@ def Main(): #main
         gf.mouse_x, gf.mouse_y = pygame.mouse.get_pos()
         gf.half_width = gf.screen.get_width() // 2
         gf.half_height = gf.screen.get_height() // 2
+        gf.Sounds_and_sfx_dict = m.set_voulume(gf.Sounds_and_sfx_dict, s.voulume)
         if gf.where != "game":
             if gf.where == "main menu":
                 menu.main_menu()

@@ -8,7 +8,7 @@
     "name2",
     "you get the point"
   ],
-  "assets folder name": ".game_name",
+  "assets folder name": ".rails_and_potatoes",
   "game start": {
     "screen width": 900,
     "screen height": 500,
