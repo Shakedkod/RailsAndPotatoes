@@ -1,14 +1,11 @@
 import pygame
 from pygame.locals import *
 from game.system import globals_file as gf, textures, entities as en, map_s as ms
-gf.classed_map = ms.Map(filename = "opt and play.png", foldername = "bg")
 #*-----------------------#init#--------------------------*#
 pygame.init() #init pygame
 pygame.font.init() #init
 #*-----------------------#pygame input#--------------------------*#
-#images
-bg_img = pygame.image.load(textures.change_texture(filename = "opt and play.png", foldername = "bg"))
-
+gf.classed_map = ms.Map(filename = "options background.png", foldername = "bg")
 #music and sounds
 # TODO
 #*-----------------------#functions#--------------------------*#

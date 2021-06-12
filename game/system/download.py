@@ -4,7 +4,9 @@ from time import sleep
 from colorama import Fore
 from zipfile import ZipFile
 
-def download(url = "https://www.python.org/static/img/python-logo@2x.png", foldername = ".folder", filename = "name.zip"):
+def download(
+    is_zip = True, url = "https://www.python.org/static/img/python-logo@2x.png", foldername = ".folder", filename = "name.zip"
+    ):
     """this fanc install to appdata what you want(in a file that end with .zip) from the internet"""
     appdata = os.getenv('APPDATA') #get appdata
     check_path = appdata + "\\"
@@ -15,9 +17,10 @@ def download(url = "https://www.python.org/static/img/python-logo@2x.png", folde
     path += filename
     ############################################
     wget.download(url, path)
-    with ZipFile(path, 'r') as zipObj:
-        zipObj.extractall(path=check_path)
-    os.remove(path)
+    if is_zip:
+        with ZipFile(path, 'r') as zipObj:
+            zipObj.extractall(path=check_path)
+        os.remove(path)
 
 def assets_check():
     appdata = os.getenv('APPDATA') #get appdata
@@ -25,9 +28,9 @@ def assets_check():
     if not os.path.exists(path):
         print (Fore.RED + "download assets, please wait...")
         download(
-            url = r"https://www.dropbox.com/s/f1uz0yfpd92dzmw/.assets.zip?dl=1",
+            url = r"https://www.dropbox.com/s/pmo3mqeqal3rd28/assets.assets?dl=1",
             foldername= ".rails_and_potatoes",
-            filename = "assets.zip"
+            filename = "assets.assets"
             )
         read_path = appdata + r"\.rails_and_potatoes\index\Assets"
         os.chmod(read_path, S_IREAD)

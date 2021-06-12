@@ -6,7 +6,7 @@ pygame.init() #init pygame
 pygame.font.init() #init
 #*-----------------------#pygame input#--------------------------*#
 #images
-bg_img = pygame.image.load(textures.change_texture(filename = "opt and play.png", foldername = "bg"))
+bg_img = pygame.image.load(textures.change_texture(filename = "options background.png", foldername = "bg"))
 
 #music and sounds
 # TODO

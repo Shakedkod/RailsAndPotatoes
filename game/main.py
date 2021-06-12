@@ -37,6 +37,7 @@ def Main(): #main
     gf.screen_height = gf.screen.get_height()
     gf.Tiles = tiles.Tiles()
     gf.Tiles.load_images(1)
+    gf.Sounds_and_sfx_dict = m.load_sounds_or_sfx(gf.Sounds_and_sfx_dict, "main.mp3", "None", "none at all", s.voulume)
 
     while gf.run: #the main loop
         gf.Tiles.change_x_and_y()
