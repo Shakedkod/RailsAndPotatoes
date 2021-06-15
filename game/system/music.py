@@ -8,10 +8,9 @@ pygame.mixer.init()
 #seting the voulume
 def set_voulume(songs_and_sfx, voulume):
     """give a dict of all of the sounds and sound efects and it will set the voulume to the voulume that is inserted,
-    -> return the list <-"""
-    for key, value in songs_and_sfx:
-        print (key, value)
-        pygame.mixer.Sound.set_volume(value, voulume)
+    -> return the dict <-"""
+    for key in songs_and_sfx:
+        pygame.mixer.Sound.set_volume(songs_and_sfx[key], voulume)
     return songs_and_sfx
 
 def change_voulume(what):
@@ -32,7 +31,7 @@ def load_sounds_or_sfx(sounds_dict, file_name, folder_name, key, voulume):
     folder_name = the folder name of the sound file, start from ...\Assets\sounds_and_sfx\(the folder here), if 'None', the folder will be just sounds_and_sfx - type === string.
 
     key = the key in the dict - type === string.
-    
+
     voulume = the voulume of the sounds in the game - type === float.
     ---------------------------------------------------------------------------------------------------------
     load sounds and sfx to the dict (pygame.mixer.Sound)

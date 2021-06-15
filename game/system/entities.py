@@ -74,64 +74,6 @@ class Button:
             return False 
 #-----------------------------------------------------------------------------------------------#
 
-class Animation:
-    def __init__(self, x, y, starting_width, starting_height, frame_number, frames_dict = None):
-        """
-        first, init at the start(were we are 'loading' our images) with frame_number == 1
-        second, init in the loop with frame_number == name_of_initial_object.frame
-        """
-        self.x = x
-        self.y = y
-        self.starting_width = starting_width
-        self.starting_height = starting_height
-        self.width = resize.resize_x(
-            settings.starting_screen_width,
-            self.starting_width,
-            gf.screen_width
-        )
-        self.height = resize.resize_y(
-            settings.starting_screen_height,
-            self.starting_height,
-            gf.screen_height
-        )
-        self.rect = pygame.Rect(
-            self.x,
-            self.y,
-            self.width,
-            self.height
-        )
-        self.not_loaded_images = frames_dict
-        self.number_of_frames = len(self.not_loaded_images) - 1 #starting from 0, because of list
-        self.loaded_images = []
-        for key, value in self.not_loaded_images: #loading the images
-            self.loaded_images.append(
-                pygame.image.load(
-                    textures.change_texture(
-                        value[1],
-                        value[0]
-                        )
-                )
-            )
-        self.scaled_images = []
-        for image in self.loaded_images:
-            self.scaled_images.append(
-                pygame.transform.scale(
-                    image,
-                    (
-                        self.rect.width,
-                        self.rect.height
-                        )
-                )
-            )
-        self.frame = frame_number #were are we now?, you are asking me?...
-        
-    def update(self):
-        pass #TODO
-
-    def animate(self):
-        pass #TODO
-#-----------------------------------------------------------------------------------------------#
-
 class Clickable_Invisible_object:
     def __init__(self, x, y, width, height):
         self.x = x
@@ -169,3 +111,131 @@ class Clickable_Invisible_object:
             self.hover = True
         else:
             self.hover = False
+#-----------------------------------------------------------------------------------------------#
+
+class Clickable_Text_object:
+    def __init__(
+        self, x, y, width, height,
+        text = "this is the text",
+        text_color = (255, 255, 255),
+        font_size = gf.screen_width // 50,
+        font_folder_name = "fonts",
+        font_file_name = "name.ttf"
+        ):
+
+        #x and y
+        self.x = x
+        self.y = y
+
+        #width and height
+        self.starting_width = width
+        self.starting_height = height
+        self.width = resize.resize_x(
+            settings.starting_screen_width,
+            self.starting_width,
+            gf.screen_width
+        )
+        self.height = resize.resize_y(
+            settings.starting_screen_height,
+            self.starting_height,
+            gf.screen_height
+        )
+
+        #create rect
+        self.rect = pygame.Rect(
+            self.x,
+            self.y,
+            self.width,
+            self.height
+        )
+        
+        #is the mouse hover the rect
+        self.hover = False
+
+        #font and text render
+        self.font = pygame.font.Font(
+            textures.change_texture(font_file_name, font_folder_name), font_size
+            )
+        self.text = self.font.render(text, 1, text_color)
+
+    
+    def update(self):
+        #blit
+        gf.screen.blit(self.text, (self.rect.x, self.rect.y))
+
+        #is you clicked the rect
+        self.mouse_hover()
+        if gf.click and self.hover:
+            gf.click = False
+            return True
+        else:
+            return False
+
+    def mouse_hover(self):
+        if self.rect.collidepoint(gf.mouse_x, gf.mouse_y): #if the mouse is on the button
+            self.hover = True
+        else:
+            self.hover = False
+    
+    def dev_checks(self):
+        pygame.draw.rect(gf.screen, (255, 0, 255), self.rect)
+#-----------------------------------------------------------------------------------------------#
+
+class Just_an_image:
+    def __init__(self, x, y, width, height, image_folder_name, image_file_name):
+        #position
+        self.x = x
+        self.y = y
+        
+        #starting scale
+        self.starting_width = width
+        self.starting_height = height
+
+        #scale
+        self.width = resize.resize_x(
+            settings.starting_screen_width,
+            self.starting_width,
+            gf.screen_width
+        )
+        self.height = resize.resize_y(
+            settings.starting_screen_height,
+            self.starting_height,
+            gf.screen_height
+        )
+
+        #image loading
+        self.unscaled_image = pygame.image.load(
+            textures.change_texture(
+                foldername = image_folder_name, filename = image_file_name
+                )
+        )
+
+    
+    def update(self, x, y):
+        #position
+        self.x = x
+        self.y = y
+        
+        #scale
+        self.width = resize.resize_x(
+            settings.starting_screen_width,
+            self.starting_width,
+            gf.screen_width
+        )
+        self.height = resize.resize_y(
+            settings.starting_screen_height,
+            self.starting_height,
+            gf.screen_height
+        )
+
+        #rect
+        self.rect = pygame.Rect(self.x, self.y, self.width, self.height)
+
+        #scale image
+        self.image = pygame.transform.scale(
+            self.unscaled_image,
+            (self.rect.width, self.rect.height)
+        )
+
+        #show image
+        gf.screen.blit(self.image, (self.rect.x, self.rect.y))

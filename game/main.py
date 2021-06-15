@@ -24,8 +24,8 @@ from .menus import main_menu as menu, options as opt, map as play
 
 #*-----------------------#creating the window--------------------------*#
 gf.screen = pygame.display.set_mode((s.game_start.start_width, s.game_start.start_height), pygame.RESIZABLE) #create the window with the right dimensions, and resize option
-pygame.display.set_caption("Game Name") #giving a name to the screen
-icon = pygame.image.load("game\Inner Assets\icon.png") #get the icon pic
+pygame.display.set_caption(s.game_start.caption) #giving a name to the screen
+icon = pygame.image.load(s.game_start.png_icon) #get the icon pic
 pygame.display.set_icon(icon) #put the icon on the window
 #--------------------------------------------------------------------#
 def Main(): #main

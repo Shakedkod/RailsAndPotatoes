@@ -1,6 +1,6 @@
 {
-  "name": "name",
-  "made by": "Shakedkod Studios",
+  "name": "Rails And Potatoes",
+  "made by": "Oort Studios",
   "virson": 0.0,
   "lang": "english",
   "teamNames": [
@@ -13,8 +13,9 @@
     "screen width": 900,
     "screen height": 500,
     "voulume": 1.0,
-    "screen name": "name here",
-    "icon path": "from this file"
+    "screen name": "Rails And Potatoes",
+    "icon path - ico": "game\\Inner Assets\\icon.ico",
+    "icon path - png": "game\\Inner Assets\\icon.png"
   },
   "calculations": {
     "screen width": 900,

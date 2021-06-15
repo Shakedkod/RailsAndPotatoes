@@ -8,7 +8,7 @@ class Game_Start(object):
         self.start_width = data["screen width"]
         self.start_height = data["screen height"]
         self.caption = data["screen name"]
-        self.icon = data["icon path"]
+        self.png_icon = data["icon path - png"]
 
 def get_setings():
     with open("game/system/settings.json", 'r') as seting:

@@ -17,12 +17,6 @@ def map():
     #-------------------------------------------------------------------------------------------#
     title_font = pygame.font.Font(textures.change_texture("Blackwood Castle.ttf", "fonts"), gf.screen_width // 20)
     
-    #------------------------------------------------------------------------------------------#
-    #                                        backgrownd                                        #
-    #------------------------------------------------------------------------------------------#
-    #panorama
-    bg = pygame.transform.scale(bg_img, (gf.screen_width, gf.screen_height)) #change size
-    gf.screen.blit(bg, (0, 0))
     #--------------------------------------------------------#
     #title
     title = title_font.render("Map", 1, gf.WHITE)

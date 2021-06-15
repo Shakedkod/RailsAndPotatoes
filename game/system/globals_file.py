@@ -19,6 +19,7 @@ loaded = False
 Tiles = None
 classed_map = None
 Sounds_and_sfx_dict = {}
+what_option = None
 ##################################################################
 #                             colors                             #
 ##################################################################
