@@ -23,11 +23,7 @@ Credits
 
 Thanks to everyone who has made or helped making this game.
 
-* Shaked
-* Omri: Game design
-* Doron: Story and game design
-* Noam: Game design and programing
-* Layrics(Mayan): The music
+* no credits yet: for the end
 
 
 .. |Done| image:: https://img.shields.io/badge/Done-no-red
