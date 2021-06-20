@@ -28,9 +28,9 @@ def assets_check():
     if not os.path.exists(path):
         print (Fore.RED + "download assets, please wait...")
         download(
-            url = r"https://www.dropbox.com/s/pmo3mqeqal3rd28/assets.assets?dl=1",
+            url = r"https://www.dropbox.com/s/wqr4qwh151z252j/RailsAndPotatoes.assets?dl=1",
             foldername= ".rails_and_potatoes",
-            filename = "assets.assets"
+            filename = "RailsAndPotatoes.assets"
             )
         read_path = appdata + r"\.rails_and_potatoes\index\Assets"
         os.chmod(read_path, S_IREAD)
