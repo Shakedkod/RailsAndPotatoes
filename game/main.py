@@ -72,6 +72,7 @@ def Main(): #main
         #------------------------------------------------------------------------#
         pygame.display.update() #the display needs to update so we can show staf on the screen
         gf.Clock.tick(60)
+
     
     if not gf.run: #quit
         #?play_time = (pygame.time.get_ticks() / (1000 * 60)) % 60

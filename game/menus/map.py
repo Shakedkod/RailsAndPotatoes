@@ -32,16 +32,16 @@ def map():
     #                                          buttons                                          #
     #-------------------------------------------------------------------------------------------#
     #create
-    #back = en.Button(
-    #    (gf.screen_width // 100) // 10,
-    #    (gf.screen_height // 100) // 10,
-    #    168.75,
-    #    75
-    #    )
-    #
-    ##update
-    #back.update()
-    #
-    ##click
-    #if back.click():
-    #    gf.where = "main menu"
+    back = en.Button(
+        (gf.screen_width // 100) // 10,
+        (gf.screen_height // 100) // 10,
+        168.75,
+        75
+        )
+    
+    #update
+    back.update()
+    
+    #click
+    if back.click():
+        gf.where = "main menu"

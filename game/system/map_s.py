@@ -28,12 +28,6 @@ class Map:
                 gf.screen_height
                 )
             )
-        self.back_button = en.Button(
-            (gf.screen_width // 100) // 10,
-            (gf.screen_height // 100) // 10,
-            168.75,
-            75
-            )
     
     def update(self):
         self.image = pygame.transform.scale(
@@ -93,8 +87,6 @@ class Map:
                     )
             )
         #------------------------------#*==*#------------------------------#
-        #blit here
-        self.back_button.update()
 
     def were_is_the_click(self):
         O1 = en.Clickable_Invisible_object(
@@ -151,9 +143,7 @@ class Map:
             300,
             166.6666666666667
             )
-        if self.back_button.click():
-            gf.where = "main menu"
-        elif O1.update():
+        if O1.update():
             self.the_part = 1 #top left
         elif O2.update():
             self.the_part = 2 #top center
