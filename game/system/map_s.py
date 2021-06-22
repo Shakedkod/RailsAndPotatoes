@@ -143,9 +143,7 @@ class Map:
             300,
             166.6666666666667
             )
-        if O1.update():
-            self.the_part = 1 #top left
-        elif O2.update():
+        if O2.update():
             self.the_part = 2 #top center
         elif O3.update():
             self.the_part = 3 #top right

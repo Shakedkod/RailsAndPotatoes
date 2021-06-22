@@ -1,11 +1,12 @@
 ##################################################################
 #!#### IMPORT ####!#
-#pygame
-import pygame
+#pygame and os
+import pygame, os, shutil
 
 # tkinter
 from tkinter import * #yay, tkinter with pygame
 from tkinter import messagebox #for popup boxes
+from tkinter import filedialog #for file dialog to open files
 
 # images
 from PIL import ImageTk, Image #for images
@@ -15,11 +16,11 @@ from win32api import GetSystemMetrics #to get the monitor res
 
 #our files
 from game.system import textures as t, globals_file as gf, settings as s #yo, this is my system
-##################################################################
+#@################################################################@#
 
 def start_options_res():
     root = Tk() #create the window
-    root.title("Rails And Potatoes") #set the title
+    root.title("Change Resolution") #set the title
     root.iconbitmap("game\\Inner Assets\\icon.ico") #set the icon
     root.resizable(0, 0) #you can't resize the window
     root.configure(background = "#D8B36E")
@@ -108,10 +109,10 @@ def start_options_res():
     root.mainloop()
 
 
-#-------------------------------------------------------------------#
+#@-------------------------------------------------------------------@#
 def options_res():
     root = Tk() #create the window
-    root.title("Rails And Potatoes") #set the title
+    root.title("Change Resolution") #set the title
     root.iconbitmap("game\\Inner Assets\\icon.ico") #set the icon
     root.resizable(0, 0) #you can't resize the window
     root.configure(background = "#D8B36E")
@@ -196,6 +197,79 @@ def options_res():
     #*----------------end----------------*#
     #set the window size
     root.geometry("210x100")
+
+    #mainloop window
+    root.mainloop()
+
+
+#@-------------------------------------------------------------------@#
+def add_resource_pack_option():
+    global the_files_list
+    def find_all_indexes(input_str, search_str):
+            l1 = []
+            length = len(input_str)
+            index = 0
+            while index < length:
+                i = input_str.find(search_str, index)
+                if i == -1:
+                    return l1
+                l1.append(i)
+                index = i + 1
+            return l1
+    
+    root = Tk() #create the window
+    root.title("Resource Packs") #set the title
+    root.iconbitmap("game\\Inner Assets\\icon.ico") #set the icon
+    root.resizable(0, 0) #you can't resize the window
+    root.configure(background = "#D8B36E")
+    APPDATA = os.getenv("APPDATA")
+    the_files_list = []
+    files_list = os.listdir(APPDATA + "\\.rails_and_potatoes\\Resource pack")
+    for file in files_list:
+        dot_list = find_all_indexes(file, ".")
+        the_one_dot_we_need = int(dot_list[-1]) + 1
+        the_one_dot_we_need_1 = int(dot_list[-1])
+        type_of_file = file[the_one_dot_we_need:]
+        name = file[:the_one_dot_we_need_1]
+        if (type_of_file == "zip") or (type_of_file == "rar") or (type_of_file == "rp") or (type_of_file == "r-a-p-assets"):
+            the_files_list.append((name, APPDATA + "\\.rails_and_potatoes\\Resource pack\\" + file))
+    #*----------------------button funcs----------------------*#
+    def open_file_dialog_box():
+        global the_files_list
+        filepath = filedialog.askopenfilename(
+            initialdir = APPDATA + "\\.rails_and_potatoes",
+            title = "Select A .zip File to add to your \"Resource Pack\" Colection",
+            filetypes = [
+                (
+                    "Compressed (zipped) Folder, WinRAR archive, ResourcePack files, RailsAndPotatoesAssets files", "*.zip *.rar *.rp *.r-a-p-assets"
+                    )
+                ]
+            )
+        if filepath == "":
+            pass
+        else:
+            slash_list = find_all_indexes(filepath, "/")
+            the_one_slash_we_need = int(slash_list[-1]) + 1
+            name = filepath[the_one_slash_we_need:-4]
+
+            shutil.copy2(filepath, APPDATA + "/.rails_and_potatoes/Resource Pack/" + name + ".zip")
+
+            the_files_list.append((name, APPDATA + "\\.rails_and_potatoes\\Resource Pack\\" + name))
+
+            for element in the_files_list:
+                print (element)
+
+    #*----------------------buttons----------------------*#
+        #?create
+    add_file_button = Button(root, text = "Add Resource Pack File", command = open_file_dialog_box, fg = "#545454", bg = "#C9860A")
+
+    
+        #?blit (ho no, blit is pygame, not tkinter)
+    add_file_button.grid(row = 0, column = 0) #packing it into the screen(row - up to down, column - left to right)
+    
+    #*----------------end----------------*#
+    #set the window size
+    root.geometry("450x250")
 
     #mainloop window
     root.mainloop()

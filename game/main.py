@@ -15,9 +15,6 @@ pygame.mixer.init() #init pygame mixer
 s.get_setings() #update setings 
 gf.Clock = pygame.time.Clock() #seting up the clock
 
-# import
-from .menus import main_menu as menu, options as opt, map as play
-
 #TODO console close (add in the final release)
 #console_hiding_part = win32gui.GetForegroundWindow()
 #win32gui.ShowWindow(console_hiding_part , win32con.SW_HIDE)
@@ -29,6 +26,7 @@ icon = pygame.image.load(s.game_start.png_icon) #get the icon pic
 pygame.display.set_icon(icon) #put the icon on the window
 #--------------------------------------------------------------------#
 def Main(): #main
+    from .menus import main_menu as menu, options as opt, map as play
     gf.where = "main menu"
     gf.click = False
     gf.width_before = gf.screen.get_width()
@@ -50,7 +48,7 @@ def Main(): #main
         if gf.where != "game":
             if gf.where == "main menu":
                 menu.main_menu()
-            elif gf.where == "opt":
+            elif gf.where == "opt": 
                 opt.options()
             elif gf.where == "play":
                 play.map()
@@ -87,7 +85,7 @@ def Main(): #main
         #?s.save_setings() #save the settings
         
         pygame.quit()
-        sys.exit() #exit the script
+
 
 if __name__ == "__main__":
     Main()

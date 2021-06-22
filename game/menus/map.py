@@ -33,15 +33,15 @@ def map():
     #-------------------------------------------------------------------------------------------#
     #create
     back = en.Button(
-        (gf.screen_width // 100) // 10,
-        (gf.screen_height // 100) // 10,
+        gf.screen_width // 100,
+        gf.screen_height // 100,
         168.75,
         75
         )
-    
+
     #update
     back.update()
-    
+
     #click
     if back.click():
         gf.where = "main menu"

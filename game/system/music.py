@@ -1,5 +1,5 @@
 import os, pygame
-from game.system import settings
+from game.system import settings, globals_file as gf
 from pygame.locals import *
 pygame.init() #init
 pygame.mixer.pre_init(44100, -16, 2, 512)
@@ -45,7 +45,13 @@ def load_sounds_or_sfx(sounds_dict, file_name, folder_name, key, voulume):
     else:
         path = appdata + "\\.rails_and_potatoes\\index\\Assets\\sounds_and_sfx\\" + folder_name + "\\" + file_name
     #?----------------------------------------load sound----------------------------------------?#
-    sounds_dict[key] = pygame.mixer.Sound(path)
+    if os.path.exists(path):
+        sounds_dict[key] = pygame.mixer.Sound(path)
+    else:
+        path = appdata + "\\.rails_and_potatoes\\by_shakedkod.txt"
+        os.remove(path)
+        gf.another_one = True
+        gf.where = "exit"
 
     #?----------------------------------------set voulume----------------------------------------?#
     pygame.mixer.Sound.set_volume(sounds_dict[key], voulume)

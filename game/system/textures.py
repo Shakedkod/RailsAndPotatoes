@@ -1,6 +1,6 @@
 from os import getenv, remove
 from os.path import exists
-from sys import exit
+from . import globals_file as gf
 #-----------------------------------------------------------#
 def change_texture(filename = "menu.png", foldername = "bg"):
     #input: (filename -> name.end) and (foldername -> name)
@@ -20,4 +20,6 @@ def change_texture(filename = "menu.png", foldername = "bg"):
     else:
         path = appdata + "\\.rails_and_potatoes\\by_shakedkod.txt"
         remove(path)
-        exit("$ restart")
+        gf.another_one = True
+        gf.where = "exit"
+

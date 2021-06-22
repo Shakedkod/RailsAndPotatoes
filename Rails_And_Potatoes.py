@@ -1,4 +1,4 @@
-import os
+import os, sys
 from game.system import download
 from time import sleep
 from colorama import Fore
@@ -36,5 +36,13 @@ sleep(1) #sleep for 1 second
 
 #---------------------------------------------------#
 from game import main
+from game.system import globals_file as gf
 
 main.Main()
+
+if gf.another_one:
+    gf.another_one = False
+    os.system("py Rails_And_Potatoes.py")
+    sys.exit()
+else:
+    sys.exit()
