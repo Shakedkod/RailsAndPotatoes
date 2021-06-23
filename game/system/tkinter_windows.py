@@ -1,7 +1,7 @@
 ##################################################################
 #!#### IMPORT ####!#
 #pygame and os
-import pygame, os, shutil
+import pygame, os, shutil, json
 
 # tkinter
 from tkinter import * #yay, tkinter with pygame
@@ -66,7 +66,7 @@ def start_options_res():
                 #if the resolution is in the right specs
                 if (0 < int(w_text_without_space) <= monitor_width) and (0 < int(h_text_without_space) <= monitor_height):
                     res = w_text_without_space + "x" + h_text_without_space
-                    confirm_text = "are you want the window to open in the resolution: " + res
+                    confirm_text = "Do you want the window to open in the resolution: " + res
 
                     response = messagebox.askyesno("Confirm", confirm_text)
                     if response:
@@ -158,7 +158,7 @@ def options_res():
                 #if the resolution is in the right specs
                 if (0 < int(w_text_without_space) <= monitor_width) and (0 < int(h_text_without_space) <= monitor_height):
                     res = w_text_without_space + "x" + h_text_without_space
-                    confirm_text = "are you want to change the resolution to: " + res
+                    confirm_text = "Do you want to change the resolution to: " + res
 
                     response = messagebox.askyesno("Confirm", confirm_text)
                     if response:
@@ -203,39 +203,60 @@ def options_res():
 
 
 #@-------------------------------------------------------------------@#
-def add_resource_pack_option():
-    global the_files_list
-    def find_all_indexes(input_str, search_str):
-            l1 = []
-            length = len(input_str)
-            index = 0
-            while index < length:
-                i = input_str.find(search_str, index)
-                if i == -1:
-                    return l1
-                l1.append(i)
-                index = i + 1
-            return l1
+def add_resource_pack_option(filessss, bty):
+    global the_files_list, bt_y, items_names
+    the_files_list = filessss
+    bt_y = bty
+    #?------------get appdata and------------?#
+    global path_of_path
+    APPDATA = os.getenv("APPDATA")
+    path_of_path = APPDATA + "\\.rails_and_potatoes\\Resource pack\\UlBNanager.cnAtbG9hZGVy"
+
+    #---------------------find all the indexses of staff in a string---------------------#
+    def find_all_indexes(input_str, search_str):                                         #
+            l1 = []                                                                      #
+            length = len(input_str)                                                      #
+            index = 0                                                                    #
+            while index < length:                                                        #
+                i = input_str.find(search_str, index)                                    #
+                if i == -1:                                                              #
+                    return l1                                                            #
+                l1.append(i)                                                             #
+                index = i + 1                                                            #
+            return l1                                                                    #
+    #------------------------------------------------------------------------------------#
     
+    #?------------tk window, create------------?#
     root = Tk() #create the window
     root.title("Resource Packs") #set the title
     root.iconbitmap("game\\Inner Assets\\icon.ico") #set the icon
     root.resizable(0, 0) #you can't resize the window
     root.configure(background = "#D8B36E")
-    APPDATA = os.getenv("APPDATA")
-    the_files_list = []
-    files_list = os.listdir(APPDATA + "\\.rails_and_potatoes\\Resource pack")
-    for file in files_list:
+
+    bg_image = Image.open(APPDATA + "\\.rails_and_potatoes\\index\\Assets\\bg\\rp-chooser.png")
+    bg_image = bg_image.resize((450, 250), Image.ANTIALIAS)
+    bg_loaded_img = ImageTk.PhotoImage(bg_image)
+    bg_image_lable = Label(image = bg_loaded_img).place(x=0, y=0, relwidth=1, relheight=1)
+
+
+    #?------------files that already in the folder(Resource pack)------------?#
+    files_list = os.listdir(APPDATA + "\\.rails_and_potatoes\\Resource pack\\")
+    for file in files_list: #add the files to the list
         dot_list = find_all_indexes(file, ".")
-        the_one_dot_we_need = int(dot_list[-1]) + 1
+        the_one_dot_we_need = int(dot_list[0]) + 1
         the_one_dot_we_need_1 = int(dot_list[-1])
         type_of_file = file[the_one_dot_we_need:]
         name = file[:the_one_dot_we_need_1]
         if (type_of_file == "zip") or (type_of_file == "rar") or (type_of_file == "rp") or (type_of_file == "r-a-p-assets"):
             the_files_list.append((name, APPDATA + "\\.rails_and_potatoes\\Resource pack\\" + file))
-    #*----------------------button funcs----------------------*#
+    
+    #*----------------------------------------------button funcs----------------------------------------------*#
+    def the_chossen_one(): #if the button is clicked
+        print ("you now")
+    
+
     def open_file_dialog_box():
-        global the_files_list
+        global the_files_list, bt_y
         filepath = filedialog.askopenfilename(
             initialdir = APPDATA + "\\.rails_and_potatoes",
             title = "Select A .zip File to add to your \"Resource Pack\" Colection",
@@ -245,27 +266,71 @@ def add_resource_pack_option():
                     )
                 ]
             )
+
+        #if you chosse a file(in else)
         if filepath == "":
             pass
         else:
-            slash_list = find_all_indexes(filepath, "/")
-            the_one_slash_we_need = int(slash_list[-1]) + 1
-            name = filepath[the_one_slash_we_need:-4]
+            slash_list = find_all_indexes(filepath, "/") #find in the path all the "/"
+            the_one_slash_we_need = int(slash_list[-1]) + 1 #find the one we need and add 1 to it becuse
+            name = filepath[the_one_slash_we_need:-4] #the name is generated here
 
-            shutil.copy2(filepath, APPDATA + "/.rails_and_potatoes/Resource Pack/" + name + ".zip")
+            shutil.copy2(filepath, APPDATA + "/.rails_and_potatoes/Resource Pack/" + name + ".zip") #we copy the file TODO - add the box that ask you if to delete the original one
 
-            the_files_list.append((name, APPDATA + "\\.rails_and_potatoes\\Resource Pack\\" + name))
+            the_files_list.append((name, APPDATA + "\\.rails_and_potatoes\\Resource Pack\\" + name + ".zip")) #add it to the files list
+            
+            #@#############################################################################@#
+            #@                               create the menu                               @#
+            #@#############################################################################@#
 
-            for element in the_files_list:
-                print (element)
+
 
     #*----------------------buttons----------------------*#
+    dm_clicked = StringVar() #the var for wut is chosen by the user
+
         #?create
     add_file_button = Button(root, text = "Add Resource Pack File", command = open_file_dialog_box, fg = "#545454", bg = "#C9860A")
+
 
     
         #?blit (ho no, blit is pygame, not tkinter)
     add_file_button.grid(row = 0, column = 0) #packing it into the screen(row - up to down, column - left to right)
+    blank_slate = Label(root, text = "                                     ", bg = "#8AEFFF").grid(row = 0, column = 1)
+
+    
+    #-----------------------------------image-----------------------------------#
+    with open(path_of_path, "r") as file:
+        data = json.load(file)
+        file.close()
+    
+    path_to_the_image = data["bG9hZGVk"]
+    if path_to_the_image[0] == "default":
+        path_to_the_image = APPDATA + "\\.rails_and_potatoes\\index\\logo.png"
+        name_active = "Default"
+    else:
+        name_active = path_to_the_image[0]
+        path_to_the_image = path_to_the_image[1]
+
+    image = Image.open(path_to_the_image)
+    image = image.resize((80, 80), Image.ANTIALIAS)
+    loaded_img = ImageTk.PhotoImage(image)
+    image_lable = Label(image = loaded_img).grid(row = bt_y - (len(the_files_list)), column = 0)
+    defult_lable = Label(root, text = "Active Resource Pack:", bg = "#D8B36E", fg = "black").grid(row = bt_y - (len(the_files_list) + 1), column = 0)
+    name_lable = Label(root, text = name_active, fg = "#403E39", bg = "#E89C0D").grid(row = bt_y - (len(the_files_list) - 1), column = 0)
+
+    #dropdown_menu
+    items_names = []
+    for file in the_files_list: #add the files to the list
+        items_names.append(file[0])
+
+    dm_clicked.set("None")
+    dropdown_menu = OptionMenu(root, dm_clicked, *items_names)
+    dropdown_menu["menu"].config(bg="#834B00", fg = "white")
+
+    dropdown_menu.grid(row = 1, column = 2)
+
+    lable_of_the_dropdown = Label(root, text = "Change ResourcePack here:", fg = "white", bg = "#834B00").grid(row = 0, column = 2)
+
     
     #*----------------end----------------*#
     #set the window size
