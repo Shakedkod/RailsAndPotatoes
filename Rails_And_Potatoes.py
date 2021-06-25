@@ -2,7 +2,7 @@ import os, sys
 from game.system import download
 from time import sleep
 from colorama import Fore
-from game.tqdm import tqdm
+from tqdm import tqdm
 
 os.system("cls") #*clear the console
 

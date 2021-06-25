@@ -14,6 +14,9 @@ from PIL import ImageTk, Image #for images
 #screen resolution
 from win32api import GetSystemMetrics #to get the monitor res
 
+#unzip RP zip file
+from zipfile import ZipFile #YAY .zip?
+
 #our files
 from game.system import textures as t, globals_file as gf, settings as s #yo, this is my system
 #@################################################################@#
@@ -254,11 +257,23 @@ def add_resource_pack_option(filessss, bty): #📚
     #*----------------------------------------------button funcs----------------------------------------------*#
     def the_chossen_one(): #if the button is clicked
         global dm_clicked, dropdown_menu
+        APPDATA = os.getenv("APPDATA")
         the_chossen_one_var = dm_clicked.get()
         if the_chossen_one_var == "None":
             pass
         else:
-            pass
+            if the_chossen_one_var == "Default":
+                gf.what_is_rp = None
+                root.destroy()
+                gf.window_open = False
+                gf.another_one = True
+                gf.where = "exit"
+            else:
+                if os.path.exists(
+                    APPDATA + "\\.rails_and_potatoes\\Resource pack\\ZiUn.z\\" + the_chossen_one_var):
+                    pass
+                else:
+                    pass
     
 
     def open_file_dialog_box():
@@ -298,11 +313,31 @@ def add_resource_pack_option(filessss, bty): #📚
                 items_names.append(file[0]) #apppppend name, tank(thank) you 🙃
 
             dm_clicked.set("None") #set the var to None
-            dropdown_menu = OptionMenu(root, dm_clicked, *items_names) #create the menu
+            dropdown_menu = OptionMenu(root, dm_clicked, "Default", *items_names) #create the menu
             dropdown_menu["menu"].config(bg="#834B00", fg = "white") #COLORS IS FUN
 
             dropdown_menu.grid(row = 1, column = 2) #show the dropdown menu on the screen
 
+            #@#############################################################################@#
+            #@                             delete the original                             @#
+            #@#############################################################################@#
+            delete_the_or_yes_or_no = messagebox.askyesno("RP installer", "Do you want to delete the original file?\nthe file will steal be avileble at the the game folder at %appdata%") #DO YOU WANT THIS SIR?
+            if delete_the_or_yes_or_no:
+                os.remove(filepath) #remove the original file
+            
+            #@#############################################################################@#
+            #@                               add to the list                               @#
+            #@#############################################################################@#
+            with open(APPDATA + "\\.rails_and_potatoes\\Resource pack\\UlBNanager.cnAtbG9hZGVy", "r") as j_file:
+                data = json.load(j_file) #load the file of the data of the Resource Packs (why?🙃)
+                j_file.close() #close the file
+            
+            data["emlwIGZpbGVz"].append(file[0]) #add this file into the data of the Resource Packs
+
+            with open(APPDATA + "\\.rails_and_potatoes\\Resource pack\\UlBNanager.cnAtbG9hZGVy", "w") as j_file:
+                json.dump(data, j_file, indent=2) #return the updated data of the Resource Packs to its file
+                j_file.close() #close the file
+    #?---------------------------------------------End of FUNC---------------------------------------------?#
 
     #Json -> find the name of the active RP
     with open(path_of_path, "r") as file:
@@ -355,7 +390,7 @@ def add_resource_pack_option(filessss, bty): #📚
         items_names.append(file[0]) #apppppend name, tank(thank) you 🙃
 
     dm_clicked.set("None") #set the var to None
-    dropdown_menu = OptionMenu(root, dm_clicked, *items_names) #create the menu
+    dropdown_menu = OptionMenu(root, dm_clicked, "Default", *items_names) #create the menu
     dropdown_menu["menu"].config(bg="#834B00", fg = "white") #COLORS IS FUN
 
     dropdown_menu.grid(row = 1, column = 2) #show the dropdown menu on the screen

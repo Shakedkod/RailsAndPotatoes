@@ -41,8 +41,8 @@ def assets_check():
         if os.path.exists(check_path + "Logs\\log.log"):
             os.remove(check_path + "Logs\\log.log")
         #the Resource Pack folder
-        if os.path.exists(check_path + "Resource pack\\for exsample.txt"):
-            os.remove(check_path + "Resource pack\\for exsample.txt")
+        if os.path.exists(check_path + "Resource pack\\ZiUn.z\\for exsample.txt"):
+            os.remove(check_path + "Resource pack\\ZiUn.z\\for exsample.txt")
         #the Screen Shots folder
         if os.path.exists(check_path + "Screen Shots\\for screen shots.txt"):
             os.remove(check_path + "Screen Shots\\for screen shots.txt")
