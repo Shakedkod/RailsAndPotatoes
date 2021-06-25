@@ -7,6 +7,10 @@ Clock = "clock"
 where = "main menu"
 run = True
 another_one = False
+mouse_x = 0
+mouse_y = 0
+click = False
+player = None
 #!#############################################################!#
 #!                            Other                            !#
 #!#############################################################!#
@@ -17,12 +21,6 @@ half_height = 250
 width_before = 900
 height_before = 500
 bg_x = 0
-mouse_x = 0
-mouse_y = 0
-click = False
-player = None
-scene = None
-bg = None
 loaded = False
 Tiles = None
 classed_map = None

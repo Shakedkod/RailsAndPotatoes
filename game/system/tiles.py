@@ -1,7 +1,8 @@
 import pygame, json, os
 from pygame.locals import *
 from . import resize, globals_file as gf, settings, textures
-#-----------------------------------------------------------------------------------------------#
+#%start%-------------------------------------------------------------------%start%#
+
 class tile:
     def __init__(self, o = 1, id = ["T1", "M1", "F1"]):
         #900 % 4 % 4 % 4
@@ -1912,13 +1913,21 @@ class tile:
         
         #create the rect
         self.rect = pygame.Rect(self.x, self.y, self.width, self.height)
-    
+    #%end%-------------------------------------------------------------------%end%#
+
+
+
+
     def load_images(self, lvl = 1):
         if lvl != self.lvl_before:
             self.loaded_image = pygame.image.load(
                 self.image[str(lvl)]
             )
             self.lvl_before = lvl
+    #%end%-------------------------------------------------------------------%end%#
+
+
+
 
     def update(self, lvl = 1):
         self.width = resize.resize_x(
@@ -1940,6 +1949,8 @@ class tile:
             ),
             (self.x, self.y)
         )
+    #%end%-------------------------------------------------------------------%end%#
+
 #-----------------------------------------------------------------------------------------------#
 class Tiles:
     def __init__(self):
@@ -2278,8 +2289,10 @@ class Tiles:
         self.T16M4F2 = tile(o = 4, id = ["T16", "M4", "F2"])
         self.T16M4F3 = tile(o = 4, id = ["T16", "M4", "F3"])
         self.T16M4F4 = tile(o = 4, id = ["T16", "M4", "F4"])
+    #%end%-------------------------------------------------------------------%end%#
 
-    #####################################################################################################
+
+
     
     def update(self, lvl = 1):
         self.change_x_and_y()
@@ -2634,9 +2647,17 @@ class Tiles:
         self.T16M4F2.update(lvl)
         self.T16M4F3.update(lvl)
         self.T16M4F4.update(lvl)
+    #%end%-------------------------------------------------------------------%end%#
+
+
+
 
     def change_x_and_y(self):
         self = resize.tiles_xy(self)
+    #%end%-------------------------------------------------------------------%end%#
+
+
+
     
     def load_images(self, lvl = 1):
         #############T1#############
@@ -2990,3 +3011,4 @@ class Tiles:
         self.T16M4F2.load_images(lvl)
         self.T16M4F3.load_images(lvl)
         self.T16M4F4.load_images(lvl)
+    #%end%-------------------------------------------------------------------%end%#

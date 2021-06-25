@@ -1,10 +1,13 @@
 # import
 from colorama import Fore
 import pygame, json, os, win32gui, win32con, sys
+
 os.system("cls") #*clear the console
 print (Fore.LIGHTGREEN_EX + "Loading, please wait..." + Fore.RESET + "")
+
 from pygame.locals import *
 from .system import settings as s, globals_file as gf, tiles, music as m
+#%start%-------------------------------------------------------------------%start%#
 
 #init
 pygame.init() #init pygame
@@ -37,6 +40,7 @@ def Main(): #main
     gf.Tiles.load_images(1)
     gf.Sounds_and_sfx_dict = m.load_sounds_or_sfx(gf.Sounds_and_sfx_dict, "main.mp3", "None", "none at all", s.voulume)
 
+        #%start%-------------------------------------------------------------------%start%#
     while gf.run: #the main loop
         gf.Tiles.change_x_and_y()
         gf.screen_width = gf.screen.get_width()
@@ -70,6 +74,7 @@ def Main(): #main
         #------------------------------------------------------------------------#
         pygame.display.update() #the display needs to update so we can show staf on the screen
         gf.Clock.tick(60)
+        #%end%-------------------------------------------------------------------%end%#
 
     
     if not gf.run: #quit
@@ -85,6 +90,7 @@ def Main(): #main
         #?s.save_setings() #save the settings
         
         pygame.quit()
+    #%end%-------------------------------------------------------------------%end%#
 
 
 if __name__ == "__main__":

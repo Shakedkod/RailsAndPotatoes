@@ -2,6 +2,8 @@ import pygame
 from pygame import key
 from pygame.locals import *
 from game.system import globals_file as gf, textures, entities as en, settings, music as m, tkinter_windows as tk
+#%start%-------------------------------------------------------------------%start%#
+
 #*-----------------------#init#--------------------------*#
 pygame.init() #init pygame
 pygame.font.init() #init
@@ -72,6 +74,17 @@ def options():
         300,
         50,
         "Starting resolution",
+        gf.WHITE,
+        gf.screen_width // 25,
+        "fonts",
+        "Livingst.ttf"
+    )
+    rp_option = en.Clickable_Text_object(
+        gf.screen_width // 100,
+        (res_option.y + res_option.height) + (gf.screen_height // 10),
+        300,
+        50,
+        "Manage Resource Packs",
         gf.WHITE,
         gf.screen_width // 25,
         "fonts",
@@ -221,3 +234,8 @@ def options():
         gf.what_option = "k"
     if res_option.update():
         gf.what_option = "r"
+    if rp_option.update():
+        gf.what_option = "rp"
+        gf.window_open = True
+        tk.add_resource_pack_option([], 10)
+    #%end%-------------------------------------------------------------------%end%#

@@ -1,4 +1,5 @@
-import json
+import json, os
+from tkinter.constants import S
 from . import globals_file as gf
 
 global game_name, by, virson, lang, teamNames, assets_folder_name, description, other, game_start, starting_screen_width, starting_screen_height, voulume
@@ -10,6 +11,27 @@ class Game_Start(object):
         self.start_height = data["screen height"]
         self.caption = data["screen name"]
         self.png_icon = data["icon path - png"]
+
+class Player_Maker(object):
+    class Cutscenes:
+        def __init__(self, data = None):
+            self.start = {
+                "name": data["start"][0],
+                "viewed": data["start"][1]
+            }
+            self.end = {
+                "name": data["end"][0],
+                "viewed": data["end"][1]
+            }
+    
+    def __init__(self):
+        APPDATA = os.getenv("APPDATA")
+        with open(APPDATA + "\\.rails_and_potatoes\index\\player.data", "r") as d_day:
+            data = json.load(d_day)
+            d_day.close()
+        self.unlocked_levels = data["unlocked levels"]
+        self.complete_levels = data["complete levels"]
+        self.cutscenes = Player_Maker.Cutscenes(data = data["cutscenes"])
 
 def get_setings():
     with open("game/system/settings.json", 'r') as seting:
@@ -29,6 +51,7 @@ def get_setings():
     starting_screen_width = data["calculations"]["screen width"]
     starting_screen_height = data["calculations"]["screen height"]
     gf.what_is_rp = data["Active RP"]
+    gf.player = Player_Maker()
 
 
 def save_setings():

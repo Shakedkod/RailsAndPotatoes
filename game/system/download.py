@@ -1,8 +1,13 @@
-import os, wget
+import os
+from wget import download as wget_d
 from stat import S_IXUSR
 from time import sleep
 from colorama import Fore
 from zipfile import ZipFile
+
+#my files:
+from . import globals_file as gf
+#%start%-------------------------------------------------------------------%start%#
 
 def download(
     is_zip = True, url = "https://www.python.org/static/img/python-logo@2x.png", foldername = ".folder", filename = "name.zip"
@@ -16,11 +21,19 @@ def download(
     path = check_path + "\\"
     path += filename
     ############################################
-    wget.download(url, path)
+    wget_d(url, path)
     if is_zip:
         with ZipFile(path, 'r') as zipObj:
-            zipObj.extractall(path=check_path)
+            zipObj.extractall(path = check_path)
         os.remove(path)
+#%end%-------------------------------------------------------------------%end%#
+
+
+
+
+
+
+
 
 def assets_check():
     appdata = os.getenv('APPDATA') #get appdata
@@ -50,3 +63,13 @@ def assets_check():
         print (Fore.RESET + "")
         print (Fore.YELLOW + "assets" + Fore.GREEN + " loaded" + Fore.RESET + "")
         sleep(2)
+    
+    new_path = appdata + "\\.rails_and_potatoes\\index\\player.data"
+    if not os.path.exists(new_path):
+        download(
+            is_zip = False,
+            url = "https://drive.google.com/uc?id=1jKNkzGChFdL1mXWR6cSizWZ32WroySfx&export=download",
+            filename = "player.data",
+            foldername = ".rails_and_potatoes\\index"
+        )
+#%end%-------------------------------------------------------------------%end%#

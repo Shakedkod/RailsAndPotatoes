@@ -19,7 +19,14 @@ from zipfile import ZipFile #YAY .zip?
 
 #our files
 from game.system import textures as t, globals_file as gf, settings as s #yo, this is my system
-#@################################################################@#
+#%start%-------------------------------------------------------------------%start%#
+
+
+
+
+
+
+
 
 def start_options_res():
     root = Tk() #create the window
@@ -110,6 +117,12 @@ def start_options_res():
 
     #mainloop window
     root.mainloop()
+#%end%-------------------------------------------------------------------%end%#
+
+
+
+
+
 
 
 #@-------------------------------------------------------------------@#
@@ -203,6 +216,13 @@ def options_res():
 
     #mainloop window
     root.mainloop()
+#%end%-------------------------------------------------------------------%end%#
+
+
+
+
+
+
 
 
 #@-------------------------------------------------------------------@#
@@ -271,9 +291,41 @@ def add_resource_pack_option(filessss, bty): #📚
             else:
                 if os.path.exists(
                     APPDATA + "\\.rails_and_potatoes\\Resource pack\\ZiUn.z\\" + the_chossen_one_var):
-                    pass
+                    #@#############################################################################@#
+                    #@                               activate the RP                               @#
+                    #@#############################################################################@#
+                    gf.what_is_rp = the_chossen_one_var
+                    root.destroy() #destroy the active tkinter window
+                    gf.window_open = False
+                    gf.another_one = True #Activate the Restart process
+                    gf.where = "exit" #exit the current game
                 else:
-                    pass
+                    with ZipFile(APPDATA + "\\.rails_and_potatoes\\Resource pack\\" + the_chossen_one_var + ".zip", 'r') as zipObj: #opening the zip file
+                        zipObj.extractall( #extracting all the files from the zip file
+                            path = APPDATA + "\\.rails_and_potatoes\\Resource pack\\ZiUn.z\\" + the_chossen_one_var)
+
+                    #@#############################################################################@#
+                    #@                               add to the list                               @#
+                    #@#############################################################################@#
+                    with open(APPDATA + "\\.rails_and_potatoes\\Resource pack\\UlBNanager.cnAtbG9hZGVy", "r") as j_file:
+                        data = json.load(j_file) #load the file of the data of the Resource Packs (why?🙃)
+                        j_file.close() #close the file
+
+                    data["dW56aXBlZCBmaWxlcw=="].append(the_chossen_one_var) #add this file into the data of the Resource Packs
+
+
+                    with open(APPDATA + "\\.rails_and_potatoes\\Resource pack\\UlBNanager.cnAtbG9hZGVy", "w")  as j_file:
+                        json.dump(data, j_file, indent=2) #return the updated data of the Resource Packs to its file
+                        j_file.close() #close the file
+                    
+                    #@#############################################################################@#
+                    #@                               activate the RP                               @#
+                    #@#############################################################################@#
+                    gf.what_is_rp = the_chossen_one_var
+                    root.destroy()
+                    gf.window_open = False
+                    gf.another_one = True
+                    gf.where = "exit"
     
 
     def open_file_dialog_box():
@@ -345,12 +397,12 @@ def add_resource_pack_option(filessss, bty): #📚
         file.close()
     
     path_to_the_image = data["bG9hZGVk"]
-    if path_to_the_image[0] == "default":
+    if path_to_the_image == "default":
         path_to_the_image = APPDATA + "\\.rails_and_potatoes\\index\\logo.png"
         name_active = "Default"
     else:
-        name_active = path_to_the_image[0]
-        path_to_the_image = path_to_the_image[1]
+        name_active = path_to_the_image
+        path_to_the_image = APPDATA + "\\.rails_and_potatoes\\R" + path_to_the_image + "\\"
 
     #*----------------------buttons----------------------*#
 
@@ -358,7 +410,6 @@ def add_resource_pack_option(filessss, bty): #📚
     add_file_button = Button(root, text = "Add Resource Pack File", command = open_file_dialog_box, bg="#834B00", fg = "white")
 
     confirm_button = Button(root, text = "Confirm", command = the_chossen_one, bg="#834B00", fg = "white").grid(row = 3, column = 2)
-
 
     
         #?blit (ho no, blit is pygame, not tkinter)
@@ -404,3 +455,4 @@ def add_resource_pack_option(filessss, bty): #📚
 
     #mainloop window
     root.mainloop()
+#%end%-------------------------------------------------------------------%end%#
