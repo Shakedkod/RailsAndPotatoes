@@ -203,8 +203,8 @@ def options_res():
 
 
 #@-------------------------------------------------------------------@#
-def add_resource_pack_option(filessss, bty):
-    global the_files_list, bt_y, items_names
+def add_resource_pack_option(filessss, bty): #📚
+    global the_files_list, bt_y, items_names, dropdown_menu, dm_clicked
     the_files_list = filessss
     bt_y = bty
     #?------------get appdata and------------?#
@@ -237,6 +237,7 @@ def add_resource_pack_option(filessss, bty):
     bg_image = bg_image.resize((450, 250), Image.ANTIALIAS)
     bg_loaded_img = ImageTk.PhotoImage(bg_image)
     bg_image_lable = Label(image = bg_loaded_img).place(x=0, y=0, relwidth=1, relheight=1)
+    dm_clicked = StringVar() #the var for wut is chosen by the user
 
 
     #?------------files that already in the folder(Resource pack)------------?#
@@ -252,11 +253,16 @@ def add_resource_pack_option(filessss, bty):
     
     #*----------------------------------------------button funcs----------------------------------------------*#
     def the_chossen_one(): #if the button is clicked
-        print ("you now")
+        global dm_clicked, dropdown_menu
+        the_chossen_one_var = dm_clicked.get()
+        if the_chossen_one_var == "None":
+            pass
+        else:
+            pass
     
 
     def open_file_dialog_box():
-        global the_files_list, bt_y
+        global the_files_list, bt_y, dropdown_menu, dm_clicked
         filepath = filedialog.askopenfilename(
             initialdir = APPDATA + "\\.rails_and_potatoes",
             title = "Select A .zip File to add to your \"Resource Pack\" Colection",
@@ -283,22 +289,22 @@ def add_resource_pack_option(filessss, bty):
             #@                               create the menu                               @#
             #@#############################################################################@#
 
+            dropdown_menu.destroy()
 
 
-    #*----------------------buttons----------------------*#
-    dm_clicked = StringVar() #the var for wut is chosen by the user
+            #Update the names
+            items_names = []
+            for file in the_files_list: #add the files to the list
+                items_names.append(file[0]) #apppppend name, tank(thank) you 🙃
 
-        #?create
-    add_file_button = Button(root, text = "Add Resource Pack File", command = open_file_dialog_box, fg = "#545454", bg = "#C9860A")
+            dm_clicked.set("None") #set the var to None
+            dropdown_menu = OptionMenu(root, dm_clicked, *items_names) #create the menu
+            dropdown_menu["menu"].config(bg="#834B00", fg = "white") #COLORS IS FUN
+
+            dropdown_menu.grid(row = 1, column = 2) #show the dropdown menu on the screen
 
 
-    
-        #?blit (ho no, blit is pygame, not tkinter)
-    add_file_button.grid(row = 0, column = 0) #packing it into the screen(row - up to down, column - left to right)
-    blank_slate = Label(root, text = "                                     ", bg = "#8AEFFF").grid(row = 0, column = 1)
-
-    
-    #-----------------------------------image-----------------------------------#
+    #Json -> find the name of the active RP
     with open(path_of_path, "r") as file:
         data = json.load(file)
         file.close()
@@ -311,25 +317,50 @@ def add_resource_pack_option(filessss, bty):
         name_active = path_to_the_image[0]
         path_to_the_image = path_to_the_image[1]
 
+    #*----------------------buttons----------------------*#
+
+        #?create
+    add_file_button = Button(root, text = "Add Resource Pack File", command = open_file_dialog_box, bg="#834B00", fg = "white")
+
+    confirm_button = Button(root, text = "Confirm", command = the_chossen_one, bg="#834B00", fg = "white").grid(row = 3, column = 2)
+
+
+    
+        #?blit (ho no, blit is pygame, not tkinter)
+    add_file_button.grid(row = 0, column = 0) #packing it into the screen(row - up to down, column - left to right)
+
+    lable_of_the_dropdown = Label(root, text = "Change ResourcePack here:", fg = "white", bg = "#834B00").grid(row = 0, column = 2)
+
+    defult_lable = Label(root, text = "Active Resource Pack:", bg = "#D8B36E", fg = "black").grid(row = bt_y - (len(the_files_list) + 1), column = 0)
+
+    name_lable = Label(root, text = name_active, fg = "#403E39", bg = "#E89C0D").grid(row = bt_y - (len(the_files_list) - 1), column = 0)
+
+    #a blank slate(for spaces here)
+    blank_slate = Label(root, text = "                                     ", bg = "#81a0b9").grid(row = 0, column = 1)
+    blank2_slate = Label(root, text = "", bg = "#bbbbb9").grid(row = 2, column = 2)
+
+    
+    #-----------------------------------image-----------------------------------#
+    
+    #IMAGE
     image = Image.open(path_to_the_image)
     image = image.resize((80, 80), Image.ANTIALIAS)
+
     loaded_img = ImageTk.PhotoImage(image)
-    image_lable = Label(image = loaded_img).grid(row = bt_y - (len(the_files_list)), column = 0)
-    defult_lable = Label(root, text = "Active Resource Pack:", bg = "#D8B36E", fg = "black").grid(row = bt_y - (len(the_files_list) + 1), column = 0)
-    name_lable = Label(root, text = name_active, fg = "#403E39", bg = "#E89C0D").grid(row = bt_y - (len(the_files_list) - 1), column = 0)
+    image_lable = Label(image = loaded_img).grid(row = bt_y - (len(the_files_list)), column = 0) #show the image on the sceen
 
     #dropdown_menu
     items_names = []
     for file in the_files_list: #add the files to the list
-        items_names.append(file[0])
+        items_names.append(file[0]) #apppppend name, tank(thank) you 🙃
 
-    dm_clicked.set("None")
-    dropdown_menu = OptionMenu(root, dm_clicked, *items_names)
-    dropdown_menu["menu"].config(bg="#834B00", fg = "white")
+    dm_clicked.set("None") #set the var to None
+    dropdown_menu = OptionMenu(root, dm_clicked, *items_names) #create the menu
+    dropdown_menu["menu"].config(bg="#834B00", fg = "white") #COLORS IS FUN
 
-    dropdown_menu.grid(row = 1, column = 2)
+    dropdown_menu.grid(row = 1, column = 2) #show the dropdown menu on the screen
 
-    lable_of_the_dropdown = Label(root, text = "Change ResourcePack here:", fg = "white", bg = "#834B00").grid(row = 0, column = 2)
+    
 
     
     #*----------------end----------------*#

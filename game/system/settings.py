@@ -1,4 +1,5 @@
 import json
+from . import globals_file as gf
 
 global game_name, by, virson, lang, teamNames, assets_folder_name, description, other, game_start, starting_screen_width, starting_screen_height, voulume
 game_name, by, virson, lang, teamNames, assets_folder_name, description, other, game_start, starting_screen_width, starting_screen_height, voulume = "name", "name", "name", "name", ["list"], "name", "name", "name", {"hi": "h"}, 900, 500, 1.0
@@ -27,6 +28,8 @@ def get_setings():
     game_start = Game_Start(data["game start"])
     starting_screen_width = data["calculations"]["screen width"]
     starting_screen_height = data["calculations"]["screen height"]
+    gf.what_is_rp = data["Active RP"]
+
 
 def save_setings():
     global game_start, voulume
@@ -36,6 +39,7 @@ def save_setings():
     data["game start"]["voulume"] = voulume
     data["game start"]["screen width"] = game_start.start_width
     data["game start"]["screen height"] = game_start.start_height
+    data["Active RP"] = gf.what_is_rp
     with open("game/system/settings.json", "w") as sett:
         json.dump(data, sett, indent=2)
         sett.close()
