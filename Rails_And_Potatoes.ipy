@@ -1,6 +1,6 @@
 import os, sys
 from time import sleep
-from colorama import Fore
+from colorama import Fore, Back
 from tqdm import tqdm
 
 os.system("cls") #*clear the console
@@ -32,4 +32,4 @@ print (Fore.LIGHTCYAN_EX +"Almost ready to launch" + Fore.RESET + "")
 sleep(1) #sleep for 1 second 
 
 #---------------------------------------------------#
-os.exit("This is secret")
+sys.exit(Fore.LIGHTRED_EX + Back.BLACK + "This is secret, " + Fore.RED + Back.BLACK + "DO NOT LOOK")
