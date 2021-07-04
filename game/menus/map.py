@@ -4,8 +4,10 @@ from game.system import globals_file as gf, textures, entities as en, map_s as m
 #*-----------------------#init#--------------------------*#
 pygame.init() #init pygame
 pygame.font.init() #init
-#*-----------------------#pygame input#--------------------------*#
-gf.classed_map = ms.Map(filename = "options background.png", foldername = "bg")
+#%start%-------------------------------------------------------------------%start%#
+
+
+gf.classed_map = ms.Map(filename = "map_bg.png", foldername = "bg")
 #music and sounds
 # TODO
 #*-----------------------#functions#--------------------------*#
@@ -45,3 +47,4 @@ def map():
     #click
     if back.click():
         gf.where = "main menu"
+    #%end%-------------------------------------------------------------------%end%#
