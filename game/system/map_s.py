@@ -13,6 +13,9 @@ class battons_for_later:
     def __init__(self):
         #cutscenes in 0, 27, 54(for now)
 
+        self.back = None
+        self.next = None
+
         #c for cutscenes
         #l for levels
 
@@ -241,6 +244,10 @@ class Map:
             )
         #------------------------------#*==*#------------------------------#
         #buttons
+        #self.buttons.next = en.Button(
+        #    
+        #)
+
         if self.x == 0: #(page 0: levels: 0 - 4)  #0CUTSCENE, 1, 2, 3, 4
             #create buttons
             self.buttons.c_0 = en.Button(
@@ -252,9 +259,49 @@ class Map:
                 "1.png",
                 "1_h.png"
             )
+            self.buttons.l_1 = en.Button(
+                (self.buttons.c_0.x + self.buttons.c_0.width) + gf.screen_width // 100,
+                gf.screen_width // 7,
+                250 // 1.5,
+                450 // 1.5,
+                "buttons\\levels",
+                "1.png",
+                "1_h.png"
+            )
+            self.buttons.l_2 = en.Button(
+                (self.buttons.l_1.x + self.buttons.l_1.width) + gf.screen_width // 100,
+                gf.screen_width // 7,
+                250 // 1.5,
+                450 // 1.5,
+                "buttons\\levels",
+                "1.png",
+                "1_h.png"
+            )
+            self.buttons.l_3 = en.Button(
+                (self.buttons.l_2.x + self.buttons.l_2.width) + gf.screen_width // 100,
+                gf.screen_width // 7,
+                250 // 1.5,
+                450 // 1.5,
+                "buttons\\levels",
+                "1.png",
+                "1_h.png"
+            )
+            self.buttons.l_4 = en.Button(
+                (self.buttons.l_3.x + self.buttons.l_3.width) + gf.screen_width // 100,
+                gf.screen_width // 7,
+                250 // 1.5,
+                450 // 1.5,
+                "buttons\\levels",
+                "1.png",
+                "1_h.png"
+            )
 
             #update buttons
             self.buttons.c_0.update()
+            self.buttons.l_1.update()
+            self.buttons.l_2.update()
+            self.buttons.l_3.update()
+            self.buttons.l_4.update()
 
 
             #%end%#
