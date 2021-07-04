@@ -12,9 +12,11 @@
             },
             "problemMatcher": [],
             "group": {
-                "kind": "build",
+                "kind": "test",
                 "isDefault": true
             }
+            //in the command plate (ctrl + shift + p) serch Tasks:Run Test Task and click on the cog on the left of it to make a shortcut
+            //I advize ctrl + \ (the one in the left side of z)
         }
     ]
 }
