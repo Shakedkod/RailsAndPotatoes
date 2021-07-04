@@ -1,4 +1,4 @@
-Logo
+I Didn't Know You Can Do That
 ------------
 |Done| |Python3| |Pygame|
 
