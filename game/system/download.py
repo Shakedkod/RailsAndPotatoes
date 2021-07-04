@@ -42,7 +42,7 @@ def assets_check():
     if not os.path.exists(path):
         print (Fore.RED + "download assets, please wait...")
         download(
-            url = r"https://www.dropbox.com/s/gaem86fgyqo872g/RailsAndPotatoes.assets?dl=1",
+            url = r"https://www.dropbox.com/s/xotkdyw8w78qgby/RailsAndPotatoes.assets?dl=1",
             foldername= ".rails_and_potatoes",
             filename = "RailsAndPotatoes.assets"
             )
