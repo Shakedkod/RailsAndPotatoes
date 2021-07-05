@@ -130,21 +130,35 @@ class Map:
                 gf.screen_height
                 )
             )
-        self.were_is_the_click()
-        #========================================================================================#
-        if ((self.the_part == 1) or (self.the_part == 4) or (self.the_part == 7)) and (self.x >= 0):
-            self.x -= 1
-        elif ((self.the_part == 3) or (self.the_part == 6) or (self.the_part == 9)) and (self.x <= 10):
+
+        #buttons#
+        self.buttons.next = en.Button(
+            gf.screen_width - (gf.screen_width // 5),
+            gf.screen_height // 100,
+            168.75,
+            75
+        )
+        self.buttons.back = en.Button(
+            gf.screen_width // 100,
+            gf.screen_height - (gf.screen_height // 8),
+            168.75,
+            75
+        )
+
+        #update#
+        self.buttons.next.update()
+        self.buttons.back.update()
+
+        #click#
+        if self.buttons.next.click():
             self.x += 1
-        
+        if self.buttons.back.click():
+            self.x -= 1
+
         if self.x >= 10:
             self.x = 10
         elif self.x <= 0:
             self.x = 0
-        #========================================================================================#
-        if self.x_before != self.x:
-            gf.Sounds_and_sfx_dict["sfx.map.woosh"].play(0)
-            self.x_before = self.x
         
         #------------------------------x == 0------------------------------#
         if (self.x == 0):
@@ -242,11 +256,17 @@ class Map:
                     0
                     )
             )
-        #------------------------------#*==*#------------------------------#
-        #buttons
-        #self.buttons.next = en.Button(
-        #    
-        #)
+        #------------------------------#*==*#------------------------------# 
+
+        self.buttons.next.draw()
+        self.buttons.back.draw()
+        
+        #========================================================================================#
+        if self.x_before != self.x:
+            gf.Sounds_and_sfx_dict["sfx.map.woosh"].play(0)
+            self.x_before = self.x
+        
+
 
         if self.x == 0: #(page 0: levels: 0 - 4)  #0CUTSCENE, 1, 2, 3, 4
             #create buttons
