@@ -19,8 +19,8 @@ s.get_setings() #update setings
 gf.Clock = pygame.time.Clock() #seting up the clock
 
 #TODO console close (add in the final release)
-#console_hiding_part = win32gui.GetForegroundWindow()
-#win32gui.ShowWindow(console_hiding_part , win32con.SW_HIDE)
+console_hiding_part = win32gui.GetForegroundWindow()
+win32gui.ShowWindow(console_hiding_part , win32con.SW_HIDE)
 
 #*-----------------------#creating the window--------------------------*#
 gf.screen = pygame.display.set_mode((s.game_start.start_width, s.game_start.start_height), pygame.RESIZABLE) #create the window with the right dimensions, and resize option

@@ -13,7 +13,7 @@
   "game start": {
     "screen width": 900,
     "screen height": 500,
-    "voulume": 1.0,
+    "volume": 1.0,
     "screen name": "Rails And Potatoes",
     "icon path - ico": "game\\Inner Assets\\icon.ico",
     "icon path - png": "game\\Inner Assets\\icon.png"

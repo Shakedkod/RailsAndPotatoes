@@ -1,6 +1,6 @@
-#this file is for global var in the hole program
+#this file is for global variables in the hole program
 #?#############################################################?#
-#?                        Most Importent                       ?#
+#?                        Most Important                       ?#
 #?#############################################################?#
 screen = "place holder"
 Clock = "clock"

@@ -106,7 +106,7 @@ class Map:
         self.x_before = 0
         self.filename = filename
         self.foldername = foldername
-        gf.Sounds_and_sfx_dict = music.load_sounds_or_sfx(gf.Sounds_and_sfx_dict, "woosh_sfx.mp3", "map", "sfx.map.woosh", s.voulume)
+        gf.Sounds_and_sfx_dict = music.load_sounds_or_sfx(gf.Sounds_and_sfx_dict, "woosh_sfx.mp3", "map", "sfx.map.woosh", s.volume)
         self.loaded_image = pygame.image.load(
             t.change_texture(
                 foldername = self.foldername,
