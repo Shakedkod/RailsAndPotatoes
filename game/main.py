@@ -15,7 +15,7 @@ pygame.display.init() #init pygame display
 pygame.mixer.pre_init(44100, -16, 2, 512)
 pygame.mixer.set_num_channels(64)
 pygame.mixer.init() #init pygame mixer
-s.get_setings() #update setings 
+s.get_setings() #update settings 
 gf.Clock = pygame.time.Clock() #seting up the clock
 
 #TODO console close (add in the final release)
@@ -38,7 +38,7 @@ def Main(): #main
     gf.screen_height = gf.screen.get_height()
     gf.Tiles = tiles.Tiles()
     gf.Tiles.load_images(1)
-    gf.Sounds_and_sfx_dict = m.load_sounds_or_sfx(gf.Sounds_and_sfx_dict, "main.mp3", "None", "none at all", s.voulume)
+    gf.Sounds_and_sfx_dict = m.load_sounds_or_sfx(gf.Sounds_and_sfx_dict, "main.mp3", "None", "none at all", s.volume)
 
         #%start%-------------------------------------------------------------------%start%#
     while gf.run: #the main loop
@@ -48,7 +48,7 @@ def Main(): #main
         gf.mouse_x, gf.mouse_y = pygame.mouse.get_pos()
         gf.half_width = gf.screen.get_width() // 2
         gf.half_height = gf.screen.get_height() // 2
-        gf.Sounds_and_sfx_dict = m.set_voulume(gf.Sounds_and_sfx_dict, s.voulume)
+        gf.Sounds_and_sfx_dict = m.set_voulume(gf.Sounds_and_sfx_dict, s.volume)
         if gf.where != "game":
             if gf.where == "main menu":
                 menu.main_menu()
