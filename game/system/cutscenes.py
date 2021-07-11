@@ -1,4 +1,4 @@
-import pygame
+import pygame, os
 from moviepy.editor import *
 from . import globals_file as gf, settings as s
 #-----------------------------------------------------------------------#
@@ -15,6 +15,32 @@ def regular(name, path):
     
     clip = VideoFileClip(
         path,
+        has_mask = False,
+        audio = True,
+        target_resolution = (gf.screen_width, gf.screen_height)
+        )
+    clip.preview()
+
+    #reload mixer
+    pygame.mixer.quit()
+    pygame.mixer.pre_init(44100, -16, 2, 512)
+    pygame.mixer.set_num_channels(64)
+    pygame.mixer.init()
+
+    #display
+    pygame.display.set_caption(s.game_start.caption)
+    gf.screen = pygame.display.set_mode(
+        (gf.screen_width, gf.screen_height),
+        pygame.RESIZABLE
+        )
+    #%end%------------------------------------%end%#
+
+def start():
+    #%start%------------------------------------%start%#
+
+
+    clip = VideoFileClip(
+        "",
         has_mask = False,
         audio = True,
         target_resolution = (gf.screen_width, gf.screen_height)

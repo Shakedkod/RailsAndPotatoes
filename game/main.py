@@ -6,7 +6,7 @@ os.system("cls") #*clear the console
 print (Fore.LIGHTGREEN_EX + "Loading, please wait..." + Fore.RESET + "")
 
 from pygame.locals import *
-from .system import settings as s, globals_file as gf, tiles, music as m
+from .system import settings as s, globals_file as gf, tiles, music as m, cutscenes
 #%start%-------------------------------------------------------------------%start%#
 
 #init
@@ -39,6 +39,7 @@ def Main(): #main
     gf.Tiles = tiles.Tiles()
     gf.Tiles.load_images(1)
     gf.Sounds_and_sfx_dict = m.load_sounds_or_sfx(gf.Sounds_and_sfx_dict, "main.mp3", "None", "none at all", s.volume)
+
 
         #%start%-------------------------------------------------------------------%start%#
     while gf.run: #the main loop
