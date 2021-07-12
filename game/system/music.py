@@ -13,13 +13,13 @@ def set_voulume(songs_and_sfx, voulume):
         pygame.mixer.Sound.set_volume(songs_and_sfx[key], voulume)
     return songs_and_sfx
 
-def change_voulume(what):
+def change_volume(what):
     """take input of 'up' or 'down' and change the voulume, return the voulume(float)"""
-    if (what == "up") and (settings.voulume < 1.0):
-        settings.voulume += .01
-    elif (what == "down") and (settings.voulume > 0.0):
-        settings.voulume -= .01
-    return settings.voulume #return
+    if (what == "up") and (settings.volume < 1.0):
+        settings.volume += .01
+    elif (what == "down") and (settings.volume > 0.0):
+        settings.volume -= .01
+    return settings.volume #return
 
 def load_sounds_or_sfx(sounds_dict, file_name, folder_name, key, voulume):
     """input:

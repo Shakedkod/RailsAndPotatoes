@@ -216,9 +216,9 @@ def options():
     
     if gf.what_option == "v":
         if volume_controler_down.click():
-            m.change_voulume("down")
+            m.change_volume("down")
         elif volume_controler_up.click():
-            m.change_voulume("up")
+            m.change_volume("up")
     if gf.what_option == "r":
         if res_now_button.click():
             gf.window_open = True

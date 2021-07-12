@@ -2,8 +2,8 @@ import json, os
 from tkinter.constants import S
 from . import globals_file as gf
 
-global game_name, by, virson, lang, teamNames, assets_folder_name, description, other, game_start, starting_screen_width, starting_screen_height, voulume
-game_name, by, virson, lang, teamNames, assets_folder_name, description, other, game_start, starting_screen_width, starting_screen_height, voulume = "name", "name", "name", "name", ["list"], "name", "name", "name", {"hi": "h"}, 900, 500, 1.0
+global game_name, by, virson, lang, teamNames, assets_folder_name, description, other, game_start, starting_screen_width, starting_screen_height, volume
+game_name, by, virson, lang, teamNames, assets_folder_name, description, other, game_start, starting_screen_width, starting_screen_height, volume = "name", "name", "name", "name", ["list"], "name", "name", "name", {"hi": "h"}, 900, 500, 1.0
 
 class Game_Start(object):
     def __init__(self, data=None):
@@ -37,7 +37,7 @@ def get_setings():
     with open("game/system/settings.json", 'r') as seting:
         data = json.load(seting)
         seting.close()
-    global game_name, by, virson, lang, teamNames, assets_folder_name, description, other, game_start, starting_screen_width, starting_screen_height, voulume
+    global game_name, by, virson, lang, teamNames, assets_folder_name, description, other, game_start, starting_screen_width, starting_screen_height, volume
     game_name = data["name"]
     by = data["made by"]
     virson = data["virson"]
@@ -46,7 +46,7 @@ def get_setings():
     assets_folder_name = data["assets folder name"]
     description = data["description"]
     other = data["other"]
-    voulume = data["game start"]["voulume"]
+    volume = data["game start"]["volume"]
     game_start = Game_Start(data["game start"])
     starting_screen_width = data["calculations"]["screen width"]
     starting_screen_height = data["calculations"]["screen height"]
@@ -55,11 +55,11 @@ def get_setings():
 
 
 def save_setings():
-    global game_start, voulume
+    global game_start, volume
     with open("game/system/settings.json", 'r') as seting:
         data = json.load(seting)
         seting.close()
-    data["game start"]["voulume"] = voulume
+    data["game start"]["voulume"] = volume
     data["game start"]["screen width"] = game_start.start_width
     data["game start"]["screen height"] = game_start.start_height
     data["Active RP"] = gf.what_is_rp
