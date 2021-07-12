@@ -111,7 +111,7 @@ def options():
         )
         
         #the text that show what the voulume is
-        volume_text = title_font.render(str(int(settings.voulume * 100)), 1, gf.WHITE)
+        volume_text = title_font.render(str(int(settings.volume * 100)), 1, gf.WHITE)
         gf.screen.blit(volume_text, (
             volume_controler_up.x,
             volume_controler_up.y + volume_controler_up.width
