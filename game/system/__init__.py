@@ -162,17 +162,20 @@ class Music_and_SFX:
     def load_sounds_or_sfx(sounds_dict, file_name, folder_name, key, voulume):
         #%start%------------------------------------%start%#
         """
-        input:
-        --------------------------------------------------------------------------------------------------------
+        Input
+        -------------------------------------------------------------------------------------------------------
         sound_dict = the list of sounds in the game - type === dict.
         file_name = the sound file name with .mp3/.ogg/... in the end - type === string.
         folder_name = the folder name of the sound file, start from ...\Assets\sounds_and_sfx\(the folder here), if 'None', the folder will be just sounds_and_sfx - type === string.
         key = the key in the dict - type === string.
         voulume = the voulume of the sounds in the game - type === float.
-        --------------------------------------------------------------------------------------------------------
+
+        Function
+        -------------------------------------------------------------------------------------------------------
         load sounds and sfx to the dict (pygame.mixer.Sound)
-        return:
-        --------------------------------------------------------------------------------------------------------
+
+        Return
+        -------------------------------------------------------------------------------------------------------
         sounds_dict - type === dict.
         """
         appdata = os.getenv('APPDATA') #get appdata
