@@ -36,6 +36,8 @@ class Cutscene:
             (gf.screen_width, gf.screen_height),
             pygame.RESIZABLE
             )
+        
+        return True
         #%end%------------------------------------%end%#
 
     @staticmethod
@@ -63,6 +65,8 @@ class Cutscene:
             (gf.screen_width, gf.screen_height),
             pygame.RESIZABLE
             )
+        
+        return True
         #%end%------------------------------------%end%#
 
     @staticmethod
@@ -101,6 +105,8 @@ class Cutscene:
 
         #back to the main menu
         gf.where = "main menu"
+
+        return True
         #%end%------------------------------------%end%#
 
     #%end%-----------------------------------------------------------------------%end%#

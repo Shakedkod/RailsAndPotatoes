@@ -22,80 +22,135 @@ class battons_for_later:
 
         #----#x = 0#----#
         self.c_0 = None
+        self.c_0_complete = False
         self.l_1 = None
+        self.l_1_complete = False
         self.l_2 = None
+        self.l_2_complete = False
         self.l_3 = None
+        self.l_3_complete = False
         self.l_4 = None
+        self.l_4_complete = False
 
         #----#x = 1#----#
         self.l_5 = None
+        self.l_5_complete = False
         self.l_6 = None
+        self.l_6_complete = False
         self.l_7 = None
+        self.l_7_complete = False
         self.l_8 = None
+        self.l_8_complete = False
         self.l_9 = None
+        self.l_9_complete = False
 
         #----#x = 2#----#
         self.l_10 = None
+        self.l_10_complete = False
         self.l_11 = None
+        self.l_11_complete = False
         self.l_12 = None
+        self.l_12_complete = False
         self.l_13 = None
+        self.l_13_complete = False
         self.l_14 = None
+        self.l_14_complete = False
 
         #----#x = 3#----#
         self.l_15 = None
+        self.l_15_complete = False
         self.l_16 = None
+        self.l_16_complete = False
         self.l_17 = None
+        self.l_17_complete = False
         self.l_18 = None
+        self.l_18_complete = False
         self.l_19 = None
+        self.l_19_complete = False
 
         #----#x = 4#----#
         self.l_20 = None
+        self.l_20_complete = False
         self.l_21 = None
+        self.l_21_complete = False
         self.l_22 = None
+        self.l_22_complete = False
         self.l_23 = None
+        self.l_23_complete = False
         self.l_24 = None
+        self.l_24_complete = False
         
         #----#x = 5#----#
         self.l_25 = None
+        self.l_25_complete = False
         self.l_26 = None
+        self.l_26_complete = False
         self.c_27 = None
+        self.c_27_complete = False
         self.l_28 = None
+        self.l_28_complete = False
         self.l_29 = None
+        self.l_29_complete = False
 
         #----#x = 6#----#
         self.l_30 = None
+        self.l_30_complete = False
         self.l_31 = None
+        self.l_31_complete = False
         self.l_32 = None
+        self.l_32_complete = False
         self.l_33 = None
+        self.l_33_complete = False
         self.l_34 = None
+        self.l_34_complete = False
 
         #----#x = 7#----#
         self.l_35 = None
+        self.l_35_complete = False
         self.l_36 = None
+        self.l_36_complete = False
         self.l_37 = None
+        self.l_37_complete = False
         self.l_38 = None
+        self.l_38_complete = False
         self.l_39 = None
+        self.l_39_complete = False
 
         #----#x = 8#----#
         self.l_40 = None
+        self.l_40_complete = False
         self.l_41 = None
+        self.l_41_complete = False
         self.l_42 = None
+        self.l_42_complete = False
         self.l_43 = None
+        self.l_43_complete = False
         self.l_44 = None
+        self.l_44_complete = False
 
         #----#x = 9#----#
         self.l_45 = None
+        self.l_45_complete = False
         self.l_46 = None
+        self.l_46_complete = False
         self.l_47 = None
+        self.l_47_complete = False
         self.l_48 = None
+        self.l_48_complete = False
         self.l_49 = None
+        self.l_49_complete = False
 
         #----#x = 10#----#
         self.l_50 = None
+        self.l_50_complete = False
         self.l_51 = None
+        self.l_51_complete = False
         self.l_52 = None
+        self.l_52_complete = False
         self.l_53 = None
+        self.l_53_complete = False
         self.c_54 = None
+        self.c_54_complete = False
 
     #%end%-------------------------------------------------------------------%end%#
 
