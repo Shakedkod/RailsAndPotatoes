@@ -6,7 +6,8 @@ os.system("cls") #*clear the console
 print (Fore.LIGHTGREEN_EX + "Loading, please wait..." + Fore.RESET + "")
 
 from pygame.locals import *
-from .system import settings as s, globals_file as gf, tiles, music as m, cutscenes
+from . import system as s_sys
+from .system import settings as s, globals_file as gf, tiles
 #%start%-------------------------------------------------------------------%start%#
 
 #init
@@ -38,7 +39,7 @@ def Main(): #main
     gf.screen_height = gf.screen.get_height()
     gf.Tiles = tiles.Tiles()
     gf.Tiles.load_images(1)
-    gf.Sounds_and_sfx_dict = m.load_sounds_or_sfx(gf.Sounds_and_sfx_dict, "main.mp3", "None", "none at all", s.volume)
+    gf.Sounds_and_sfx_dict = s_sys.Music_and_SFX.load_sounds_or_sfx(gf.Sounds_and_sfx_dict, "main.mp3", "None", "none at all", s.volume)
 
 
         #%start%-------------------------------------------------------------------%start%#
@@ -49,7 +50,7 @@ def Main(): #main
         gf.mouse_x, gf.mouse_y = pygame.mouse.get_pos()
         gf.half_width = gf.screen.get_width() // 2
         gf.half_height = gf.screen.get_height() // 2
-        gf.Sounds_and_sfx_dict = m.set_voulume(gf.Sounds_and_sfx_dict, s.volume)
+        gf.Sounds_and_sfx_dict = s_sys.Music_and_SFX.set_volume(gf.Sounds_and_sfx_dict, s.volume)
         if gf.where != "game":
             if gf.where == "main menu":
                 menu.main_menu()

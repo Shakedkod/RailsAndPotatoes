@@ -47,4 +47,10 @@ def map():
     #click
     if back.click():
         gf.where = "main menu"
+    else:
+        if gf.classed_map.buttons.c_0.click():
+            print ("0")
+        
+        if gf.classed_map.buttons.l_1.click():
+            print ("1")
     #%end%-------------------------------------------------------------------%end%#

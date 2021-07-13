@@ -1,5 +1,4 @@
 import json, os
-from tkinter.constants import S
 from . import globals_file as gf
 
 global game_name, by, virson, lang, teamNames, assets_folder_name, description, other, game_start, starting_screen_width, starting_screen_height, volume

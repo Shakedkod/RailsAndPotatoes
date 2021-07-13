@@ -1,7 +1,8 @@
 from tkinter.constants import NO
 import pygame
 from pygame.locals import *
-from . import globals_file as gf, entities as en, textures as t, music, settings as s
+from game import system as s_sys
+from . import globals_file as gf, entities as en, textures as t, settings as s
 #*-----------------------#init#--------------------------*#
 pygame.init() #init pygame
 pygame.mixer.pre_init(44100, -16, 2, 512)
@@ -106,7 +107,7 @@ class Map:
         self.x_before = 0
         self.filename = filename
         self.foldername = foldername
-        gf.Sounds_and_sfx_dict = music.load_sounds_or_sfx(gf.Sounds_and_sfx_dict, "woosh_sfx.mp3", "map", "sfx.map.woosh", s.volume)
+        gf.Sounds_and_sfx_dict = s_sys.Music_and_SFX.load_sounds_or_sfx(gf.Sounds_and_sfx_dict, "woosh_sfx.mp3", "map", "sfx.map.woosh", s.volume)
         self.loaded_image = pygame.image.load(
             t.change_texture(
                 foldername = self.foldername,
@@ -277,7 +278,8 @@ class Map:
                 450 // 1.5,
                 "buttons\\levels",
                 "1.png",
-                "1_h.png"
+                "1_h.png",
+                True
             )
             self.buttons.l_1 = en.Button(
                 (self.buttons.c_0.x + self.buttons.c_0.width) + gf.screen_width // 100,
@@ -286,7 +288,8 @@ class Map:
                 450 // 1.5,
                 "buttons\\levels",
                 "1.png",
-                "1_h.png"
+                "1_h.png",
+                False
             )
             self.buttons.l_2 = en.Button(
                 (self.buttons.l_1.x + self.buttons.l_1.width) + gf.screen_width // 100,
@@ -295,7 +298,8 @@ class Map:
                 450 // 1.5,
                 "buttons\\levels",
                 "1.png",
-                "1_h.png"
+                "1_h.png",
+                False
             )
             self.buttons.l_3 = en.Button(
                 (self.buttons.l_2.x + self.buttons.l_2.width) + gf.screen_width // 100,
@@ -304,7 +308,8 @@ class Map:
                 450 // 1.5,
                 "buttons\\levels",
                 "1.png",
-                "1_h.png"
+                "1_h.png",
+                False
             )
             self.buttons.l_4 = en.Button(
                 (self.buttons.l_3.x + self.buttons.l_3.width) + gf.screen_width // 100,
@@ -313,7 +318,8 @@ class Map:
                 450 // 1.5,
                 "buttons\\levels",
                 "1.png",
-                "1_h.png"
+                "1_h.png",
+                False
             )
 
             #update buttons
@@ -334,7 +340,8 @@ class Map:
                 450 // 1.5,
                 "buttons\\levels",
                 "1.png",
-                "1_h.png"
+                "1_h.png",
+                False
             )
             self.buttons.l_6 = en.Button(
                 (self.buttons.l_5.x + self.buttons.l_5.width) + gf.screen_width // 100,
@@ -343,7 +350,8 @@ class Map:
                 450 // 1.5,
                 "buttons\\levels",
                 "1.png",
-                "1_h.png"
+                "1_h.png",
+                False
             )
             self.buttons.l_7 = en.Button(
                 (self.buttons.l_6.x + self.buttons.l_6.width) + gf.screen_width // 100,
@@ -352,7 +360,8 @@ class Map:
                 450 // 1.5,
                 "buttons\\levels",
                 "1.png",
-                "1_h.png"
+                "1_h.png",
+                False
             )
             self.buttons.l_8 = en.Button(
                 (self.buttons.l_7.x + self.buttons.l_7.width) + gf.screen_width // 100,
@@ -361,7 +370,8 @@ class Map:
                 450 // 1.5,
                 "buttons\\levels",
                 "1.png",
-                "1_h.png"
+                "1_h.png",
+                False
             )
             self.buttons.l_9 = en.Button(
                 (self.buttons.l_8.x + self.buttons.l_8.width) + gf.screen_width // 100,
@@ -370,7 +380,8 @@ class Map:
                 450 // 1.5,
                 "buttons\\levels",
                 "1.png",
-                "1_h.png"
+                "1_h.png",
+                False
             )
 
             #update buttons
@@ -391,7 +402,8 @@ class Map:
                 450 // 1.5,
                 "buttons\\levels",
                 "1.png",
-                "1_h.png"
+                "1_h.png",
+                False
             )
             self.buttons.l_11 = en.Button(
                 (self.buttons.l_10.x + self.buttons.l_10.width) + gf.screen_width // 100,
@@ -400,7 +412,8 @@ class Map:
                 450 // 1.5,
                 "buttons\\levels",
                 "1.png",
-                "1_h.png"
+                "1_h.png",
+                False
             )
             self.buttons.l_12 = en.Button(
                 (self.buttons.l_11.x + self.buttons.l_11.width) + gf.screen_width // 100,
@@ -409,7 +422,8 @@ class Map:
                 450 // 1.5,
                 "buttons\\levels",
                 "1.png",
-                "1_h.png"
+                "1_h.png",
+                False
             )
             self.buttons.l_13 = en.Button(
                 (self.buttons.l_12.x + self.buttons.l_12.width) + gf.screen_width // 100,
@@ -418,7 +432,8 @@ class Map:
                 450 // 1.5,
                 "buttons\\levels",
                 "1.png",
-                "1_h.png"
+                "1_h.png",
+                False
             )
             self.buttons.l_14 = en.Button(
                 (self.buttons.l_13.x + self.buttons.l_13.width) + gf.screen_width // 100,
@@ -427,7 +442,8 @@ class Map:
                 450 // 1.5,
                 "buttons\\levels",
                 "1.png",
-                "1_h.png"
+                "1_h.png",
+                False
             )
 
             #update buttons
@@ -448,7 +464,8 @@ class Map:
                 450 // 1.5,
                 "buttons\\levels",
                 "1.png",
-                "1_h.png"
+                "1_h.png",
+                False
             )
             self.buttons.l_16 = en.Button(
                 (self.buttons.l_15.x + self.buttons.l_15.width) + gf.screen_width // 100,
@@ -457,7 +474,8 @@ class Map:
                 450 // 1.5,
                 "buttons\\levels",
                 "1.png",
-                "1_h.png"
+                "1_h.png",
+                False
             )
             self.buttons.l_17 = en.Button(
                 (self.buttons.l_16.x + self.buttons.l_16.width) + gf.screen_width // 100,
@@ -466,7 +484,8 @@ class Map:
                 450 // 1.5,
                 "buttons\\levels",
                 "1.png",
-                "1_h.png"
+                "1_h.png",
+                False
             )
             self.buttons.l_18 = en.Button(
                 (self.buttons.l_17.x + self.buttons.l_17.width) + gf.screen_width // 100,
@@ -475,7 +494,8 @@ class Map:
                 450 // 1.5,
                 "buttons\\levels",
                 "1.png",
-                "1_h.png"
+                "1_h.png",
+                False
             )
             self.buttons.l_19 = en.Button(
                 (self.buttons.l_18.x + self.buttons.l_18.width) + gf.screen_width // 100,
@@ -484,7 +504,8 @@ class Map:
                 450 // 1.5,
                 "buttons\\levels",
                 "1.png",
-                "1_h.png"
+                "1_h.png",
+                False
             )
 
             #update buttons
@@ -505,7 +526,8 @@ class Map:
                 450 // 1.5,
                 "buttons\\levels",
                 "1.png",
-                "1_h.png"
+                "1_h.png",
+                False
             )
             self.buttons.l_21 = en.Button(
                 (self.buttons.l_20.x + self.buttons.l_20.width) + gf.screen_width // 100,
@@ -514,7 +536,8 @@ class Map:
                 450 // 1.5,
                 "buttons\\levels",
                 "1.png",
-                "1_h.png"
+                "1_h.png",
+                False
             )
             self.buttons.l_22 = en.Button(
                 (self.buttons.l_21.x + self.buttons.l_21.width) + gf.screen_width // 100,
@@ -523,7 +546,8 @@ class Map:
                 450 // 1.5,
                 "buttons\\levels",
                 "1.png",
-                "1_h.png"
+                "1_h.png",
+                False
             )
             self.buttons.l_23 = en.Button(
                 (self.buttons.l_22.x + self.buttons.l_22.width) + gf.screen_width // 100,
@@ -532,7 +556,8 @@ class Map:
                 450 // 1.5,
                 "buttons\\levels",
                 "1.png",
-                "1_h.png"
+                "1_h.png",
+                False
             )
             self.buttons.l_24 = en.Button(
                 (self.buttons.l_23.x + self.buttons.l_23.width) + gf.screen_width // 100,
@@ -541,7 +566,8 @@ class Map:
                 450 // 1.5,
                 "buttons\\levels",
                 "1.png",
-                "1_h.png"
+                "1_h.png",
+                False
             )
 
             #update buttons
@@ -562,7 +588,8 @@ class Map:
                 450 // 1.5,
                 "buttons\\levels",
                 "1.png",
-                "1_h.png"
+                "1_h.png",
+                False
             )
             self.buttons.l_26 = en.Button(
                 (self.buttons.l_25.x + self.buttons.l_25.width) + gf.screen_width // 100,
@@ -571,7 +598,8 @@ class Map:
                 450 // 1.5,
                 "buttons\\levels",
                 "1.png",
-                "1_h.png"
+                "1_h.png",
+                False
             )
             self.buttons.c_27 = en.Button(
                 (self.buttons.l_26.x + self.buttons.l_26.width) + gf.screen_width // 100,
@@ -580,7 +608,8 @@ class Map:
                 450 // 1.5,
                 "buttons\\levels",
                 "1.png",
-                "1_h.png"
+                "1_h.png",
+                False
             )
             self.buttons.l_28 = en.Button(
                 (self.buttons.c_27.x + self.buttons.c_27.width) + gf.screen_width // 100,
@@ -589,7 +618,8 @@ class Map:
                 450 // 1.5,
                 "buttons\\levels",
                 "1.png",
-                "1_h.png"
+                "1_h.png",
+                False
             )
             self.buttons.l_29 = en.Button(
                 (self.buttons.l_28.x + self.buttons.l_28.width) + gf.screen_width // 100,
@@ -598,7 +628,8 @@ class Map:
                 450 // 1.5,
                 "buttons\\levels",
                 "1.png",
-                "1_h.png"
+                "1_h.png",
+                False
             )
 
             #update buttons
@@ -619,7 +650,8 @@ class Map:
                 450 // 1.5,
                 "buttons\\levels",
                 "1.png",
-                "1_h.png"
+                "1_h.png",
+                False
             )
             self.buttons.l_31 = en.Button(
                 (self.buttons.l_30.x + self.buttons.l_30.width) + gf.screen_width // 100,
@@ -628,7 +660,8 @@ class Map:
                 450 // 1.5,
                 "buttons\\levels",
                 "1.png",
-                "1_h.png"
+                "1_h.png",
+                False
             )
             self.buttons.l_32 = en.Button(
                 (self.buttons.l_31.x + self.buttons.l_31.width) + gf.screen_width // 100,
@@ -637,7 +670,8 @@ class Map:
                 450 // 1.5,
                 "buttons\\levels",
                 "1.png",
-                "1_h.png"
+                "1_h.png",
+                False
             )
             self.buttons.l_33 = en.Button(
                 (self.buttons.l_32.x + self.buttons.l_32.width) + gf.screen_width // 100,
@@ -646,7 +680,8 @@ class Map:
                 450 // 1.5,
                 "buttons\\levels",
                 "1.png",
-                "1_h.png"
+                "1_h.png",
+                False
             )
             self.buttons.l_34 = en.Button(
                 (self.buttons.l_33.x + self.buttons.l_33.width) + gf.screen_width // 100,
@@ -655,7 +690,8 @@ class Map:
                 450 // 1.5,
                 "buttons\\levels",
                 "1.png",
-                "1_h.png"
+                "1_h.png",
+                False
             )
 
             #update buttons
@@ -676,7 +712,8 @@ class Map:
                 450 // 1.5,
                 "buttons\\levels",
                 "1.png",
-                "1_h.png"
+                "1_h.png",
+                False
             )
             self.buttons.l_36 = en.Button(
                 (self.buttons.l_35.x + self.buttons.l_35.width) + gf.screen_width // 100,
@@ -685,7 +722,8 @@ class Map:
                 450 // 1.5,
                 "buttons\\levels",
                 "1.png",
-                "1_h.png"
+                "1_h.png",
+                False
             )
             self.buttons.l_37 = en.Button(
                 (self.buttons.l_36.x + self.buttons.l_36.width) + gf.screen_width // 100,
@@ -694,7 +732,8 @@ class Map:
                 450 // 1.5,
                 "buttons\\levels",
                 "1.png",
-                "1_h.png"
+                "1_h.png",
+                False
             )
             self.buttons.l_38 = en.Button(
                 (self.buttons.l_37.x + self.buttons.l_37.width) + gf.screen_width // 100,
@@ -703,7 +742,8 @@ class Map:
                 450 // 1.5,
                 "buttons\\levels",
                 "1.png",
-                "1_h.png"
+                "1_h.png",
+                False
             )
             self.buttons.l_39 = en.Button(
                 (self.buttons.l_38.x + self.buttons.l_38.width) + gf.screen_width // 100,
@@ -712,7 +752,8 @@ class Map:
                 450 // 1.5,
                 "buttons\\levels",
                 "1.png",
-                "1_h.png"
+                "1_h.png",
+                False
             )
 
             #update buttons
@@ -733,7 +774,8 @@ class Map:
                 450 // 1.5,
                 "buttons\\levels",
                 "1.png",
-                "1_h.png"
+                "1_h.png",
+                False
             )
             self.buttons.l_41 = en.Button(
                 (self.buttons.l_40.x + self.buttons.l_40.width) + gf.screen_width // 100,
@@ -742,7 +784,8 @@ class Map:
                 450 // 1.5,
                 "buttons\\levels",
                 "1.png",
-                "1_h.png"
+                "1_h.png",
+                False
             )
             self.buttons.l_42 = en.Button(
                 (self.buttons.l_41.x + self.buttons.l_41.width) + gf.screen_width // 100,
@@ -751,7 +794,8 @@ class Map:
                 450 // 1.5,
                 "buttons\\levels",
                 "1.png",
-                "1_h.png"
+                "1_h.png",
+                False
             )
             self.buttons.l_43 = en.Button(
                 (self.buttons.l_42.x + self.buttons.l_42.width) + gf.screen_width // 100,
@@ -760,7 +804,8 @@ class Map:
                 450 // 1.5,
                 "buttons\\levels",
                 "1.png",
-                "1_h.png"
+                "1_h.png",
+                False
             )
             self.buttons.l_44 = en.Button(
                 (self.buttons.l_43.x + self.buttons.l_43.width) + gf.screen_width // 100,
@@ -769,7 +814,8 @@ class Map:
                 450 // 1.5,
                 "buttons\\levels",
                 "1.png",
-                "1_h.png"
+                "1_h.png",
+                False
             )
 
             #update buttons
@@ -790,7 +836,8 @@ class Map:
                 450 // 1.5,
                 "buttons\\levels",
                 "1.png",
-                "1_h.png"
+                "1_h.png",
+                False
             )
             self.buttons.l_46 = en.Button(
                 (self.buttons.l_45.x + self.buttons.l_45.width) + gf.screen_width // 100,
@@ -799,7 +846,8 @@ class Map:
                 450 // 1.5,
                 "buttons\\levels",
                 "1.png",
-                "1_h.png"
+                "1_h.png",
+                False
             )
             self.buttons.l_47 = en.Button(
                 (self.buttons.l_46.x + self.buttons.l_46.width) + gf.screen_width // 100,
@@ -808,7 +856,8 @@ class Map:
                 450 // 1.5,
                 "buttons\\levels",
                 "1.png",
-                "1_h.png"
+                "1_h.png",
+                False
             )
             self.buttons.l_48 = en.Button(
                 (self.buttons.l_47.x + self.buttons.l_47.width) + gf.screen_width // 100,
@@ -817,7 +866,8 @@ class Map:
                 450 // 1.5,
                 "buttons\\levels",
                 "1.png",
-                "1_h.png"
+                "1_h.png",
+                False
             )
             self.buttons.l_49 = en.Button(
                 (self.buttons.l_48.x + self.buttons.l_48.width) + gf.screen_width // 100,
@@ -826,7 +876,8 @@ class Map:
                 450 // 1.5,
                 "buttons\\levels",
                 "1.png",
-                "1_h.png"
+                "1_h.png",
+                False
             )
 
             #update buttons
@@ -847,7 +898,8 @@ class Map:
                 450 // 1.5,
                 "buttons\\levels",
                 "1.png",
-                "1_h.png"
+                "1_h.png",
+                False
             )
             self.buttons.l_51 = en.Button(
                 (self.buttons.l_50.x + self.buttons.l_50.width) + gf.screen_width // 100,
@@ -856,7 +908,8 @@ class Map:
                 450 // 1.5,
                 "buttons\\levels",
                 "1.png",
-                "1_h.png"
+                "1_h.png",
+                False
             )
             self.buttons.l_52 = en.Button(
                 (self.buttons.l_51.x + self.buttons.l_51.width) + gf.screen_width // 100,
@@ -865,7 +918,8 @@ class Map:
                 450 // 1.5,
                 "buttons\\levels",
                 "1.png",
-                "1_h.png"
+                "1_h.png",
+                False
             )
             self.buttons.l_53 = en.Button(
                 (self.buttons.l_52.x + self.buttons.l_52.width) + gf.screen_width // 100,
@@ -874,7 +928,8 @@ class Map:
                 450 // 1.5,
                 "buttons\\levels",
                 "1.png",
-                "1_h.png"
+                "1_h.png",
+                False
             )
             self.buttons.c_54 = en.Button(
                 (self.buttons.l_53.x + self.buttons.l_53.width) + gf.screen_width // 100,
@@ -883,7 +938,8 @@ class Map:
                 450 // 1.5,
                 "buttons\\levels",
                 "1.png",
-                "1_h.png"
+                "1_h.png",
+                False
             )
 
             #update buttons
