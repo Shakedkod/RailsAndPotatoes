@@ -1,7 +1,7 @@
 from tkinter.constants import NO
 import pygame
 from pygame.locals import *
-from game import system as s_sys
+from game import system as sys
 from . import globals_file as gf, entities as en, textures as t, settings as s
 #*-----------------------#init#--------------------------*#
 pygame.init() #init pygame
@@ -162,7 +162,7 @@ class Map:
         self.x_before = 0
         self.filename = filename
         self.foldername = foldername
-        gf.Sounds_and_sfx_dict = s_sys.Music_and_SFX.load_sounds_or_sfx(gf.Sounds_and_sfx_dict, "woosh_sfx.mp3", "map", "sfx.map.woosh", s.volume)
+        gf.Sounds_and_sfx_dict = sys.Music_and_SFX.load_sounds_or_sfx(gf.Sounds_and_sfx_dict, "woosh_sfx.mp3", "map", "sfx.map.woosh", s.volume)
         self.loaded_image = pygame.image.load(
             t.change_texture(
                 foldername = self.foldername,

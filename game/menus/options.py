@@ -1,7 +1,7 @@
 import pygame
 from pygame import key
 from pygame.locals import *
-from game import system as s_sys
+from game import system as sys
 from game.system import globals_file as gf, textures, entities as en, settings, tkinter_windows as tk
 #%start%-------------------------------------------------------------------%start%#
 
@@ -217,9 +217,9 @@ def options():
     
     if gf.what_option == "v":
         if volume_controler_down.click():
-            s_sys.Music_and_SFX.change_volume("down")
+            sys.Music_and_SFX.change_volume("down")
         elif volume_controler_up.click():
-            s_sys.Music_and_SFX.change_volume("up")
+            sys.Music_and_SFX.change_volume("up")
     if gf.what_option == "r":
         if res_now_button.click():
             gf.window_open = True

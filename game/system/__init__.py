@@ -293,11 +293,17 @@ class Resize:
 #?---------------------------------------#Levels#---------------------------------------?#
 #?--------------------------------------------------------------------------------------?#
 class levels:
+
+    from .levles.l_0_9 import one, two, three, four, five, six, seven, eight, nine
+
+    from .levles.l_10_19 import ten, eleven, twelve, thirteen, fourteen, fifteen, sixteen, seventeen, eighteen, nineteen
+
+    from .levles.l_20_29 import twenty, twenty_one, twenty_two, twenty_three, twenty_four, twenty_five, twenty_six, twenty_seven, twenty_eight, twenty_nine
+
+    from .levles.l_30_39 import thirty, thirty_one, thirty_two, thirty_three, thirty_four, thirty_five, thirty_six, thirty_seven, thirty_eight, thirty_nine
+
+    from .levles.l_40_49 import forty, forty_one, forty_two, forty_three, forty_four, forty_five, forty_six, forty_seven, forty_eight, forty_nine
     
-    @staticmethod
-    def one():
-        #%start%------------------------------------%start%#
-        pass
-        #%end%------------------------------------%end%#
+    from .levles.l_50_54 import fifty, fifty_one, fifty_two, fifty_three
     
     #%end%-----------------------------------------------------------------------%end%#

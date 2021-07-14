@@ -1,6 +1,6 @@
 import pygame, json, os
 from pygame.locals import *
-from game import system as s_sys
+from game import system as sys
 from . import globals_file as gf, settings, textures
 #%start%-------------------------------------------------------------------%start%#
 
@@ -351,12 +351,12 @@ class tile:
         self.w = 14.0625 * 4
         #500 % 4 % 4 % 4
         self.h = 7.8125 * 4
-        self.width = s_sys.Resize.resize_x( #resize
+        self.width = sys.Resize.resize_x( #resize
             settings.starting_screen_width,
             self.w,
             gf.screen_width
         )
-        self.height = s_sys.Resize.resize_y( #resize
+        self.height = sys.Resize.resize_y( #resize
             settings.starting_screen_height,
             self.h,
             gf.screen_height
@@ -2272,12 +2272,12 @@ class tile:
 
 
     def update(self, lvl = 1):
-        self.width = s_sys.Resize.resize_x(
+        self.width = sys.Resize.resize_x(
             settings.starting_screen_width,
             self.w,
             gf.screen_width
         )
-        self.height = s_sys.Resize.resize_y(
+        self.height = sys.Resize.resize_y(
             settings.starting_screen_height,
             self.h,
             gf.screen_height

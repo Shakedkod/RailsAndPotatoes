@@ -1,6 +1,6 @@
 import pygame
 from pygame.locals import *
-from game import system as s_sys
+from game import system as sys
 from . import globals_file as gf, settings, textures
 #-----------------------------------------------------------------------------------------------#
 def B_init(
@@ -17,12 +17,12 @@ def B_init(
     self.starting_width = width #the given width
     self.starting_height = height #the given height
     self.unlocked = unlocked
-    self.width = s_sys.Resize.resize_x(
+    self.width = sys.Resize.resize_x(
         settings.starting_screen_width,
         width,
         gf.screen_width
         )
-    self.height = s_sys.Resize.resize_y(
+    self.height = sys.Resize.resize_y(
         settings.starting_screen_height,
         height,
         gf.screen_height
@@ -89,12 +89,12 @@ def CIO_init(self, x, y, width, height):
     self.y = y
     self.starting_width = width
     self.starting_height = height
-    self.width = s_sys.Resize.resize_x(
+    self.width = sys.Resize.resize_x(
         settings.starting_screen_width,
         self.starting_width,
         gf.screen_width
     )
-    self.height = s_sys.Resize.resize_y(
+    self.height = sys.Resize.resize_y(
         settings.starting_screen_height,
         self.starting_height,
         gf.screen_height
@@ -145,12 +145,12 @@ def CTO_init(
     #width and height
     self.starting_width = width
     self.starting_height = height
-    self.width = s_sys.Resize.resize_x(
+    self.width = sys.Resize.resize_x(
         settings.starting_screen_width,
         self.starting_width,
         gf.screen_width
     )
-    self.height = s_sys.Resize.resize_y(
+    self.height = sys.Resize.resize_y(
         settings.starting_screen_height,
         self.starting_height,
         gf.screen_height
@@ -214,12 +214,12 @@ def Image_init(self, x, y, width, height, image_folder_name, image_file_name):
     self.starting_height = height
 
     #scale
-    self.width = s_sys.Resize.resize_x(
+    self.width = sys.Resize.resize_x(
         settings.starting_screen_width,
         self.starting_width,
         gf.screen_width
     )
-    self.height = s_sys.Resize.resize_y(
+    self.height = sys.Resize.resize_y(
         settings.starting_screen_height,
         self.starting_height,
         gf.screen_height
@@ -238,12 +238,12 @@ def Image_update(self, x, y):
     self.y = y
     
     #scale
-    self.width = s_sys.Resize.resize_x(
+    self.width = sys.Resize.resize_x(
         settings.starting_screen_width,
         self.starting_width,
         gf.screen_width
     )
-    self.height = s_sys.Resize.resize_y(
+    self.height = sys.Resize.resize_y(
         settings.starting_screen_height,
         self.starting_height,
         gf.screen_height
