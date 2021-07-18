@@ -1,7 +1,7 @@
 import pygame
 from pygame.locals import *
-from game import system as sys
-from . import globals_file as gf, settings, textures
+from game import system as sys, globals_file as gf
+from . import settings, textures
 #-----------------------------------------------------------------------------------------------#
 def B_init(
     self, x, y, width, height,

@@ -1,54 +1,52 @@
 import json, os
-from . import globals_file as gf
+from game import globals_file as gf
 
 global game_name, by, virson, lang, teamNames, assets_folder_name, description, other, game_start, starting_screen_width, starting_screen_height, volume
 game_name, by, virson, lang, teamNames, assets_folder_name, description, other, game_start, starting_screen_width, starting_screen_height, volume = "name", "name", "name", "name", ["list"], "name", "name", "name", {"hi": "h"}, 900, 500, 1.0
 
 class Game_Start(object):
-    def __init__(self, data=None):
-        self.start_width = data["screen width"]
-        self.start_height = data["screen height"]
+    def __init__(self, data = None, open_data = None):
+        self.start_width = open_data["screen width"]
+        self.start_height = open_data["screen height"]
         self.caption = data["screen name"]
         self.png_icon = data["icon path - png"]
 
 class Player_Maker(object):
-    class Cutscenes:
-        def __init__(self, data = None):
-            self.start = {
-                "name": data["start"][0],
-                "viewed": data["start"][1]
-            }
-            self.end = {
-                "name": data["end"][0],
-                "viewed": data["end"][1]
-            }
-    
     def __init__(self):
         APPDATA = os.getenv("APPDATA")
-        with open(APPDATA + "\\.rails_and_potatoes\index\\player.data", "r") as d_day:
+        with open(APPDATA + "\\.rails_and_potatoes\index\\player.os.dt", "r") as d_day:
             data = json.load(d_day)
             d_day.close()
-        self.unlocked_levels = data["unlocked levels"]
-        self.complete_levels = data["complete levels"]
-        self.cutscenes = Player_Maker.Cutscenes(data = data["cutscenes"])
 
 def get_setings():
-    with open("game/system/settings.json", 'r') as seting:
+    with open("game/system/settings.os.dt", "r") as seting:
         data = json.load(seting)
         seting.close()
+    APPDATA = os.getenv("APPDATA")
+    with open(APPDATA + "\\.rails_and_potatoes\index\\player.os.dt", "r") as seting:
+        open_data = json.load(seting)
+        seting.close()
+    
     global game_name, by, virson, lang, teamNames, assets_folder_name, description, other, game_start, starting_screen_width, starting_screen_height, volume
+
     game_name = data["name"]
     by = data["made by"]
+    teamNames = data["teamNames"]
+
     virson = data["virson"]
     lang = data["lang"]
-    teamNames = data["teamNames"]
     assets_folder_name = data["assets folder name"]
     description = data["description"]
-    other = data["other"]
-    volume = data["game start"]["volume"]
-    game_start = Game_Start(data["game start"])
+
+    other = open_data["settings"]["other"]
+
+    volume = open_data["settings"]["game start"]["volume"]
+
+    game_start = Game_Start(data["game start"], open_data["settings"]["game start"])
+
     starting_screen_width = data["calculations"]["screen width"]
     starting_screen_height = data["calculations"]["screen height"]
+
     gf.what_is_rp = data["Active RP"]
     gf.player = Player_Maker()
 

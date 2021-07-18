@@ -1,0 +1,23 @@
+{
+    "name": "Rails And Potatoes",
+    "made by": "Oort Studios",
+    "virson": 0.5,
+    "lang": "english",
+    "teamNames": [
+        "ShakedKod",
+        "Doron",
+        "Noam?"
+    ],
+    "Active RP": "None",
+    "assets folder name": ".rails_and_potatoes",
+    "game start": {
+        "screen name": "Rails And Potatoes",
+        "icon path - ico": "game\\Inner Assets\\icon.ico",
+        "icon path - png": "game\\Inner Assets\\icon.png"
+    },
+    "calculations": {
+        "screen width": 900,
+        "screen height": 500
+    },
+    "description": ""
+}

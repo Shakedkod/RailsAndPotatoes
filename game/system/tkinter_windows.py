@@ -18,7 +18,8 @@ from win32api import GetSystemMetrics #to get the monitor res
 from zipfile import ZipFile #YAY .zip?
 
 #our files
-from game.system import textures as t, globals_file as gf, settings as s #yo, this is my system
+from game import globals_file as gf
+from game.system import textures as t, settings as s #yo, this is my system
 #%start%-------------------------------------------------------------------%start%#
 
 

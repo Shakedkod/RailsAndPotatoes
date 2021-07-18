@@ -1,6 +1,6 @@
 from os import getenv, remove
 from os.path import exists
-from . import globals_file as gf
+from game import globals_file as gf
 #%start%-------------------------------------------------------------------%start%#
 
 

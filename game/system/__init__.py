@@ -1,6 +1,7 @@
 import pygame, base64, ast, os
 from moviepy.editor import *
-from . import globals_file as gf, settings as s
+from . import settings as s
+from game import globals_file as gf
 from pygame.locals import *
 #-----------------------------------------------------------------------#
 pygame.init()

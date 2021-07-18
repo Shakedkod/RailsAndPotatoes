@@ -1,5 +1,5 @@
 import os, sys
-from game.system import download
+from game import download
 from time import sleep
 from colorama import Fore
 from tqdm import tqdm
@@ -38,7 +38,7 @@ sleep(1) #sleep for 1 second
 
 #---------------------------------------------------#
 from game import main
-from game.system import globals_file as gf
+from game import globals_file as gf
 
 main.Main()
 

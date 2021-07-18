@@ -1,6 +1,7 @@
 import pygame
 from pygame.locals import *
-from game.system import globals_file as gf, textures, entities as en
+from game.system import textures, entities as en
+from game import globals_file as gf
 #*-----------------------#init#--------------------------*#
 pygame.init() #init pygame
 pygame.font.init() #init

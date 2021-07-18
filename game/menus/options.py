@@ -1,8 +1,8 @@
 import pygame
 from pygame import key
 from pygame.locals import *
-from game import system as sys
-from game.system import globals_file as gf, textures, entities as en, settings, tkinter_windows as tk
+from game import system as sys, globals_file as gf
+from game.system import textures, entities as en, settings, tkinter_windows as tk
 #%start%-------------------------------------------------------------------%start%#
 
 #*-----------------------#init#--------------------------*#

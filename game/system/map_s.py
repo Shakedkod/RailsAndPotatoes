@@ -1,8 +1,8 @@
 from tkinter.constants import NO
 import pygame
 from pygame.locals import *
-from game import system as sys
-from . import globals_file as gf, entities as en, textures as t, settings as s
+from game import system as sys, globals_file as gf
+from . import entities as en, textures as t, settings as s
 #*-----------------------#init#--------------------------*#
 pygame.init() #init pygame
 pygame.mixer.pre_init(44100, -16, 2, 512)

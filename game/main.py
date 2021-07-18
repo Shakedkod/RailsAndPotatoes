@@ -6,8 +6,9 @@ os.system("cls") #*clear the console
 print (Fore.LIGHTGREEN_EX + "Loading, please wait..." + Fore.RESET + "")
 
 from pygame.locals import *
-from . import system as sys
-from .system import settings as s, globals_file as gf, tiles
+from . import system as sys, tiles
+from . import globals_file as gf
+from .system import settings as s
 #%start%-------------------------------------------------------------------%start%#
 
 #init
