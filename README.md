@@ -3,8 +3,6 @@
  <img width=355.5555555555556px height=200px src="/promotional/logo.png" alt="Logo"></a>
 </p>
 
-<h3 align="center">Project Title</h3>
-
 <div align="center">
 
 [![Status](https://img.shields.io/badge/Created%20By-Oort%20Studios-orange)]()
