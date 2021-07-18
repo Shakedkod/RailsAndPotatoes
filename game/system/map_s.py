@@ -385,10 +385,9 @@ class Map:
                 250 // 1.5,
                 450 // 1.5,
                 "buttons\\levels",
-                "c.png",
-                "1_h.png",
-                "1_comp.png",
-                "1_locked.png",
+                "0.png",
+                "0_h.png",
+                "0_comp.png",
                 completed = self.buttons.c_0_completed
             )
             self.buttons.l_1 = en.Button(

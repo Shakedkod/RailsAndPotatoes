@@ -1,7 +1,7 @@
 import pygame
 from pygame.locals import *
 from game.system import textures, entities as en, map_s as ms
-from game import globals_file as gf
+from game import globals_file as gf, system as s_sys
 #*-----------------------#init#--------------------------*#
 pygame.init() #init pygame
 pygame.font.init() #init
@@ -57,4 +57,5 @@ def map():
         if gf.classed_map.buttons.l_1.click():
             print ("1")
             gf.classed_map.buttons.l_1_completed = True
+            gf.classed_map.buttons.l_2_unlocked = True
     #%end%-------------------------------------------------------------------%end%#
