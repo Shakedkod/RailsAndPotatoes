@@ -51,7 +51,10 @@ def map():
     else:
         if gf.classed_map.buttons.c_0.click():
             print ("0")
+            gf.classed_map.buttons.c_0_completed = True
+            gf.classed_map.buttons.l_1_unlocked = True
         
         if gf.classed_map.buttons.l_1.click():
             print ("1")
+            gf.classed_map.buttons.l_1_completed = True
     #%end%-------------------------------------------------------------------%end%#

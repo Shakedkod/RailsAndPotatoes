@@ -1,4 +1,4 @@
-Logo
+This is the first version
 ------------
 |Done| |Python3| |Pygame|
 

@@ -8,15 +8,23 @@ def B_init(
     texture_foldername = "buttons",
     texture_filename = "play.png",
     hover_texture_filename = "play_h.png",
-    unlocked = True
+    completed_texture_filename = None,
+    locked_texture_filename = None,
+    unlocked = True,
+    completed = False
     ):
     """create the button"""
+
     self.x = x #x pos of the button
     self.y = y #y pos of the button
-    self.hover = False #is the mouse hover the button
+
     self.starting_width = width #the given width
     self.starting_height = height #the given height
+
+    self.hover = False #is the mouse hover the button
     self.unlocked = unlocked
+    self.completed = completed
+
     self.width = sys.Resize.resize_x(
         settings.starting_screen_width,
         width,
@@ -27,12 +35,15 @@ def B_init(
         height,
         gf.screen_height
         )
+    
     self.rect = pygame.Rect( #create a rect for pygame hitbox
         x,
         y,
         self.width,
         self.height
         )
+    
+    #Textures
     self.texture = pygame.transform.scale( #change the scale of the given image
         pygame.image.load(
             textures.change_texture(
@@ -50,14 +61,41 @@ def B_init(
         (self.rect.width, self.rect.height)
         )
 
+    if locked_texture_filename != None:
+        self.locked_texture = pygame.transform.scale( #change the scale of the given image
+            pygame.image.load(
+                textures.change_texture(
+                    foldername = texture_foldername, filename = locked_texture_filename
+                    )
+                ),
+            (self.rect.width, self.rect.height)
+            )
+    
+    if completed_texture_filename != None:
+        self.completed_texture = pygame.transform.scale( #change the scale of the given hover image
+            pygame.image.load(
+                textures.change_texture(
+                    foldername = texture_foldername, filename = completed_texture_filename
+                    )
+                ),
+            (self.rect.width, self.rect.height)
+            )
+
 def B_update(self):
     """update self and draw him on the screen"""
     self.mouse_hover() #go to the func hover
     self.draw() #go to the func draw
 
 def B_draw(self):
-    if self.hover: #if the mouse is on the button
+    if self.unlocked == False:
+        gf.screen.blit(self.locked_texture, (self.x, self.y)) #show the locked texture
+
+    elif self.hover: #if the mouse is on the button
         gf.screen.blit(self.hover_texture, (self.x, self.y)) #show the hover texture
+
+    elif self.completed:
+        gf.screen.blit(self.completed_texture, (self.x, self.y)) #show the completed texture
+
     else:
         gf.screen.blit(self.texture, (self.x, self.y)) #show the regular texture
 

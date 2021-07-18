@@ -1,4 +1,3 @@
-from tkinter.constants import NO
 import pygame
 from pygame.locals import *
 from game import system as sys, globals_file as gf
@@ -22,135 +21,189 @@ class battons_for_later:
 
         #----#x = 0#----#
         self.c_0 = None
-        self.c_0_complete = False
+        self.c_0_completed = False
         self.l_1 = None
-        self.l_1_complete = False
+        self.l_1_completed = False
+        self.l_1_unlocked = False
         self.l_2 = None
-        self.l_2_complete = False
+        self.l_2_completed = False
+        self.l_2_unlocked = False
         self.l_3 = None
-        self.l_3_complete = False
+        self.l_3_completed = False
+        self.l_3_unlocked = False
         self.l_4 = None
-        self.l_4_complete = False
+        self.l_4_completed = False
+        self.l_4_unlocked = False
 
         #----#x = 1#----#
         self.l_5 = None
-        self.l_5_complete = False
+        self.l_5_completed = False
+        self.l_5_unlocked = False
         self.l_6 = None
-        self.l_6_complete = False
+        self.l_6_completed = False
+        self.l_6_unlocked = False
         self.l_7 = None
-        self.l_7_complete = False
+        self.l_7_completed = False
+        self.l_7_unlocked = False
         self.l_8 = None
-        self.l_8_complete = False
+        self.l_8_completed = False
+        self.l_8_unlocked = False
         self.l_9 = None
-        self.l_9_complete = False
+        self.l_9_completed = False
+        self.l_9_unlocked = False
 
         #----#x = 2#----#
         self.l_10 = None
-        self.l_10_complete = False
+        self.l_10_completed = False
+        self.l_10_unlocked = False
         self.l_11 = None
-        self.l_11_complete = False
+        self.l_11_completed = False
+        self.l_11_unlocked = False
         self.l_12 = None
-        self.l_12_complete = False
+        self.l_12_completed = False
+        self.l_12_unlocked = False
         self.l_13 = None
-        self.l_13_complete = False
+        self.l_13_completed = False
+        self.l_13_unlocked = False
         self.l_14 = None
-        self.l_14_complete = False
+        self.l_14_completed = False
+        self.l_14_unlocked = False
 
         #----#x = 3#----#
         self.l_15 = None
-        self.l_15_complete = False
+        self.l_15_completed = False
+        self.l_15_unlocked = False
         self.l_16 = None
-        self.l_16_complete = False
+        self.l_16_completed = False
+        self.l_16_unlocked = False
         self.l_17 = None
-        self.l_17_complete = False
+        self.l_17_completed = False
+        self.l_17_unlocked = False
         self.l_18 = None
-        self.l_18_complete = False
+        self.l_18_completed = False
+        self.l_18_unlocked = False
         self.l_19 = None
-        self.l_19_complete = False
+        self.l_19_completed = False
+        self.l_19_unlocked = False
 
         #----#x = 4#----#
         self.l_20 = None
-        self.l_20_complete = False
+        self.l_20_completed = False
+        self.l_20_unlocked = False
         self.l_21 = None
-        self.l_21_complete = False
+        self.l_21_completed = False
+        self.l_21_unlocked = False
         self.l_22 = None
-        self.l_22_complete = False
+        self.l_22_completed = False
+        self.l_22_unlocked = False
         self.l_23 = None
-        self.l_23_complete = False
+        self.l_23_completed = False
+        self.l_23_unlocked = False
         self.l_24 = None
-        self.l_24_complete = False
+        self.l_24_completed = False
+        self.l_24_unlocked = False
         
         #----#x = 5#----#
         self.l_25 = None
-        self.l_25_complete = False
+        self.l_25_completed = False
+        self.l_25_unlocked = False
         self.l_26 = None
-        self.l_26_complete = False
+        self.l_26_completed = False
+        self.l_26_unlocked = False
         self.c_27 = None
-        self.c_27_complete = False
+        self.c_27_completed = False
+        self.c_27_unlocked = False
         self.l_28 = None
-        self.l_28_complete = False
+        self.l_28_completed = False
+        self.l_28_unlocked = False
         self.l_29 = None
-        self.l_29_complete = False
+        self.l_29_completed = False
+        self.l_29_unlocked = False
 
         #----#x = 6#----#
         self.l_30 = None
-        self.l_30_complete = False
+        self.l_30_completed = False
+        self.l_30_unlocked = False
         self.l_31 = None
-        self.l_31_complete = False
+        self.l_31_completed = False
+        self.l_31_unlocked = False
         self.l_32 = None
-        self.l_32_complete = False
+        self.l_32_completed = False
+        self.l_32_unlocked = False
         self.l_33 = None
-        self.l_33_complete = False
+        self.l_33_completed = False
+        self.l_33_unlocked = False
         self.l_34 = None
-        self.l_34_complete = False
+        self.l_34_completed = False
+        self.l_34_unlocked = False
 
         #----#x = 7#----#
         self.l_35 = None
-        self.l_35_complete = False
+        self.l_35_completed = False
+        self.l_35_unlocked = False
         self.l_36 = None
-        self.l_36_complete = False
+        self.l_36_completed = False
+        self.l_36_unlocked = False
         self.l_37 = None
-        self.l_37_complete = False
+        self.l_37_completed = False
+        self.l_37_unlocked = False
         self.l_38 = None
-        self.l_38_complete = False
+        self.l_38_completed = False
+        self.l_38_unlocked = False
         self.l_39 = None
-        self.l_39_complete = False
+        self.l_39_completed = False
+        self.l_39_unlocked = False
 
         #----#x = 8#----#
         self.l_40 = None
-        self.l_40_complete = False
+        self.l_40_completed = False
+        self.l_40_unlocked = False
         self.l_41 = None
-        self.l_41_complete = False
+        self.l_41_completed = False
+        self.l_41_unlocked = False
         self.l_42 = None
-        self.l_42_complete = False
+        self.l_42_completed = False
+        self.l_42_unlocked = False
         self.l_43 = None
-        self.l_43_complete = False
+        self.l_43_completed = False
+        self.l_43_unlocked = False
         self.l_44 = None
-        self.l_44_complete = False
+        self.l_44_completed = False
+        self.l_44_unlocked = False
 
         #----#x = 9#----#
         self.l_45 = None
-        self.l_45_complete = False
+        self.l_45_completed = False
+        self.l_45_unlocked = False
         self.l_46 = None
-        self.l_46_complete = False
+        self.l_46_completed = False
+        self.l_46_unlocked = False
         self.l_47 = None
-        self.l_47_complete = False
+        self.l_47_completed = False
+        self.l_47_unlocked = False
         self.l_48 = None
-        self.l_48_complete = False
+        self.l_48_completed = False
+        self.l_48_unlocked = False
         self.l_49 = None
-        self.l_49_complete = False
+        self.l_49_completed = False
+        self.l_49_unlocked = False
 
         #----#x = 10#----#
         self.l_50 = None
-        self.l_50_complete = False
+        self.l_50_completed = False
+        self.l_50_unlocked = False
         self.l_51 = None
-        self.l_51_complete = False
+        self.l_51_completed = False
+        self.l_51_unlocked = False
         self.l_52 = None
-        self.l_52_complete = False
+        self.l_52_completed = False
+        self.l_52_unlocked = False
         self.l_53 = None
-        self.l_53_complete = False
+        self.l_53_completed = False
+        self.l_53_unlocked = False
         self.c_54 = None
-        self.c_54_complete = False
+        self.c_54_completed = False
+        self.c_54_unlocked = False
 
     #%end%-------------------------------------------------------------------%end%#
 
@@ -332,9 +385,11 @@ class Map:
                 250 // 1.5,
                 450 // 1.5,
                 "buttons\\levels",
-                "1.png",
+                "c.png",
                 "1_h.png",
-                True
+                "1_comp.png",
+                "1_locked.png",
+                completed = self.buttons.c_0_completed
             )
             self.buttons.l_1 = en.Button(
                 (self.buttons.c_0.x + self.buttons.c_0.width) + gf.screen_width // 100,
@@ -344,7 +399,10 @@ class Map:
                 "buttons\\levels",
                 "1.png",
                 "1_h.png",
-                False
+                "1_comp.png",
+                "1_locked.png",
+                unlocked = self.buttons.l_1_unlocked,
+                completed = self.buttons.l_1_completed
             )
             self.buttons.l_2 = en.Button(
                 (self.buttons.l_1.x + self.buttons.l_1.width) + gf.screen_width // 100,
@@ -354,7 +412,10 @@ class Map:
                 "buttons\\levels",
                 "1.png",
                 "1_h.png",
-                False
+                "1_comp.png",
+                "1_locked.png",
+                unlocked = self.buttons.l_2_unlocked,
+                completed = self.buttons.l_2_completed
             )
             self.buttons.l_3 = en.Button(
                 (self.buttons.l_2.x + self.buttons.l_2.width) + gf.screen_width // 100,
@@ -364,7 +425,10 @@ class Map:
                 "buttons\\levels",
                 "1.png",
                 "1_h.png",
-                False
+                "1_comp.png",
+                "1_locked.png",
+                unlocked = self.buttons.l_3_unlocked,
+                completed = self.buttons.l_3_completed
             )
             self.buttons.l_4 = en.Button(
                 (self.buttons.l_3.x + self.buttons.l_3.width) + gf.screen_width // 100,
@@ -374,7 +438,11 @@ class Map:
                 "buttons\\levels",
                 "1.png",
                 "1_h.png",
-                False
+                "1_comp.png",
+                "1_locked.png",
+                unlocked = self.buttons.l_4_unlocked,
+                completed = self.buttons.l_4_completed
+                
             )
 
             #update buttons
@@ -396,7 +464,11 @@ class Map:
                 "buttons\\levels",
                 "1.png",
                 "1_h.png",
-                False
+                "1_comp.png",
+                "1_locked.png",
+                unlocked = self.buttons.l_5_unlocked,
+                completed = self.buttons.l_5_completed
+                
             )
             self.buttons.l_6 = en.Button(
                 (self.buttons.l_5.x + self.buttons.l_5.width) + gf.screen_width // 100,
@@ -406,7 +478,11 @@ class Map:
                 "buttons\\levels",
                 "1.png",
                 "1_h.png",
-                False
+                "1_comp.png",
+                "1_locked.png",
+                unlocked = self.buttons.l_6_unlocked,
+                completed = self.buttons.l_6_completed
+                
             )
             self.buttons.l_7 = en.Button(
                 (self.buttons.l_6.x + self.buttons.l_6.width) + gf.screen_width // 100,
@@ -416,7 +492,11 @@ class Map:
                 "buttons\\levels",
                 "1.png",
                 "1_h.png",
-                False
+                "1_comp.png",
+                "1_locked.png",
+                unlocked = self.buttons.l_7_unlocked,
+                completed = self.buttons.l_7_completed
+                
             )
             self.buttons.l_8 = en.Button(
                 (self.buttons.l_7.x + self.buttons.l_7.width) + gf.screen_width // 100,
@@ -426,7 +506,11 @@ class Map:
                 "buttons\\levels",
                 "1.png",
                 "1_h.png",
-                False
+                "1_comp.png",
+                "1_locked.png",
+                unlocked = self.buttons.l_8_unlocked,
+                completed = self.buttons.l_8_completed
+                
             )
             self.buttons.l_9 = en.Button(
                 (self.buttons.l_8.x + self.buttons.l_8.width) + gf.screen_width // 100,
@@ -436,7 +520,11 @@ class Map:
                 "buttons\\levels",
                 "1.png",
                 "1_h.png",
-                False
+                "1_comp.png",
+                "1_locked.png",
+                unlocked = self.buttons.l_9_unlocked,
+                completed = self.buttons.l_9_completed
+                
             )
 
             #update buttons
@@ -458,7 +546,11 @@ class Map:
                 "buttons\\levels",
                 "1.png",
                 "1_h.png",
-                False
+                "1_comp.png",
+                "1_locked.png",
+                unlocked = self.buttons.l_10_unlocked,
+                completed = self.buttons.l_10_completed
+                
             )
             self.buttons.l_11 = en.Button(
                 (self.buttons.l_10.x + self.buttons.l_10.width) + gf.screen_width // 100,
@@ -468,7 +560,11 @@ class Map:
                 "buttons\\levels",
                 "1.png",
                 "1_h.png",
-                False
+                "1_comp.png",
+                "1_locked.png",
+                unlocked = self.buttons.l_11_unlocked,
+                completed = self.buttons.l_11_completed
+                
             )
             self.buttons.l_12 = en.Button(
                 (self.buttons.l_11.x + self.buttons.l_11.width) + gf.screen_width // 100,
@@ -478,7 +574,11 @@ class Map:
                 "buttons\\levels",
                 "1.png",
                 "1_h.png",
-                False
+                "1_comp.png",
+                "1_locked.png",
+                unlocked = self.buttons.l_12_unlocked,
+                completed = self.buttons.l_12_completed
+                
             )
             self.buttons.l_13 = en.Button(
                 (self.buttons.l_12.x + self.buttons.l_12.width) + gf.screen_width // 100,
@@ -488,7 +588,11 @@ class Map:
                 "buttons\\levels",
                 "1.png",
                 "1_h.png",
-                False
+                "1_comp.png",
+                "1_locked.png",
+                unlocked = self.buttons.l_13_unlocked,
+                completed = self.buttons.l_13_completed
+                
             )
             self.buttons.l_14 = en.Button(
                 (self.buttons.l_13.x + self.buttons.l_13.width) + gf.screen_width // 100,
@@ -498,7 +602,11 @@ class Map:
                 "buttons\\levels",
                 "1.png",
                 "1_h.png",
-                False
+                "1_comp.png",
+                "1_locked.png",
+                unlocked = self.buttons.l_14_unlocked,
+                completed = self.buttons.l_14_completed
+                
             )
 
             #update buttons
@@ -520,7 +628,11 @@ class Map:
                 "buttons\\levels",
                 "1.png",
                 "1_h.png",
-                False
+                "1_comp.png",
+                "1_locked.png",
+                unlocked = self.buttons.l_15_unlocked,
+                completed = self.buttons.l_15_completed
+                
             )
             self.buttons.l_16 = en.Button(
                 (self.buttons.l_15.x + self.buttons.l_15.width) + gf.screen_width // 100,
@@ -530,7 +642,11 @@ class Map:
                 "buttons\\levels",
                 "1.png",
                 "1_h.png",
-                False
+                "1_comp.png",
+                "1_locked.png",
+                unlocked = self.buttons.l_16_unlocked,
+                completed = self.buttons.l_16_completed
+                
             )
             self.buttons.l_17 = en.Button(
                 (self.buttons.l_16.x + self.buttons.l_16.width) + gf.screen_width // 100,
@@ -540,7 +656,11 @@ class Map:
                 "buttons\\levels",
                 "1.png",
                 "1_h.png",
-                False
+                "1_comp.png",
+                "1_locked.png",
+                unlocked = self.buttons.l_17_unlocked,
+                completed = self.buttons.l_17_completed
+                
             )
             self.buttons.l_18 = en.Button(
                 (self.buttons.l_17.x + self.buttons.l_17.width) + gf.screen_width // 100,
@@ -550,7 +670,11 @@ class Map:
                 "buttons\\levels",
                 "1.png",
                 "1_h.png",
-                False
+                "1_comp.png",
+                "1_locked.png",
+                unlocked = self.buttons.l_18_unlocked,
+                completed = self.buttons.l_18_completed
+                
             )
             self.buttons.l_19 = en.Button(
                 (self.buttons.l_18.x + self.buttons.l_18.width) + gf.screen_width // 100,
@@ -560,7 +684,11 @@ class Map:
                 "buttons\\levels",
                 "1.png",
                 "1_h.png",
-                False
+                "1_comp.png",
+                "1_locked.png",
+                unlocked = self.buttons.l_19_unlocked,
+                completed = self.buttons.l_19_completed
+                
             )
 
             #update buttons
@@ -582,7 +710,11 @@ class Map:
                 "buttons\\levels",
                 "1.png",
                 "1_h.png",
-                False
+                "1_comp.png",
+                "1_locked.png",
+                unlocked = self.buttons.l_20_unlocked,
+                completed = self.buttons.l_20_completed
+                
             )
             self.buttons.l_21 = en.Button(
                 (self.buttons.l_20.x + self.buttons.l_20.width) + gf.screen_width // 100,
@@ -592,7 +724,11 @@ class Map:
                 "buttons\\levels",
                 "1.png",
                 "1_h.png",
-                False
+                "1_comp.png",
+                "1_locked.png",
+                unlocked = self.buttons.l_21_unlocked,
+                completed = self.buttons.l_21_completed
+                
             )
             self.buttons.l_22 = en.Button(
                 (self.buttons.l_21.x + self.buttons.l_21.width) + gf.screen_width // 100,
@@ -602,7 +738,11 @@ class Map:
                 "buttons\\levels",
                 "1.png",
                 "1_h.png",
-                False
+                "1_comp.png",
+                "1_locked.png",
+                unlocked = self.buttons.l_22_unlocked,
+                completed = self.buttons.l_22_completed
+                
             )
             self.buttons.l_23 = en.Button(
                 (self.buttons.l_22.x + self.buttons.l_22.width) + gf.screen_width // 100,
@@ -612,7 +752,11 @@ class Map:
                 "buttons\\levels",
                 "1.png",
                 "1_h.png",
-                False
+                "1_comp.png",
+                "1_locked.png",
+                unlocked = self.buttons.l_23_unlocked,
+                completed = self.buttons.l_23_completed
+                
             )
             self.buttons.l_24 = en.Button(
                 (self.buttons.l_23.x + self.buttons.l_23.width) + gf.screen_width // 100,
@@ -622,7 +766,11 @@ class Map:
                 "buttons\\levels",
                 "1.png",
                 "1_h.png",
-                False
+                "1_comp.png",
+                "1_locked.png",
+                unlocked = self.buttons.l_24_unlocked,
+                completed = self.buttons.l_24_completed
+                
             )
 
             #update buttons
@@ -644,7 +792,11 @@ class Map:
                 "buttons\\levels",
                 "1.png",
                 "1_h.png",
-                False
+                "1_comp.png",
+                "1_locked.png",
+                unlocked = self.buttons.l_25_unlocked,
+                completed = self.buttons.l_25_completed
+                
             )
             self.buttons.l_26 = en.Button(
                 (self.buttons.l_25.x + self.buttons.l_25.width) + gf.screen_width // 100,
@@ -654,7 +806,11 @@ class Map:
                 "buttons\\levels",
                 "1.png",
                 "1_h.png",
-                False
+                "1_comp.png",
+                "1_locked.png",
+                unlocked = self.buttons.l_26_unlocked,
+                completed = self.buttons.l_26_completed
+                
             )
             self.buttons.c_27 = en.Button(
                 (self.buttons.l_26.x + self.buttons.l_26.width) + gf.screen_width // 100,
@@ -664,7 +820,11 @@ class Map:
                 "buttons\\levels",
                 "1.png",
                 "1_h.png",
-                False
+                "1_comp.png",
+                "1_locked.png",
+                unlocked = self.buttons.c_27_unlocked,
+                completed = self.buttons.c_27_completed
+                
             )
             self.buttons.l_28 = en.Button(
                 (self.buttons.c_27.x + self.buttons.c_27.width) + gf.screen_width // 100,
@@ -674,7 +834,11 @@ class Map:
                 "buttons\\levels",
                 "1.png",
                 "1_h.png",
-                False
+                "1_comp.png",
+                "1_locked.png",
+                unlocked = self.buttons.l_28_unlocked,
+                completed = self.buttons.l_28_completed
+                
             )
             self.buttons.l_29 = en.Button(
                 (self.buttons.l_28.x + self.buttons.l_28.width) + gf.screen_width // 100,
@@ -684,7 +848,11 @@ class Map:
                 "buttons\\levels",
                 "1.png",
                 "1_h.png",
-                False
+                "1_comp.png",
+                "1_locked.png",
+                unlocked = self.buttons.l_29_unlocked,
+                completed = self.buttons.l_29_completed
+                
             )
 
             #update buttons
@@ -706,7 +874,11 @@ class Map:
                 "buttons\\levels",
                 "1.png",
                 "1_h.png",
-                False
+                "1_comp.png",
+                "1_locked.png",
+                unlocked = self.buttons.l_30_unlocked,
+                completed = self.buttons.l_30_completed
+                
             )
             self.buttons.l_31 = en.Button(
                 (self.buttons.l_30.x + self.buttons.l_30.width) + gf.screen_width // 100,
@@ -716,7 +888,11 @@ class Map:
                 "buttons\\levels",
                 "1.png",
                 "1_h.png",
-                False
+                "1_comp.png",
+                "1_locked.png",
+                unlocked = self.buttons.l_31_unlocked,
+                completed = self.buttons.l_31_completed
+                
             )
             self.buttons.l_32 = en.Button(
                 (self.buttons.l_31.x + self.buttons.l_31.width) + gf.screen_width // 100,
@@ -726,7 +902,11 @@ class Map:
                 "buttons\\levels",
                 "1.png",
                 "1_h.png",
-                False
+                "1_comp.png",
+                "1_locked.png",
+                unlocked = self.buttons.l_32_unlocked,
+                completed = self.buttons.l_32_completed
+                
             )
             self.buttons.l_33 = en.Button(
                 (self.buttons.l_32.x + self.buttons.l_32.width) + gf.screen_width // 100,
@@ -736,7 +916,11 @@ class Map:
                 "buttons\\levels",
                 "1.png",
                 "1_h.png",
-                False
+                "1_comp.png",
+                "1_locked.png",
+                unlocked = self.buttons.l_33_unlocked,
+                completed = self.buttons.l_33_completed
+                
             )
             self.buttons.l_34 = en.Button(
                 (self.buttons.l_33.x + self.buttons.l_33.width) + gf.screen_width // 100,
@@ -746,7 +930,11 @@ class Map:
                 "buttons\\levels",
                 "1.png",
                 "1_h.png",
-                False
+                "1_comp.png",
+                "1_locked.png",
+                unlocked = self.buttons.l_34_unlocked,
+                completed = self.buttons.l_34_completed
+                
             )
 
             #update buttons
@@ -768,7 +956,11 @@ class Map:
                 "buttons\\levels",
                 "1.png",
                 "1_h.png",
-                False
+                "1_comp.png",
+                "1_locked.png",
+                unlocked = self.buttons.l_35_unlocked,
+                completed = self.buttons.l_35_completed
+                
             )
             self.buttons.l_36 = en.Button(
                 (self.buttons.l_35.x + self.buttons.l_35.width) + gf.screen_width // 100,
@@ -778,7 +970,11 @@ class Map:
                 "buttons\\levels",
                 "1.png",
                 "1_h.png",
-                False
+                "1_comp.png",
+                "1_locked.png",
+                unlocked = self.buttons.l_36_unlocked,
+                completed = self.buttons.l_36_completed
+                
             )
             self.buttons.l_37 = en.Button(
                 (self.buttons.l_36.x + self.buttons.l_36.width) + gf.screen_width // 100,
@@ -788,7 +984,11 @@ class Map:
                 "buttons\\levels",
                 "1.png",
                 "1_h.png",
-                False
+                "1_comp.png",
+                "1_locked.png",
+                unlocked = self.buttons.l_37_unlocked,
+                completed = self.buttons.l_37_completed
+                
             )
             self.buttons.l_38 = en.Button(
                 (self.buttons.l_37.x + self.buttons.l_37.width) + gf.screen_width // 100,
@@ -798,7 +998,11 @@ class Map:
                 "buttons\\levels",
                 "1.png",
                 "1_h.png",
-                False
+                "1_comp.png",
+                "1_locked.png",
+                unlocked = self.buttons.l_38_unlocked,
+                completed = self.buttons.l_38_completed
+                
             )
             self.buttons.l_39 = en.Button(
                 (self.buttons.l_38.x + self.buttons.l_38.width) + gf.screen_width // 100,
@@ -808,7 +1012,11 @@ class Map:
                 "buttons\\levels",
                 "1.png",
                 "1_h.png",
-                False
+                "1_comp.png",
+                "1_locked.png",
+                unlocked = self.buttons.l_39_unlocked,
+                completed = self.buttons.l_39_completed
+                
             )
 
             #update buttons
@@ -830,7 +1038,11 @@ class Map:
                 "buttons\\levels",
                 "1.png",
                 "1_h.png",
-                False
+                "1_comp.png",
+                "1_locked.png",
+                unlocked = self.buttons.l_40_unlocked,
+                completed = self.buttons.l_40_completed
+                
             )
             self.buttons.l_41 = en.Button(
                 (self.buttons.l_40.x + self.buttons.l_40.width) + gf.screen_width // 100,
@@ -840,7 +1052,11 @@ class Map:
                 "buttons\\levels",
                 "1.png",
                 "1_h.png",
-                False
+                "1_comp.png",
+                "1_locked.png",
+                unlocked = self.buttons.l_41_unlocked,
+                completed = self.buttons.l_41_completed
+                
             )
             self.buttons.l_42 = en.Button(
                 (self.buttons.l_41.x + self.buttons.l_41.width) + gf.screen_width // 100,
@@ -850,7 +1066,11 @@ class Map:
                 "buttons\\levels",
                 "1.png",
                 "1_h.png",
-                False
+                "1_comp.png",
+                "1_locked.png",
+                unlocked = self.buttons.l_42_unlocked,
+                completed = self.buttons.l_42_completed
+                
             )
             self.buttons.l_43 = en.Button(
                 (self.buttons.l_42.x + self.buttons.l_42.width) + gf.screen_width // 100,
@@ -860,7 +1080,11 @@ class Map:
                 "buttons\\levels",
                 "1.png",
                 "1_h.png",
-                False
+                "1_comp.png",
+                "1_locked.png",
+                unlocked = self.buttons.l_43_unlocked,
+                completed = self.buttons.l_43_completed
+                
             )
             self.buttons.l_44 = en.Button(
                 (self.buttons.l_43.x + self.buttons.l_43.width) + gf.screen_width // 100,
@@ -870,7 +1094,11 @@ class Map:
                 "buttons\\levels",
                 "1.png",
                 "1_h.png",
-                False
+                "1_comp.png",
+                "1_locked.png",
+                unlocked = self.buttons.l_44_unlocked,
+                completed = self.buttons.l_44_completed
+                
             )
 
             #update buttons
@@ -892,7 +1120,11 @@ class Map:
                 "buttons\\levels",
                 "1.png",
                 "1_h.png",
-                False
+                "1_comp.png",
+                "1_locked.png",
+                unlocked = self.buttons.l_45_unlocked,
+                completed = self.buttons.l_45_completed
+                
             )
             self.buttons.l_46 = en.Button(
                 (self.buttons.l_45.x + self.buttons.l_45.width) + gf.screen_width // 100,
@@ -902,7 +1134,11 @@ class Map:
                 "buttons\\levels",
                 "1.png",
                 "1_h.png",
-                False
+                "1_comp.png",
+                "1_locked.png",
+                unlocked = self.buttons.l_46_unlocked,
+                completed = self.buttons.l_46_completed
+                
             )
             self.buttons.l_47 = en.Button(
                 (self.buttons.l_46.x + self.buttons.l_46.width) + gf.screen_width // 100,
@@ -912,7 +1148,11 @@ class Map:
                 "buttons\\levels",
                 "1.png",
                 "1_h.png",
-                False
+                "1_comp.png",
+                "1_locked.png",
+                unlocked = self.buttons.l_47_unlocked,
+                completed = self.buttons.l_47_completed
+                
             )
             self.buttons.l_48 = en.Button(
                 (self.buttons.l_47.x + self.buttons.l_47.width) + gf.screen_width // 100,
@@ -922,7 +1162,11 @@ class Map:
                 "buttons\\levels",
                 "1.png",
                 "1_h.png",
-                False
+                "1_comp.png",
+                "1_locked.png",
+                unlocked = self.buttons.l_48_unlocked,
+                completed = self.buttons.l_48_completed
+                
             )
             self.buttons.l_49 = en.Button(
                 (self.buttons.l_48.x + self.buttons.l_48.width) + gf.screen_width // 100,
@@ -932,7 +1176,11 @@ class Map:
                 "buttons\\levels",
                 "1.png",
                 "1_h.png",
-                False
+                "1_comp.png",
+                "1_locked.png",
+                unlocked = self.buttons.l_49_unlocked,
+                completed = self.buttons.l_49_completed
+                
             )
 
             #update buttons
@@ -954,7 +1202,11 @@ class Map:
                 "buttons\\levels",
                 "1.png",
                 "1_h.png",
-                False
+                "1_comp.png",
+                "1_locked.png",
+                unlocked = self.buttons.l_50_unlocked,
+                completed = self.buttons.l_50_completed
+                
             )
             self.buttons.l_51 = en.Button(
                 (self.buttons.l_50.x + self.buttons.l_50.width) + gf.screen_width // 100,
@@ -964,7 +1216,11 @@ class Map:
                 "buttons\\levels",
                 "1.png",
                 "1_h.png",
-                False
+                "1_comp.png",
+                "1_locked.png",
+                unlocked = self.buttons.l_51_unlocked,
+                completed = self.buttons.l_51_completed
+                
             )
             self.buttons.l_52 = en.Button(
                 (self.buttons.l_51.x + self.buttons.l_51.width) + gf.screen_width // 100,
@@ -974,7 +1230,11 @@ class Map:
                 "buttons\\levels",
                 "1.png",
                 "1_h.png",
-                False
+                "1_comp.png",
+                "1_locked.png",
+                unlocked = self.buttons.l_52_unlocked,
+                completed = self.buttons.l_52_completed
+                
             )
             self.buttons.l_53 = en.Button(
                 (self.buttons.l_52.x + self.buttons.l_52.width) + gf.screen_width // 100,
@@ -984,7 +1244,11 @@ class Map:
                 "buttons\\levels",
                 "1.png",
                 "1_h.png",
-                False
+                "1_comp.png",
+                "1_locked.png",
+                unlocked = self.buttons.l_53_unlocked,
+                completed = self.buttons.l_53_completed
+                
             )
             self.buttons.c_54 = en.Button(
                 (self.buttons.l_53.x + self.buttons.l_53.width) + gf.screen_width // 100,
@@ -994,7 +1258,11 @@ class Map:
                 "buttons\\levels",
                 "1.png",
                 "1_h.png",
-                False
+                "1_comp.png",
+                "1_locked.png",
+                unlocked = self.buttons.c_54_unlocked,
+                completed = self.buttons.c_54_completed
+                
             )
 
             #update buttons
