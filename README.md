@@ -47,7 +47,7 @@ Write about 1-2 paragraphs describing the purpose of your project.
       download the mac version
 
     - linux:
-      download the source code and [python for linux](https://www.python.org/downloads/source/) and run the   python code by opening the terminal in the folder of the game and type 
+      download the source code and [python for linux](https://www.python.org/downloads/source/) and run the   python code by opening the terminal in the folder of the game and type:
       ```
       python Rails_And_Potatoes.py
       ```
@@ -59,9 +59,9 @@ Write about 1-2 paragraphs describing the purpose of your project.
     go to the python download page and download [python](https://www.python.org/downloads) for your os.
     install python and unzip the source code.
     open the terminal(or the command line) in the folder of the source code and type:
-      ```
-      python Rails_And_Potatoes.py
-      ```
+    ```
+    python Rails_And_Potatoes.py
+    ```
     and press enter.
 
   #### Enjoy The Game!
