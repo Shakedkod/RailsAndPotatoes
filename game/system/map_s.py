@@ -13,8 +13,8 @@ class battons_for_later:
     def __init__(self):
         #cutscenes in 0, 27, 54(for now)
 
-        self.back = None
-        self.next = None
+        self.back_button = None
+        self.next_button = None
 
         #c for cutscenes
         #l for levels
@@ -241,13 +241,13 @@ class Map:
             )
 
         #buttons#
-        self.buttons.next = en.Button(
+        self.buttons.next_button = en.Button(
             gf.screen_width - (gf.screen_width // 5),
             gf.screen_height // 100,
             168.75,
             75
         )
-        self.buttons.back = en.Button(
+        self.buttons.back_button = en.Button(
             gf.screen_width // 100,
             gf.screen_height - (gf.screen_height // 8),
             168.75,
@@ -255,13 +255,13 @@ class Map:
         )
 
         #update#
-        self.buttons.next.update()
-        self.buttons.back.update()
+        self.buttons.next_button.update()
+        self.buttons.back_button.update()
 
         #click#
-        if self.buttons.next.click():
+        if self.buttons.next_button.click():
             self.x += 1
-        if self.buttons.back.click():
+        if self.buttons.back_button.click():
             self.x -= 1
 
         if self.x > 10:
@@ -367,8 +367,8 @@ class Map:
             )
         #------------------------------#*==*#------------------------------# 
 
-        self.buttons.next.draw()
-        self.buttons.back.draw()
+        self.buttons.next_button.draw()
+        self.buttons.back_button.draw()
         
         #========================================================================================#
         if self.x_before != self.x:

@@ -87,7 +87,7 @@ some screenshots and more text
 <br>
 <h2>✍️ Want To Help <a name = "help"></a></h2>
 
-- [Sea the staff we working on](https://open.codecks.io/railsandpotatoes)
+- [See the staff we working on](https://open.codecks.io/railsandpotatoes)
 
 - to help go to our [Discord server](https://discord.com/) and in the "ideas and more" channel write the command !bag {info about the bug} and send
 
@@ -95,7 +95,7 @@ some screenshots and more text
 <br>
 <h2>✍️ Found A Bug? <a name = "bug"></a></h2>
 
-- [Sea the bugs](https://open.codecks.io/railsandpotatoes/decks/8-bugs)
+- [See the bugs](https://open.codecks.io/railsandpotatoes/decks/8-bugs)
 
 - to report go to our [Discord server](https://discord.com/) and in "main" write the command !idea {info about your idea} and send
 

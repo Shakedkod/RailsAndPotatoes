@@ -17,6 +17,16 @@ class Player_Maker(object):
         with open(APPDATA + "\\.rails_and_potatoes\index\\player.os.dt", "r") as d_day:
             data = json.load(d_day)
             d_day.close()
+        
+        self.open_levels = []
+        self.completed_levels = []
+        for item in data["levels&cutscenes"]:
+            if item["data"] == 0:
+                pass
+            elif item["data"] == 1:
+                self.open_levels.append(item["id"])
+            else:
+                self.completed_levels.append(item["id"])
 
 def get_setings():
     with open("game/system/settings.os.dt", "r") as seting:
@@ -63,4 +73,3 @@ def save_setings():
     with open("game/system/settings.json", "w") as sett:
         json.dump(data, sett, indent=2)
         sett.close()
-
