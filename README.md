@@ -13,7 +13,7 @@
 
 </div>
 
----
+--- 
 
 <p align="center"> Few lines describing your project.
     <br> 
@@ -32,15 +32,49 @@
 
 Write about 1-2 paragraphs describing the purpose of your project.
 
-## 🏁 Getting Started <a name = "getting_started"></a>
+<br>
+<br>
+<h2>🏁 Getting Started <a name = "getting_started"></a></h2>
 
-first go to []()
+- ###         get the game:
 
-## 📸 See More <a name = "about"></a>
+    first go to the [Download Page]()
+
+    - Windows:
+      download the windows version
+
+    - macOS:
+      download the mac version
+
+    - linux:
+      download the source code and [python for linux](https://www.python.org/downloads/source/) and run the   python code by opening the terminal in the folder of the game and type 
+      ```
+      python Rails_And_Potatoes.py
+      ```
+      and press enter
+
+- ###         get the source code and run it:
+
+    first go to the [Download Page]() and download the source code.
+    go to the python download page and download [python](https://www.python.org/downloads) for your os.
+    install python and unzip the source code.
+    open the terminal(or the command line) in the folder of the source code and type:
+      ```
+      python Rails_And_Potatoes.py
+      ```
+    and press enter.
+
+  #### Enjoy The Game!
+<br>
+<br>
+
+<h2>📸 See More <a name = "about"></a></h2>
 
 some screenshots and more text
 
-## ✍️ Authors <a name = "authors"></a>
+<br>
+<br>
+<h2>✍️ Authors <a name = "authors"></a></h2>
 
 - [Shakedkod](https://github.com/Shakedkod)
 
@@ -49,13 +83,17 @@ some screenshots and more text
   - [Doron]() - Story & Ideas
 
 
-## ✍️ Want To Help <a name = "help"></a>
+<br>
+<br>
+<h2>✍️ Want To Help <a name = "help"></a></h2>
 
 - [Sea the staff we working on](https://open.codecks.io/railsandpotatoes)
 
 - to help go to our [Discord server](https://discord.com/) and in the "ideas and more" channel write the command !bag {info about the bug} and send
 
-## ✍️ Found A Bug? <a name = "bug"></a>
+<br>
+<br>
+<h2>✍️ Found A Bug? <a name = "bug"></a></h2>
 
 - [Sea the bugs](https://open.codecks.io/railsandpotatoes/decks/8-bugs)
 
