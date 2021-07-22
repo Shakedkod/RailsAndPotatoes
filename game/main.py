@@ -1,68 +1,100 @@
-# import
-from colorama import Fore
-import pygame, json, os, win32gui, win32con
+#--------------------------------------------< Import >--------------------------------------------#
+import pygame, json, os, win32gui, win32con #regular staff
+from pygame.locals import * #pygame locals
 
 os.system("cls") #*clear the console
-print (Fore.LIGHTGREEN_EX + "Loading, please wait..." + Fore.RESET + "")
 
-from pygame.locals import *
+from colorama import Fore #colorama for colored text
+print (Fore.LIGHTGREEN_EX + "Loading, please wait..." + Fore.RESET + "") #printing the text of loading to the screen
+
+#our functions
 from . import system as sys, tiles
 from . import globals_file as gf
 from .system import settings as s
 #%start%-------------------------------------------------------------------%start%#
 
-#init
+#--------------------------------------------< Init >--------------------------------------------#
+
+    #pygame
 pygame.init() #init pygame
 pygame.display.init() #init pygame display
 pygame.mixer.pre_init(44100, -16, 2, 512)
 pygame.mixer.set_num_channels(64)
 pygame.mixer.init() #init pygame mixer
-s.get_setings() #update settings 
 gf.Clock = pygame.time.Clock() #seting up the clock
 
-#TODO console close (add in the final release)
-#console_hiding_part = win32gui.GetForegroundWindow()
-#win32gui.ShowWindow(console_hiding_part , win32con.SW_HIDE)
+    #settings
+s.get_setings() #update settings and init them
 
-#*-----------------------#creating the window--------------------------*#
-gf.screen = pygame.display.set_mode((s.game_start.start_width, s.game_start.start_height), pygame.RESIZABLE) #create the window with the right dimensions, and resize option
+#------------------------------------< Closing the Console >------------------------------------#
+#TODO add in the final release!
+#?console_hiding_part = win32gui.GetForegroundWindow()
+#?win32gui.ShowWindow(console_hiding_part , win32con.SW_HIDE)
+
+#*-----------------------------------------< Creating The Window >-----------------------------------------*#
+gf.screen = pygame.display.set_mode((s.game_start.start_width, s.game_start.start_height), pygame.RESIZABLE) #create the pygame window with the right dimensions, and resize option
+
 pygame.display.set_caption(s.game_start.caption) #giving a name to the screen
 icon = pygame.image.load(s.game_start.png_icon) #get the icon pic
 pygame.display.set_icon(icon) #put the icon on the window
-#--------------------------------------------------------------------#
+
+
+#!-------------------------------------------< Main >-------------------------------------------!#
 def Main(): #main
-    from .menus import main_menu as menu, options as opt, map as play
-    gf.where = "main menu"
-    gf.click = False
+    from .menus import main_menu as menu, options as opt, map as play #import 2.0 because of settings
+
+    gf.where = "main menu" #what panel are we on? ho right, its the <main menu>
+
+    gf.click = False #Do Not Touch This Red Button -> if the player click the mouse
+
+    #Screen Resolution
     gf.width_before = gf.screen.get_width()
     gf.height_before = gf.screen.get_height()
     gf.screen_width = gf.screen.get_width()
     gf.screen_height = gf.screen.get_height()
+
+    #INIT tiles for the levels
     gf.Tiles = tiles.Tiles()
     gf.Tiles.load_images(1)
+
+    #TODO load the music of the main menu
     gf.Sounds_and_sfx_dict = sys.Music_and_SFX.load_sounds_or_sfx(gf.Sounds_and_sfx_dict, "main.mp3", "None", "none at all", s.volume)
 
 
         #%start%-------------------------------------------------------------------%start%#
-    while gf.run: #the main loop
-        gf.Tiles.change_x_and_y()
+    #--------------------------------------------< The Main Loop >--------------------------------------------#
+    while gf.run:
+        gf.Tiles.change_x_and_y() #tiles update
+
+        #screen resolution check and change
         gf.screen_width = gf.screen.get_width()
         gf.screen_height = gf.screen.get_height()
-        gf.mouse_x, gf.mouse_y = pygame.mouse.get_pos()
         gf.half_width = gf.screen.get_width() // 2
         gf.half_height = gf.screen.get_height() // 2
+
+        #mouse position on the screen
+        gf.mouse_x, gf.mouse_y = pygame.mouse.get_pos()
+
+        #set volume
         gf.Sounds_and_sfx_dict = sys.Music_and_SFX.set_volume(gf.Sounds_and_sfx_dict, s.volume)
-        if gf.where != "game":
-            if gf.where == "main menu":
-                menu.main_menu()
-            elif gf.where == "opt": 
-                opt.options()
-            elif gf.where == "play":
-                play.map()
-            elif gf.where == "exit":
+
+        #fine the screen we need to go to
+        if gf.where != "game": #Selection
+
+            if gf.where == "main menu": #the famous main menu panel
+                menu.main_menu() #go to the main menu, you also can go, just click.= ho, you are already there? impressive... impressive...
+            
+            elif gf.where == "opt": #the helpful option panel
+                opt.options() #go to the options, you also can go, just click. (did you have a deja vu too, or it is just me?)
+            
+            elif gf.where == "play": #we need to find the map panel
+                play.map() #go to the map, you also can go, just click. (I feel I being repetitive today)
+            
+            elif gf.where == "exit": #"wait, were are you going to" panel
                 gf.run = False #stop the game
+
         else:
-            pass #TODO Game
+            pass #TODO Game, That is important?
         
         #*-----------------events-----------------*#
         for event in pygame.event.get():

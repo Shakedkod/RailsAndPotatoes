@@ -1,8 +1,13 @@
+#--------------------------------------------< Import >--------------------------------------------#
 import pygame
 from pygame.locals import *
+
 from game import system as sys, globals_file as gf
 from . import settings, textures
-#-----------------------------------------------------------------------------------------------#
+
+
+#%start%--------< The Start >--------%start%#
+#--------------------------------------------< Buttons >--------------------------------------------#
 def B_init(
     self, x, y, width, height,
     texture_foldername = "buttons",
@@ -112,7 +117,7 @@ def B_click(self):
     else:
         return False 
 
-#!=-------------------------------------------------------------------!=#
+#!=-------------------------------< Class Creation >-------------------------------!=#
 Button = type("Button", (), {
     "__init__": B_init,
     "update": B_update,
@@ -121,7 +126,7 @@ Button = type("Button", (), {
     "click": B_click
 })
 
-#-----------------------------------------------------------------------------------------------#
+#----------------------------------< Clickable Invisible Object >----------------------------------#
 def CIO_init(self, x, y, width, height):
     self.x = x
     self.y = y
@@ -159,14 +164,14 @@ def CIO_mh(self):
     else:
         self.hover = False
 
-#!=-------------------------------------------------------------------!=#
+#!=-------------------------------< Class Creation >-------------------------------!=#
 Clickable_Invisible_object = type("Clickable_Invisible_object", (), {
     "__init__": CIO_init,
     "update": CIO_update,
     "mouse_hover": CIO_mh
 })
 
-#-----------------------------------------------------------------------------------------------#
+#------------------------------------< Clickable Text Object >------------------------------------#
 def CTO_init(
     self, x, y, width, height,
     text = "this is the text",
@@ -233,7 +238,7 @@ def CTO_mh(self):
 def CTO_dc(self):
     pygame.draw.rect(gf.screen, (255, 0, 255), self.rect)
 
-#!=-------------------------------------------------------------------!=#
+#!=-------------------------------< Class Creation >-------------------------------!=#
 Clickable_Text_object = type("Clickable_Text_object", (), {
     "__init__": CTO_init,
     "update": CTO_update,
@@ -241,7 +246,7 @@ Clickable_Text_object = type("Clickable_Text_object", (), {
     "dev_checks": CTO_dc
 })
 
-#-----------------------------------------------------------------------------------------------#
+#--------------------------------------------< Just An Image >--------------------------------------------#
 def Image_init(self, x, y, width, height, image_folder_name, image_file_name):
     #position
     self.x = x
@@ -299,8 +304,10 @@ def Image_update(self, x, y):
     #show image
     gf.screen.blit(self.image, (self.rect.x, self.rect.y))
 
-#!=-------------------------------------------------------------------!=#
+#!=-------------------------------< Class Creation >-------------------------------!=#
 Just_an_image = type("Just_an_image", (), {
     "__init__": Image_init,
     "update": Image_update
 })
+
+#%end%-----------< The End >-----------%end%#
