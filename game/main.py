@@ -28,8 +28,8 @@ s.get_setings() #update settings and init them
 
 #------------------------------------< Closing the Console >------------------------------------#
 #TODO add in the final release!
-#?console_hiding_part = win32gui.GetForegroundWindow()
-#?win32gui.ShowWindow(console_hiding_part , win32con.SW_HIDE)
+#//console_hiding_part = win32gui.GetForegroundWindow()
+#//win32gui.ShowWindow(console_hiding_part , win32con.SW_HIDE)
 
 #*-----------------------------------------< Creating The Window >-----------------------------------------*#
 gf.screen = pygame.display.set_mode((s.game_start.start_width, s.game_start.start_height), pygame.RESIZABLE) #create the pygame window with the right dimensions, and resize option
@@ -39,7 +39,7 @@ icon = pygame.image.load(s.game_start.png_icon) #get the icon pic
 pygame.display.set_icon(icon) #put the icon on the window
 
 
-#!-------------------------------------------< Main >-------------------------------------------!#
+#?-------------------------------------------< Main >-------------------------------------------?#
 def Main(): #main
     from .menus import main_menu as menu, options as opt, map as play #import 2.0 because of settings
 
