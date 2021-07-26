@@ -8,8 +8,7 @@ from colorama import Fore #colorama for colored text
 print (Fore.LIGHTGREEN_EX + "Loading, please wait..." + Fore.RESET + "") #printing the text of loading to the screen
 
 #our functions
-from . import system as sys, tiles
-from . import globals_file as gf
+from . import system as sys, tiles, globals_file as gf
 from .system import settings as s
 #%start%-------------------------------------------------------------------%start%#
 

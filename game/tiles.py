@@ -2074,184 +2074,326 @@ class tile:
                         self.id = "T16M4F4"
                         self.x = self.w * 15
                         self.y = self.h * 15
-        
-        #-------------------------------#Tiles Prop#-------------------------------#
+
+
+
+
+        #!--------------------------------------------------------------------------!#
+        #!------------------------------< Tiles Prop >------------------------------!#
+        #!--------------------------------------------------------------------------!#
         data = {}
         appdata = os.getenv('APPDATA') #get appdata
         o1_path = appdata + "\\.rails_and_potatoes\\index\\Assets\\tiles\\properties\\O1\\"
         o2_path = appdata + "\\.rails_and_potatoes\\index\\Assets\\tiles\\properties\\O2\\"
         o3_path = appdata + "\\.rails_and_potatoes\\index\\Assets\\tiles\\properties\\O3\\"
         o4_path = appdata + "\\.rails_and_potatoes\\index\\Assets\\tiles\\properties\\O4\\"
-        with open(o1_path + "T1.tile_prop", "r") as f:
+        
+        #?----------------------------------------------------------------------?#
+        #?--------------------------------< O1 >--------------------------------?#
+        #?----------------------------------------------------------------------?#
+        with open(o1_path + "T1.tp", "r") as f:
             data["T1"] = json.load(f)
             f.close()
-        with open(o1_path + "T2.tile_prop", "r") as f:
+        with open(o1_path + "T2.tp", "r") as f:
             data["T2"] = json.load(f)
             f.close()
-        with open(o1_path + "T3.tile_prop", "r") as f:
+        with open(o1_path + "T3.tp", "r") as f:
             data["T3"] = json.load(f)
             f.close()
-        with open(o1_path + "T4.tile_prop", "r") as f:
+        with open(o1_path + "T4.tp", "r") as f:
             data["T4"] = json.load(f)
             f.close()
         
-        with open(o2_path + "T5.tile_prop", "r") as f:
+        #?----------------------------------------------------------------------?#
+        #?--------------------------------< O2 >--------------------------------?#
+        #?----------------------------------------------------------------------?#
+        with open(o2_path + "T5.tp", "r") as f:
             data["T5"] = json.load(f)
             f.close()
-        with open(o2_path + "T6.tile_prop", "r") as f:
+        with open(o2_path + "T6.tp", "r") as f:
             data["T6"] = json.load(f)
             f.close()
-        with open(o2_path + "T7.tile_prop", "r") as f:
+        with open(o2_path + "T7.tp", "r") as f:
             data["T7"] = json.load(f)
             f.close()
-        with open(o2_path + "T8.tile_prop", "r") as f:
+        with open(o2_path + "T8.tp", "r") as f:
             data["T8"] = json.load(f)
             f.close()
         
-        with open(o3_path + "T9.tile_prop", "r") as f:
+        #?----------------------------------------------------------------------?#
+        #?--------------------------------< O3 >--------------------------------?#
+        #?----------------------------------------------------------------------?#
+        with open(o3_path + "T9.tp", "r") as f:
             data["T9"] = json.load(f)
             f.close()
-        with open(o3_path + "T10.tile_prop", "r") as f:
+        with open(o3_path + "T10.tp", "r") as f:
             data["T10"] = json.load(f)
             f.close()
-        with open(o3_path + "T11.tile_prop", "r") as f:
+        with open(o3_path + "T11.tp", "r") as f:
             data["T11"] = json.load(f)
             f.close()
-        with open(o3_path + "T12.tile_prop", "r") as f:
+        with open(o3_path + "T12.tp", "r") as f:
             data["T12"] = json.load(f)
             f.close()
         
-        with open(o4_path + "T13.tile_prop", "r") as f:
+        #?----------------------------------------------------------------------?#
+        #?--------------------------------< O4 >--------------------------------?#
+        #?----------------------------------------------------------------------?#
+        with open(o4_path + "T13.tp", "r") as f:
             data["T13"] = json.load(f)
             f.close()
-        with open(o4_path + "T14.tile_prop", "r") as f:
+        with open(o4_path + "T14.tp", "r") as f:
             data["T14"] = json.load(f)
             f.close()
-        with open(o4_path + "T15.tile_prop", "r") as f:
+        with open(o4_path + "T15.tp", "r") as f:
             data["T15"] = json.load(f)
             f.close()
-        with open(o4_path + "T16.tile_prop", "r") as f:
+        with open(o4_path + "T16.tp", "r") as f:
             data["T16"] = json.load(f)
             f.close()
 
-        #-------------------------------#Images#-------------------------------#
+
+
+
+
+        #!----------------------------------------------------------------------!#
+        #!------------------------------< Images >------------------------------!#
+        #!----------------------------------------------------------------------!#
+        self.image = {}
+        level_1_foldername = "tiles\\lvl1"
+
+
+        #?----------------------------------------------------------------------?#
+        #?--------------------------------< O1 >--------------------------------?#
+        #?----------------------------------------------------------------------?#
         if o == 1:
+
+            #------------------------------------------------------------------------#
+            #---------------------------------< T1 >---------------------------------#
+            #------------------------------------------------------------------------#
             if id[0] == "T1":
-                self.image = {
-                    "1": textures.change_texture(
-                        filename = self.id + ".png",
-                        foldername = data["T1"]["1"]
-                    )
-                }
+                self.image["1"] = textures.change_texture(
+                    filename = data["T1"][self.id]["1"] + ".png",
+                    foldername = level_1_foldername
+                )
+                self.image["2"] = textures.change_texture(
+                    filename = data["T1"][self.id]["2"] + ".png",
+                    foldername = level_1_foldername
+                )
+
+            #------------------------------------------------------------------------#
+            #---------------------------------< T2 >---------------------------------#
+            #------------------------------------------------------------------------#
             elif id[0] == "T2":
-                self.image = {
-                    "1": textures.change_texture(
-                        filename = self.id + ".png",
-                        foldername = data["T2"]["1"]
-                    )
-                }
+                self.image["1"] = textures.change_texture(
+                    filename = data["T2"][self.id]["1"] + ".png",
+                    foldername = level_1_foldername
+                )
+                self.image["2"] = textures.change_texture(
+                    filename = data["T2"][self.id]["2"] + ".png",
+                    foldername = level_1_foldername
+                )
+            
+            #------------------------------------------------------------------------#
+            #---------------------------------< T3 >---------------------------------#
+            #------------------------------------------------------------------------#
             elif id[0] == "T3":
-                self.image = {
-                    "1": textures.change_texture(
-                        filename = self.id + ".png",
-                        foldername = data["T3"]["1"]
-                    )
-                }
+                self.image["1"] = textures.change_texture(
+                    filename = data["T3"][self.id]["1"] + ".png",
+                    foldername = level_1_foldername
+                )
+                self.image["2"] = textures.change_texture(
+                    filename = data["T3"][self.id]["2"] + ".png",
+                    foldername = level_1_foldername
+                )
+
+            #------------------------------------------------------------------------#
+            #---------------------------------< T4 >---------------------------------#
+            #------------------------------------------------------------------------#
             elif id[0] == "T4":
-                self.image = {
-                    "1": textures.change_texture(
-                        filename = self.id + ".png",
-                        foldername = data["T4"]["1"]
-                    )
-                }
+                self.image["1"] = textures.change_texture(
+                    filename = data["T4"][self.id]["1"] + ".png",
+                    foldername = level_1_foldername
+                )
+                self.image["2"] = textures.change_texture(
+                    filename = data["T4"][self.id]["2"] + ".png",
+                    foldername = level_1_foldername
+                )
+            
+
+        #?----------------------------------------------------------------------?#
+        #?--------------------------------< O2 >--------------------------------?#
+        #?----------------------------------------------------------------------?#
         elif o == 2:
+
+            #------------------------------------------------------------------------#
+            #---------------------------------< T5 >---------------------------------#
+            #------------------------------------------------------------------------#
             if id[0] == "T5":
-                self.image = {
-                    "1": textures.change_texture(
-                        filename = self.id + ".png",
-                        foldername = data["T5"]["1"]
-                    )
-                }
+                self.image["1"] = textures.change_texture(
+                    filename = data["T5"][self.id]["1"] + ".png",
+                    foldername = level_1_foldername
+                )
+                self.image["2"] = textures.change_texture(
+                    filename = data["T5"][self.id]["2"] + ".png",
+                    foldername = level_1_foldername
+                )
+            
+            #------------------------------------------------------------------------#
+            #---------------------------------< T6 >---------------------------------#
+            #------------------------------------------------------------------------#
             elif id[0] == "T6":
-                self.image = {
-                    "1": textures.change_texture(
-                        filename = self.id + ".png",
-                        foldername = data["T6"]["1"]
-                    )
-                }
+                self.image["1"] = textures.change_texture(
+                    filename = data["T6"][self.id]["1"] + ".png",
+                    foldername = level_1_foldername
+                )
+                self.image["2"] = textures.change_texture(
+                    filename = data["T6"][self.id]["2"] + ".png",
+                    foldername = level_1_foldername
+                )
+            
+            #------------------------------------------------------------------------#
+            #---------------------------------< T7 >---------------------------------#
+            #------------------------------------------------------------------------#
             elif id[0] == "T7":
-                self.image = {
-                    "1": textures.change_texture(
-                        filename = self.id + ".png",
-                        foldername = data["T7"]["1"]
-                    )
-                }
+                self.image["1"] = textures.change_texture(
+                    filename = data["T7"][self.id]["1"] + ".png",
+                    foldername = level_1_foldername
+                )
+                self.image["2"] = textures.change_texture(
+                    filename = data["T7"][self.id]["2"] + ".png",
+                    foldername = level_1_foldername
+                )
+            
+            #------------------------------------------------------------------------#
+            #---------------------------------< T8 >---------------------------------#
+            #------------------------------------------------------------------------#
             elif id[0] == "T8":
-                self.image = {
-                    "1": textures.change_texture(
-                        filename = self.id + ".png",
-                        foldername = data["T8"]["1"]
-                    )
-                }
-        elif o == 3:
-            if id[0] == "T9":
-                self.image = {
-                    "1": textures.change_texture(
-                        filename = self.id + ".png",
-                        foldername = data["T9"]["1"]
-                    )
-                }
-            elif id[0] == "T10":
-                self.image = {
-                    "1": textures.change_texture(
-                        filename = self.id + ".png",
-                        foldername = data["T10"]["1"]
-                    )
-                }
-            elif id[0] == "T11":
-                self.image = {
-                    "1": textures.change_texture(
-                        filename = self.id + ".png",
-                        foldername = data["T11"]["1"]
-                    )
-                }
-            elif id[0] == "T12":
-                self.image = {
-                    "1": textures.change_texture(
-                        filename = self.id + ".png",
-                        foldername = data["T12"]["1"]
-                    )
-                }
-        elif o == 4:
-            if id[0] == "T13":
-                self.image = {
-                    "1": textures.change_texture(
-                        filename = self.id + ".png",
-                        foldername = data["T13"]["1"]
-                    )
-                }
-            elif id[0] == "T14":
-                self.image = {
-                    "1": textures.change_texture(
-                        filename = self.id + ".png",
-                        foldername = data["T14"]["1"]
-                    )
-                }
-            elif id[0] == "T15":
-                self.image = {
-                    "1": textures.change_texture(
-                        filename = self.id + ".png",
-                        foldername = data["T15"]["1"]
-                    )
-                }
-            elif id[0] == "T16":
-                self.image = {
-                    "1": textures.change_texture(
-                        filename = self.id + ".png",
-                        foldername = data["T16"]["1"]
-                    )
-                }
+                self.image["1"] = textures.change_texture(
+                    filename = data["T8"][self.id]["1"] + ".png",
+                    foldername = level_1_foldername
+                )
+                self.image["2"] = textures.change_texture(
+                    filename = data["T8"][self.id]["2"] + ".png",
+                    foldername = level_1_foldername
+                )
         
+
+        #?----------------------------------------------------------------------?#
+        #?--------------------------------< O3 >--------------------------------?#
+        #?----------------------------------------------------------------------?#
+        elif o == 3:
+
+            #------------------------------------------------------------------------#
+            #---------------------------------< T9 >---------------------------------#
+            #------------------------------------------------------------------------#
+            if id[0] == "T9":
+                self.image["1"] = textures.change_texture(
+                    filename = data["T9"][self.id]["1"] + ".png",
+                    foldername = level_1_foldername
+                )
+                self.image["2"] = textures.change_texture(
+                    filename = data["T9"][self.id]["2"] + ".png",
+                    foldername = level_1_foldername
+                )
+            
+            #-----------------------------------------------------------------------#
+            #--------------------------------< T10 >--------------------------------#
+            #-----------------------------------------------------------------------#
+            elif id[0] == "T10":
+                self.image["1"] = textures.change_texture(
+                    filename = data["T10"][self.id]["1"] + ".png",
+                    foldername = level_1_foldername
+                )
+                self.image["2"] = textures.change_texture(
+                    filename = data["T10"][self.id]["2"] + ".png",
+                    foldername = level_1_foldername
+                )
+            
+            #-----------------------------------------------------------------------#
+            #--------------------------------< T11 >--------------------------------#
+            #-----------------------------------------------------------------------#
+            elif id[0] == "T11":
+                self.image["1"] = textures.change_texture(
+                    filename = data["T11"][self.id]["1"] + ".png",
+                    foldername = level_1_foldername
+                )
+                self.image["2"] = textures.change_texture(
+                    filename = data["T11"][self.id]["2"] + ".png",
+                    foldername = level_1_foldername
+                )
+            
+            #-----------------------------------------------------------------------#
+            #--------------------------------< T12 >--------------------------------#
+            #-----------------------------------------------------------------------#
+            elif id[0] == "T12":
+                self.image["1"] = textures.change_texture(
+                    filename = data["T12"][self.id]["1"] + ".png",
+                    foldername = level_1_foldername
+                )
+                self.image["2"] = textures.change_texture(
+                    filename = data["T12"][self.id]["2"] + ".png",
+                    foldername = level_1_foldername
+                )
+        
+
+        #?----------------------------------------------------------------------?#
+        #?--------------------------------< O4 >--------------------------------?#
+        #?----------------------------------------------------------------------?#
+        elif o == 4:
+
+            #-----------------------------------------------------------------------#
+            #--------------------------------< T13 >--------------------------------#
+            #-----------------------------------------------------------------------#
+            if id[0] == "T13":
+                self.image["1"] = textures.change_texture(
+                    filename = data["T13"][self.id]["1"] + ".png",
+                    foldername = level_1_foldername
+                )
+                self.image["2"] = textures.change_texture(
+                    filename = data["T13"][self.id]["2"] + ".png",
+                    foldername = level_1_foldername
+                )
+            
+            #-----------------------------------------------------------------------#
+            #--------------------------------< T14 >--------------------------------#
+            #-----------------------------------------------------------------------#
+            elif id[0] == "T14":
+                self.image["1"] = textures.change_texture(
+                    filename = data["T14"][self.id]["1"] + ".png",
+                    foldername = level_1_foldername
+                )
+                self.image["2"] = textures.change_texture(
+                    filename = data["T14"][self.id]["2"] + ".png",
+                    foldername = level_1_foldername
+                )
+            
+            #-----------------------------------------------------------------------#
+            #--------------------------------< T15 >--------------------------------#
+            #-----------------------------------------------------------------------#
+            elif id[0] == "T15":
+                self.image["1"] = textures.change_texture(
+                    filename = data["T15"][self.id]["1"] + ".png",
+                    foldername = level_1_foldername
+                )
+                self.image["2"] = textures.change_texture(
+                    filename = data["T15"][self.id]["2"] + ".png",
+                    foldername = level_1_foldername
+                )
+            
+            #-----------------------------------------------------------------------#
+            #--------------------------------< T16 >--------------------------------#
+            #-----------------------------------------------------------------------#
+            elif id[0] == "T16":
+                self.image["1"] = textures.change_texture(
+                    filename = data["T16"][self.id]["1"] + ".png",
+                    foldername = level_1_foldername
+                )
+                self.image["2"] = textures.change_texture(
+                    filename = data["T16"][self.id]["2"] + ".png",
+                    foldername = level_1_foldername
+                )
+        #%end%--------------------------------%end%#
         
         #create the rect
         self.rect = pygame.Rect(self.x, self.y, self.width, self.height)
