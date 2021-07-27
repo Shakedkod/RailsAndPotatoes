@@ -57,11 +57,9 @@ def levels_n_staff():
     elif gf.level == "l1":
         #%start%--------------------------------------------------------%start%#
         #load level and start it
-        sys.levels.one()
+        #gf.screen.fill(gf.RED)
 
-        gf.where = "play"
-        gf.Sounds_and_sfx_dict["main"].play(-1)
-        gf.start_music = True
+        sys.levels.one()
 
         #%end%--------------------------------------------------------%end%#
 

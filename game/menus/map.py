@@ -54,8 +54,7 @@ def map():
         
         if gf.classed_map.buttons.l_1.click():
             #update were
-            gf.where = "l1"
-
-            gf.classed_map.buttons.l_1_completed = True
-            gf.classed_map.buttons.l_2_unlocked = True
+            gf.where = "game"
+            gf.level = "l1"
+            gf.run_level = True
     #%end%-------------------------------------------------------------------%end%#

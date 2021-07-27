@@ -1,6 +1,7 @@
 #--------------------------------------------< Import >--------------------------------------------#
 import pygame, json, os, win32gui, win32con #regular staff
 from pygame.locals import * #pygame locals
+from pygame.constants import MOUSEBUTTONDOWN, QUIT
 from moviepy.editor import * #the cutsence
 
 #our functions

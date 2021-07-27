@@ -1,13 +1,26 @@
+import pygame
+from pygame.constants import MOUSEBUTTONDOWN, QUIT
 from game import globals_file as gf
 from time import sleep
 
 @staticmethod
 def one():
-    gf.run_level = True
-    while gf.run_level:
-        gf.Tiles.update(1)
-        sleep(5)
-        gf.run_level = False
+    
+
+    #?--------------------------------------------------------------------------------?#
+    #?-----------------------------------< UPDATE >-----------------------------------?#
+    #?--------------------------------------------------------------------------------?#
+    gf.screen.fill(gf.LIGHTBLUE)
+    gf.Tiles.update(1)
+    
+    if gf.run_level == False:
+
+        gf.classed_map.buttons.l_1_completed = True
+        gf.classed_map.buttons.l_2_unlocked = True
+
+        gf.where = "play"
+        gf.Sounds_and_sfx_dict["main"].play(-1)
+        gf.start_music = True
 
 @staticmethod
 def two():

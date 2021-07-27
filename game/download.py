@@ -14,10 +14,13 @@ def download(
     ):
     """this fanc install to appdata what you want(in a file that end with .zip) from the internet"""
     appdata = os.getenv('APPDATA') #get appdata
-    check_path = appdata + "\\"
-    check_path += foldername
-    if not os.path.exists(check_path):
-        os.makedirs(check_path)
+    if foldername != None:
+        check_path = appdata + "\\"
+        check_path += foldername
+        if not os.path.exists(check_path):
+            os.makedirs(check_path)
+    else:
+        check_path = appdata
     path = check_path + "\\"
     path += filename
     ############################################
@@ -42,8 +45,8 @@ def assets_check():
     if not os.path.exists(path):
         print (Fore.RED + "download assets, please wait...")
         download(
-            url = r"https://www.dropbox.com/s/xotkdyw8w78qgby/RailsAndPotatoes.assets?dl=1",
-            foldername= ".rails_and_potatoes",
+            url = r"https://www.dropbox.com/s/2bpqq10nwf3ywy1/RailsAndPotatoes.assets?dl=1",
+            foldername = None,
             filename = "RailsAndPotatoes.assets"
             )
         read_path = appdata + r"\.rails_and_potatoes\index\Assets"
@@ -64,11 +67,11 @@ def assets_check():
         print (Fore.YELLOW + "assets" + Fore.GREEN + " loaded" + Fore.RESET + "")
         sleep(2)
     
-    new_path = appdata + "\\.rails_and_potatoes\\index\\player.data"
+    new_path = appdata + "\\.rails_and_potatoes\\index\\player.os.dt"
     if not os.path.exists(new_path):
         download(
             is_zip = False,
-            url = "https://drive.google.com/uc?id=1jKNkzGChFdL1mXWR6cSizWZ32WroySfx&export=download",
+            url = "https://drive.google.com/uc?id=19B1IQQQANhlClsZkS4WnDyy4ojbExYnH&export=download",
             filename = "player.data",
             foldername = ".rails_and_potatoes\\index"
         )
