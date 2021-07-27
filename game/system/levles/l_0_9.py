@@ -1,6 +1,13 @@
+from game import globals_file as gf
+from time import sleep
+
 @staticmethod
 def one():
-    print ("one")
+    gf.run_level = True
+    while gf.run_level:
+        gf.Tiles.update(1)
+        sleep(5)
+        gf.run_level = False
 
 @staticmethod
 def two():

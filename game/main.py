@@ -1,19 +1,13 @@
 #--------------------------------------------< Import >--------------------------------------------#
 import pygame, json, os, win32gui, win32con #regular staff
 from pygame.locals import * #pygame locals
-
-os.system("cls") #*clear the console
-
-from colorama import Fore #colorama for colored text
-print (Fore.LIGHTGREEN_EX + "Loading, please wait..." + Fore.RESET + "") #printing the text of loading to the screen
+from moviepy.editor import * #the cutsence
 
 #our functions
 from . import system as sys, tiles, globals_file as gf
 from .system import settings as s
-#%start%-------------------------------------------------------------------%start%#
 
 #--------------------------------------------< Init >--------------------------------------------#
-
     #pygame
 pygame.init() #init pygame
 pygame.display.init() #init pygame display
@@ -22,6 +16,13 @@ pygame.mixer.set_num_channels(64)
 pygame.mixer.init() #init pygame mixer
 gf.Clock = pygame.time.Clock() #seting up the clock
 
+os.system("cls") #*clear the console
+
+from colorama import Fore #colorama for colored text
+print (Fore.LIGHTGREEN_EX + "Loading, please wait..." + Fore.RESET + "") #printing the text of loading to the screen
+#%start%-------------------------------------------------------------------%start%#
+
+#--------------------------------------------< Init >--------------------------------------------#
     #settings
 s.get_setings() #update settings and init them
 
@@ -40,11 +41,14 @@ pygame.display.set_icon(icon) #put the icon on the window
 
 #?-------------------------------------------< Main >-------------------------------------------?#
 def Main(): #main
-    from .menus import main_menu as menu, options as opt, map as play #import 2.0 because of settings
+    from .menus import main_menu as menu, options as opt, map as play, power_level as tp #import 2.0 because of settings
 
     gf.where = "main menu" #what panel are we on? ho right, its the <main menu>
 
     gf.click = False #Do Not Touch This Red Button -> if the player click the mouse
+
+    #appdata
+    APPDATA = os.getenv("APPDATA")
 
     #Screen Resolution
     gf.width_before = gf.screen.get_width()
@@ -59,6 +63,40 @@ def Main(): #main
     #TODO load the music of the main menu
     gf.Sounds_and_sfx_dict = sys.Music_and_SFX.load_sounds_or_sfx(gf.Sounds_and_sfx_dict, "main.mp3", "None", "none at all", s.volume)
 
+    #!-------------------------------------------------------------------------------!#
+    #!-----------------------------< Starting Cutscene >-----------------------------!#
+    #!-------------------------------------------------------------------------------!#
+    #load cutscence and start it
+    clip = VideoFileClip(APPDATA + "\\.rails_and_potatoes\\index\\Assets\\cutscenes\\open.mp4", False, True, 200000, (gf.screen_height, gf.screen_width))
+    clip.preview()
+    
+    #restart the mixer
+    pygame.mixer.pre_init(44100, -16, 2, 512)
+    pygame.mixer.set_num_channels(64)
+    pygame.mixer.init() #init pygame mixer
+
+    #restarting the window
+    gf.screen = pygame.display.set_mode((gf.screen_width, gf.screen_height), pygame.RESIZABLE)
+
+    #MUSIC FOR MAIN MENU
+    gf.Sounds_and_sfx_dict = sys.Music_and_SFX.load_sounds_or_sfx(
+        gf.Sounds_and_sfx_dict,
+        "start.mp3",
+        "None",
+        "start",
+        s.volume
+        )
+    gf.Sounds_and_sfx_dict = sys.Music_and_SFX.load_sounds_or_sfx(
+        gf.Sounds_and_sfx_dict,
+        "main.mp3",
+        "None",
+        "main",
+        s.volume
+        )
+    
+    gf.Sounds_and_sfx_dict["start"].play()
+    start_music_start_time = pygame.time.get_ticks()
+    start_music_time = 191000
 
         #%start%-------------------------------------------------------------------%start%#
     #--------------------------------------------< The Main Loop >--------------------------------------------#
@@ -71,8 +109,17 @@ def Main(): #main
         gf.half_width = gf.screen.get_width() // 2
         gf.half_height = gf.screen.get_height() // 2
 
+        #time
+        gf.current_time = pygame.time.get_ticks()
+
         #mouse position on the screen
         gf.mouse_x, gf.mouse_y = pygame.mouse.get_pos()
+
+        if not gf.start_music:
+            if gf.current_time - start_music_start_time > start_music_time:
+                gf.Sounds_and_sfx_dict["main"].play(-1)
+                gf.start_music = True
+        #--------------------------------------------------------------------#
 
         #set volume
         gf.Sounds_and_sfx_dict = sys.Music_and_SFX.set_volume(gf.Sounds_and_sfx_dict, s.volume)
@@ -93,9 +140,11 @@ def Main(): #main
                 gf.run = False #stop the game
 
         else:
-            pass #TODO Game, That is important?
+            tp.levels_n_staff()
         
-        #*-----------------events-----------------*#
+        #!--------------------------------------------------------------------------------!#
+        #!-----------------------------------< EVENTS >-----------------------------------!#
+        #!--------------------------------------------------------------------------------!#
         for event in pygame.event.get():
             if event.type == QUIT: #if you closing the window 
                 gf.run = False #stop the game
@@ -113,12 +162,11 @@ def Main(): #main
     
     if not gf.run: #quit
         #?play_time = (pygame.time.get_ticks() / (1000 * 60)) % 60
-        #?appdata = os.getenv('APPDATA') #get appdata
-        #?with open(appdata + "\\.rails_and_potatoes\\index\\player.data.json", "r") as f:
+        #?with open(APPDATA + "\\.rails_and_potatoes\\index\\player.data.json", "r") as f:
         #?    data = json.load(f)
         #?    f.close()
         #?data["play time"] += play_time
-        #?with open(appdata + "\\.rails_and_potatoes\\index\\player.data.json", "w") as f:
+        #?with open(APPDATA + "\\.rails_and_potatoes\\index\\player.data.json", "w") as f:
         #?    json.dump(data, f, indent=2)
         #?    f.close()
         #?s.save_setings() #save the settings

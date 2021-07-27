@@ -1,6 +1,8 @@
 {
     "cSpell.words": [
         "blit",
+        "cutscence",
+        "getenv",
         "pygame",
         "tqdm",
         "version"

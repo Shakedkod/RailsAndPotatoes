@@ -29,7 +29,6 @@ def map():
     )) #blit the text onto the screen
     
     gf.classed_map.update()
-    #!gf.Tiles.update(1)
     
     #-------------------------------------------------------------------------------------------#
     #                                          buttons                                          #
@@ -50,12 +49,13 @@ def map():
         gf.where = "main menu"
     else:
         if gf.classed_map.buttons.c_0.click():
-            print ("0")
-            gf.classed_map.buttons.c_0_completed = True
-            gf.classed_map.buttons.l_1_unlocked = True
+            gf.where = "game"
+            gf.level = "c0"
         
         if gf.classed_map.buttons.l_1.click():
-            s_sys.levels.one()
+            #update were
+            gf.where = "l1"
+
             gf.classed_map.buttons.l_1_completed = True
             gf.classed_map.buttons.l_2_unlocked = True
     #%end%-------------------------------------------------------------------%end%#

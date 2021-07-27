@@ -27,10 +27,6 @@ def twenty_six():
     print ("six")
 
 @staticmethod
-def twenty_seven():
-    print ("seven")
-
-@staticmethod
 def twenty_eight():
     print ("eight")
 

@@ -12,7 +12,7 @@ pygame.mixer.init() #init pygame mixer
 #%start%-----------------------------------------------------------------------%start%#
 
 #?----------------------------------------------------------------------------------------?#
-#?---------------------------------------#Cutscene#---------------------------------------?#
+#?--------------------------------------< Cutscene >--------------------------------------?#
 #?----------------------------------------------------------------------------------------?#
 class Cutscene:
 
@@ -117,7 +117,7 @@ class Cutscene:
     #%end%-----------------------------------------------------------------------%end%#
 
 #?-------------------------------------------------------------------------------------------------?#
-#?---------------------------------------#Encode and Decode#---------------------------------------?#
+#?--------------------------------------< Encode and Decode >--------------------------------------?#
 #?-------------------------------------------------------------------------------------------------?#
 class Encode_and_Decode:
 
@@ -147,7 +147,7 @@ class Encode_and_Decode:
     #%end%-----------------------------------------------------------------------%end%#
 
 #?---------------------------------------------------------------------------------------------?#
-#?---------------------------------------#Music_and_SFX#---------------------------------------?#
+#?--------------------------------------< Music_and_SFX >--------------------------------------?#
 #?---------------------------------------------------------------------------------------------?#
 class Music_and_SFX:
 
@@ -182,7 +182,7 @@ class Music_and_SFX:
         -------------------------------------------------------------------------------------------------------
         sound_dict = the list of sounds in the game - type === dict.
         file_name = the sound file name with .mp3/.ogg/... in the end - type === string.
-        folder_name = the folder name of the sound file, start from ...\Assets\sounds_and_sfx\(the folder here), if 'None', the folder will be just sounds_and_sfx - type === string.
+        folder_name = the folder name of the sound file, start from ...\Assets\sounds_and_sfx\(the folder here), if "None", the folder will be just sounds_and_sfx - type === string.
         key = the key in the dict - type === string.
         voulume = the voulume of the sounds in the game - type === float.
 
@@ -218,7 +218,7 @@ class Music_and_SFX:
     #%end%-----------------------------------------------------------------------%end%#
 
 #?--------------------------------------------------------------------------------------?#
-#?---------------------------------------#Resize#---------------------------------------?#
+#?--------------------------------------< Resize >--------------------------------------?#
 #?--------------------------------------------------------------------------------------?#
 class Resize:
 
@@ -291,7 +291,7 @@ class Resize:
     #%end%-----------------------------------------------------------------------%end%#
 
 #?--------------------------------------------------------------------------------------?#
-#?---------------------------------------#Levels#---------------------------------------?#
+#?--------------------------------------< Levels >--------------------------------------?#
 #?--------------------------------------------------------------------------------------?#
 class levels:
 
@@ -299,7 +299,7 @@ class levels:
 
     from .levles.l_10_19 import ten, eleven, twelve, thirteen, fourteen, fifteen, sixteen, seventeen, eighteen, nineteen
 
-    from .levles.l_20_29 import twenty, twenty_one, twenty_two, twenty_three, twenty_four, twenty_five, twenty_six, twenty_seven, twenty_eight, twenty_nine
+    from .levles.l_20_29 import twenty, twenty_one, twenty_two, twenty_three, twenty_four, twenty_five, twenty_six, twenty_eight, twenty_nine
 
     from .levles.l_30_39 import thirty, thirty_one, thirty_two, thirty_three, thirty_four, thirty_five, thirty_six, thirty_seven, thirty_eight, thirty_nine
 
