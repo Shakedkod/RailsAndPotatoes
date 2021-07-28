@@ -14,13 +14,10 @@ def download(
     ):
     """this fanc install to appdata what you want(in a file that end with .zip) from the internet"""
     appdata = os.getenv('APPDATA') #get appdata
-    if foldername != None:
-        check_path = appdata + "\\"
-        check_path += foldername
-        if not os.path.exists(check_path):
-            os.makedirs(check_path)
-    else:
-        check_path = appdata
+    check_path = appdata + "\\"
+    check_path += foldername
+    if not os.path.exists(check_path):
+        os.makedirs(check_path)
     path = check_path + "\\"
     path += filename
     ############################################
@@ -28,14 +25,9 @@ def download(
     if is_zip:
         with ZipFile(path, 'r') as zipObj:
             zipObj.extractall(path = check_path)
+
         os.remove(path)
 #%end%-------------------------------------------------------------------%end%#
-
-
-
-
-
-
 
 
 def assets_check():
@@ -45,9 +37,10 @@ def assets_check():
     if not os.path.exists(path):
         print (Fore.RED + "download assets, please wait...")
         download(
-            url = r"https://www.dropbox.com/s/2bpqq10nwf3ywy1/RailsAndPotatoes.assets?dl=1",
-            foldername = None,
-            filename = "RailsAndPotatoes.assets"
+            is_zip = True,
+            url = r"https://www.dropbox.com/s/msdxyh31gualoqn/RailsAndPotatoes.assets?dl=1",
+            foldername= ".rails_and_potatoes",
+            filename = "rap.zip"
             )
         read_path = appdata + r"\.rails_and_potatoes\index\Assets"
         os.chmod(read_path, S_IXUSR)
