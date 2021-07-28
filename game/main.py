@@ -1,5 +1,11 @@
 #--------------------------------------------< Import >--------------------------------------------#
 import pygame, json, os, win32gui, win32con #regular staff
+
+os.system("cls") #*clear the console
+
+from colorama import Fore #colorama for colored text
+print (Fore.LIGHTGREEN_EX + "Loading, please wait..." + Fore.RESET + "") #printing the text of loading to the screen
+
 from pygame.locals import * #pygame locals
 from pygame.constants import MOUSEBUTTONDOWN, QUIT
 from moviepy.editor import * #the cutsence
@@ -9,23 +15,18 @@ from . import system as sys, tiles, globals_file as gf
 from .system import settings as s
 
 #--------------------------------------------< Init >--------------------------------------------#
-    #pygame
 pygame.init() #init pygame
-pygame.display.init() #init pygame display
+
 pygame.mixer.pre_init(44100, -16, 2, 512)
 pygame.mixer.set_num_channels(64)
+
 pygame.mixer.init() #init pygame mixer
+pygame.display.init() #init pygame display
+
 gf.Clock = pygame.time.Clock() #seting up the clock
 
-os.system("cls") #*clear the console
-
-from colorama import Fore #colorama for colored text
-print (Fore.LIGHTGREEN_EX + "Loading, please wait..." + Fore.RESET + "") #printing the text of loading to the screen
+s.init() #update settings and init them
 #%start%-------------------------------------------------------------------%start%#
-
-#--------------------------------------------< Init >--------------------------------------------#
-    #settings
-s.get_setings() #update settings and init them
 
 #------------------------------------< Closing the Console >------------------------------------#
 #TODO add in the final release!
@@ -152,6 +153,8 @@ def Main(): #main
             elif event.type == MOUSEBUTTONDOWN:
                 if event.button == 1:
                     gf.click = True
+                elif event.button == 3:
+                    gf.right_click = True
                 else:
                     gf.click = False
 
@@ -163,13 +166,17 @@ def Main(): #main
     
     if not gf.run: #quit
         #?play_time = (pygame.time.get_ticks() / (1000 * 60)) % 60
-        #?with open(APPDATA + "\\.rails_and_potatoes\\index\\player.data.json", "r") as f:
+        #?with open(APPDATA + "\\.rails_and_potatoes\\index\\player.os.dt", "r") as f:
         #?    data = json.load(f)
         #?    f.close()
+        #?
         #?data["play time"] += play_time
         #?with open(APPDATA + "\\.rails_and_potatoes\\index\\player.data.json", "w") as f:
         #?    json.dump(data, f, indent=2)
         #?    f.close()
+
+        if gf.classed_map != "None":
+            gf.classed_map.save_map()
         #?s.save_setings() #save the settings
         
         pygame.quit()

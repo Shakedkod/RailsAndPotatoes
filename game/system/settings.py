@@ -28,7 +28,7 @@ class Player_Maker(object):
             else:
                 self.completed_levels.append(item["id"])
 
-def get_setings():
+def init():
     with open("game/system/settings.os.dt", "r") as seting:
         data = json.load(seting)
         seting.close()

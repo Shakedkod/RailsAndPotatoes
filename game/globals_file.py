@@ -11,6 +11,7 @@ another_one = False
 mouse_x = 0
 mouse_y = 0
 click = False
+right_click = False
 player = None
 level = 0
 #@--------------------------------------------------------------@#
@@ -34,7 +35,7 @@ start_music = False
 bg_x = 0
 loaded = False
 Tiles = None
-classed_map = None
+classed_map = "None"
 what_option = None
 #*-------------------------------------------------------------*#
 #*                           tkinter                           *#
