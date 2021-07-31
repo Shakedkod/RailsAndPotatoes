@@ -164,7 +164,7 @@ def Main(): #main
         #%end%-------------------------------------------------------------------%end%#
 
     
-    if not gf.run: #quit
+    else: #quit
         #?play_time = (pygame.time.get_ticks() / (1000 * 60)) % 60
         #?with open(APPDATA + "\\.rails_and_potatoes\\index\\player.os.dt", "r") as f:
         #?    data = json.load(f)

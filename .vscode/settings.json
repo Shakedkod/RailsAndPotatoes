@@ -5,6 +5,7 @@
         "cutscence",
         "getenv",
         "pygame",
+        "shakedkod",
         "tqdm",
         "version"
     ],

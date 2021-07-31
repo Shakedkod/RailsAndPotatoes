@@ -31,11 +31,8 @@ class battons_for_later:
 
         #----#x = 0#----#
         self.c_0 = None
-        
-        if (data[0]["data"] == 1) or (data[0]["data"] == 0):
-            self.c_0_completed = False
-        else:
-            self.c_0_completed = True
+        self.c_0_completed = False if (data[0]["data"] == 1) or (data[0]["data"] == 0) else True
+
 
 
         self.l_1 = None
@@ -1768,11 +1765,9 @@ class Map:
         
         data = dt["levels&cutscenes"]
 
+
         #cutscene -> 0#
-        if self.buttons.c_0_completed:
-            data[0]["data"] = 2
-        else:
-            data[0]["data"] = 1
+        data[0]["data"] = 2 if self.buttons.c_0_completed else 1
 
 
         #level -> 1#
@@ -2265,7 +2260,7 @@ class Map:
         dt["levels&cutscenes"] = data
 
 
-        with open(APPDATA + "\\.rails_and_potatoes\\index\\player.os.dt", "r") as oort_studios_data_file:
+        with open(APPDATA + "\\.rails_and_potatoes\\index\\player.os.dt", "w") as oort_studios_data_file:
             json.dump(dt, oort_studios_data_file, indent=2)
             oort_studios_data_file.close()
 

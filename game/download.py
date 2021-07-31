@@ -34,6 +34,7 @@ def assets_check():
     appdata = os.getenv('APPDATA') #get appdata
     path = appdata + r"\.rails_and_potatoes\by_shakedkod.txt"
     check_path = appdata + "\\.rails_and_potatoes\\"
+
     if not os.path.exists(path):
         print (Fore.RED + "download assets, please wait...")
         download(
@@ -43,7 +44,7 @@ def assets_check():
             filename = "rap.zip"
             )
         read_path = appdata + r"\.rails_and_potatoes\index\Assets"
-        os.chmod(read_path, S_IXUSR)
+        #os.chmod(read_path, S_IXUSR)
 
         #remove tmp files
         #the logs folder
@@ -65,7 +66,7 @@ def assets_check():
         download(
             is_zip = False,
             url = "https://drive.google.com/uc?id=19B1IQQQANhlClsZkS4WnDyy4ojbExYnH&export=download",
-            filename = "player.data",
+            filename = "player.os.dt",
             foldername = ".rails_and_potatoes\\index"
         )
 #%end%-------------------------------------------------------------------%end%#
