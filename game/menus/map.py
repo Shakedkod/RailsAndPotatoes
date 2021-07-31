@@ -7,8 +7,11 @@ pygame.init() #init pygame
 pygame.font.init() #init
 #%start%-------------------------------------------------------------------%start%#
 
-
-gf.classed_map = ms.Map(filename = "map_bg.png", foldername = "bg")
+classed_map_kwargs = {
+    "filename": "map_bg.png",
+    "foldername": "bg"
+    }
+gf.classed_map = ms.Map(**classed_map_kwargs)
 #music and sounds
 # TODO
 #*-----------------------#functions#--------------------------*#
@@ -33,13 +36,16 @@ def map():
     #-------------------------------------------------------------------------------------------#
     #                                          buttons                                          #
     #-------------------------------------------------------------------------------------------#
+    #arguments:
+    back_button_kwargs = {
+        "x": gf.screen_width // 100,
+        "y": gf.screen_height // 100,
+        "width": 168.75,
+        "height": 75
+    }
+
     #create
-    back = en.Button(
-        gf.screen_width // 100,
-        gf.screen_height // 100,
-        168.75,
-        75
-        )
+    back = en.Button(**back_button_kwargs)
 
     #update
     back.update()

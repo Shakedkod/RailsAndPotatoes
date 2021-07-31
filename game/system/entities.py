@@ -9,7 +9,11 @@ from . import settings, textures
 #%start%--------< The Start >--------%start%#
 #--------------------------------------------< Buttons >--------------------------------------------#
 def B_init(
-    self, x, y, width, height,
+    self,
+    x = 0,
+    y = 0,
+    width = 1,
+    height = 1,
     texture_foldername = "buttons",
     texture_filename = "play.png",
     hover_texture_filename = "play_h.png",
@@ -127,7 +131,13 @@ Button = type("Button", (), {
 })
 
 #----------------------------------< Clickable Invisible Object >----------------------------------#
-def CIO_init(self, x, y, width, height):
+def CIO_init(
+    self,
+    x = 0,
+    y = 0,
+    width = 1,
+    height = 1
+    ):
     self.x = x
     self.y = y
     self.starting_width = width
@@ -173,7 +183,11 @@ Clickable_Invisible_object = type("Clickable_Invisible_object", (), {
 
 #------------------------------------< Clickable Text Object >------------------------------------#
 def CTO_init(
-    self, x, y, width, height,
+    self,
+    x = 0,
+    y = 0,
+    width = 1,
+    height = 1,
     text = "this is the text",
     text_color = (255, 255, 255),
     font_size = gf.screen_width // 50,
@@ -247,67 +261,80 @@ Clickable_Text_object = type("Clickable_Text_object", (), {
 })
 
 #--------------------------------------------< Just An Image >--------------------------------------------#
-def Image_init(self, x, y, width, height, image_folder_name, image_file_name):
-    #position
-    self.x = x
-    self.y = y
+class Just_an_image:
+    def __init__(
+        self,
+        x = 0,
+        y = 0,
+        width = 1,
+        height = 1,
+        image_folder_name = "folder name",
+        image_file_name = "file name"
+        ):
+        """this entity is just an image, and no more
     
-    #starting scale
-    self.starting_width = width
-    self.starting_height = height
+        Args:
+            x (int, optional): the x coordinate of the entity. Defaults to 0.
+            y (int, optional): the y coordinate of the entity. Defaults to 0.
+            width (int, optional): the width of the entity. Defaults to 1.
+            height (int, optional): the height of the entity. Defaults to 1.
+            image_folder_name (str, optional): the image folder name. Defaults to "folder name".
+            image_file_name (str, optional): the image file name with .png/jpeg/gif/... at the end. Defaults to "file name".
+        """ 
+        
+        #position
+        self.x = x
+        self.y = y
 
-    #scale
-    self.width = sys.Resize.resize_x(
-        settings.starting_screen_width,
-        self.starting_width,
-        gf.screen_width
-    )
-    self.height = sys.Resize.resize_y(
-        settings.starting_screen_height,
-        self.starting_height,
-        gf.screen_height
-    )
+        #starting scale
+        self.starting_width = width
+        self.starting_height = height
 
-    #image loading
-    self.unscaled_image = pygame.image.load(
-        textures.change_texture(
-            foldername = image_folder_name, filename = image_file_name
-            )
-    )
+        #scale
+        self.width = sys.Resize.resize_x(
+            settings.starting_screen_width,
+            self.starting_width,
+            gf.screen_width
+        )
+        self.height = sys.Resize.resize_y(
+            settings.starting_screen_height,
+            self.starting_height,
+            gf.screen_height
+        )
 
-def Image_update(self, x, y):
-    #position
-    self.x = x
-    self.y = y
-    
-    #scale
-    self.width = sys.Resize.resize_x(
-        settings.starting_screen_width,
-        self.starting_width,
-        gf.screen_width
-    )
-    self.height = sys.Resize.resize_y(
-        settings.starting_screen_height,
-        self.starting_height,
-        gf.screen_height
-    )
+        #image loading
+        self.unscaled_image = pygame.image.load(
+            textures.change_texture(
+                foldername = image_folder_name, filename = image_file_name
+                )
+        )
 
-    #rect
-    self.rect = pygame.Rect(self.x, self.y, self.width, self.height)
+    def update(self, x, y):
+        #position
+        self.x = x
+        self.y = y
 
-    #scale image
-    self.image = pygame.transform.scale(
-        self.unscaled_image,
-        (self.rect.width, self.rect.height)
-    )
+        #scale
+        self.width = sys.Resize.resize_x(
+            settings.starting_screen_width,
+            self.starting_width,
+            gf.screen_width
+        )
+        self.height = sys.Resize.resize_y(
+            settings.starting_screen_height,
+            self.starting_height,
+            gf.screen_height
+        )
 
-    #show image
-    gf.screen.blit(self.image, (self.rect.x, self.rect.y))
+        #rect
+        self.rect = pygame.Rect(self.x, self.y, self.width, self.height)
 
-#!=-------------------------------< Class Creation >-------------------------------!=#
-Just_an_image = type("Just_an_image", (), {
-    "__init__": Image_init,
-    "update": Image_update
-})
+        #scale image
+        self.image = pygame.transform.scale(
+            self.unscaled_image,
+            (self.rect.width, self.rect.height)
+        )
 
+        #show image
+        gf.screen.blit(self.image, (self.rect.x, self.rect.y))
 #%end%-----------< The End >-----------%end%#
