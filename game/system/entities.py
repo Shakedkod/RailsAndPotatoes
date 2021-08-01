@@ -14,7 +14,7 @@ def B_init(
     y = 0,
     width = 1,
     height = 1,
-    texture_foldername = "buttons",
+    texture_foldername = "buttons\\main menu",
     texture_filename = "play.png",
     hover_texture_filename = "play_h.png",
     completed_texture_filename = None,

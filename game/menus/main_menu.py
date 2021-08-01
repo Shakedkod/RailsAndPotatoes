@@ -36,27 +36,38 @@ def main_menu():
     #-------------------------------------------------------------------------------------------#
     #                                          buttons                                          #
     #-------------------------------------------------------------------------------------------#
-    #create
-    play = en.Button(
-        gf.screen_width // 1.5,
-        gf.screen_height // 3,
-        225,
-        100
-        )
-
-    options = en.Button(
-        gf.screen_width // 1.5,
-        gf.screen_height // 1.8,
-        225,
-        100
-        )
+    #arguments:
+    play_button_kwargs = {
+        "x": gf.screen_width // 1.5,
+        "y": gf.screen_height // 3,
+        "width": 225,
+        "height": 100
+    }
+    options_button_kwargs = {
+        "x": gf.screen_width // 1.5,
+        "y": gf.screen_height // 1.8,
+        "width": 225,
+        "height": 100,
+        "texture_foldername": "buttons\\main menu",
+        "texture_filename": "options.png",
+        "hover_texture_filename": "options_h.png"
+    }
+    exit_button_kwargs = {
+        "x": gf.screen_width // 1.5,
+        "y": gf.screen_height // 1.3,
+        "width": 225,
+        "height": 100,
+        "texture_foldername": "buttons\\main menu",
+        "texture_filename": "exit.png",
+        "hover_texture_filename": "exit_h.png"
+    }
     
-    exit = en.Button(
-        gf.screen_width // 1.5,
-        gf.screen_height // 1.3,
-        225,
-        100
-        )
+    #create
+    play = en.Button(**play_button_kwargs)
+
+    options = en.Button(**options_button_kwargs)
+    
+    exit = en.Button(**exit_button_kwargs)
 
     #update
     play.update()

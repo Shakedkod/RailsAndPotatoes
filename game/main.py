@@ -11,8 +11,8 @@ from pygame.constants import MOUSEBUTTONDOWN, QUIT
 from moviepy.editor import * #the cutsence
 
 #our functions
-from . import system as sys, tiles, globals_file as gf
-from .system import settings as s
+from . import system as sys, globals_file as gf
+from .system import settings as s, tiles
 
 #--------------------------------------------< Init >--------------------------------------------#
 pygame.init() #init pygame
@@ -177,7 +177,7 @@ def Main(): #main
 
         if gf.classed_map != "None":
             gf.classed_map.save_map()
-        #?s.save_setings() #save the settings
+        #?s.save_settings() #save the settings
         
         pygame.quit()
     #%end%-------------------------------------------------------------------%end%#

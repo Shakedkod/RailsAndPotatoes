@@ -1,7 +1,7 @@
 import pygame, json, os
 from pygame.locals import *
-from . import system as sys, globals_file as gf
-from .system import settings, textures
+from game import system as sys, globals_file as gf
+from . import settings, textures
 #%start%-------------------------------------------------------------------%start%#
 
 def tiles_xy(self):

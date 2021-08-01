@@ -1,8 +1,8 @@
 import json, os
 from game import globals_file as gf
 
-global game_name, by, virson, lang, teamNames, assets_folder_name, description, other, game_start, starting_screen_width, starting_screen_height, volume
-game_name, by, virson, lang, teamNames, assets_folder_name, description, other, game_start, starting_screen_width, starting_screen_height, volume = "name", "name", "name", "name", ["list"], "name", "name", "name", {"hi": "h"}, 900, 500, 1.0
+global game_name, by, version, lang, teamNames, assets_folder_name, description, other, game_start, starting_screen_width, starting_screen_height, volume
+game_name, by, version, lang, teamNames, assets_folder_name, description, other, game_start, starting_screen_width, starting_screen_height, volume = "name", "name", "name", "name", ["list"], "name", "name", "name", {"hi": "h"}, 900, 500, 1.0
 
 class Game_Start(object):
     def __init__(self, data = None, open_data = None):
@@ -37,13 +37,13 @@ def init():
         open_data = json.load(seting)
         seting.close()
     
-    global game_name, by, virson, lang, teamNames, assets_folder_name, description, other, game_start, starting_screen_width, starting_screen_height, volume
+    global game_name, by, version, lang, teamNames, assets_folder_name, description, other, game_start, starting_screen_width, starting_screen_height, volume
 
     game_name = data["name"]
     by = data["made by"]
     teamNames = data["teamNames"]
 
-    virson = data["virson"]
+    version = data["version"]
     lang = data["lang"]
     assets_folder_name = data["assets folder name"]
     description = data["description"]
@@ -61,7 +61,7 @@ def init():
     gf.player = Player_Maker()
 
 
-def save_setings():
+def save_settings():
     global game_start, volume
     with open("game/system/settings.json", 'r') as seting:
         data = json.load(seting)

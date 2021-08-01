@@ -185,7 +185,10 @@ def options():
         gf.screen_width // 100,
         gf.screen_height // 100,
         168.75,
-        75
+        75,
+        texture_foldername = "buttons\\other",
+        texture_filename = "back.png",
+        hover_texture_filename = "back h.png"
         )
 
     #update

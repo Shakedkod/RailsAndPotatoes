@@ -41,7 +41,10 @@ def map():
         "x": gf.screen_width // 100,
         "y": gf.screen_height // 100,
         "width": 168.75,
-        "height": 75
+        "height": 75,
+        "texture_foldername": "buttons\\other",
+        "texture_filename": "back.png",
+        "hover_texture_filename": "back h.png"
     }
 
     #create
