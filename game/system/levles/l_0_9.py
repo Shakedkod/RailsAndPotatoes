@@ -17,6 +17,10 @@ def one():
     #!--------------------------------------------------------------------------------!#
     gf.screen.fill(gf.LIGHTBLUE)
     gf.Tiles.update(1)
+
+    
+
+
     
     if gf.run_level == False:
 

@@ -8,7 +8,7 @@ print (Fore.LIGHTGREEN_EX + "Loading, please wait..." + Fore.RESET + "") #printi
 
 from pygame.locals import * #pygame locals
 from pygame.constants import MOUSEBUTTONDOWN, QUIT
-from moviepy.editor import * #the cutsence
+from moviepy.editor import * #the cutscence
 
 #our functions
 from . import system as sys, globals_file as gf
