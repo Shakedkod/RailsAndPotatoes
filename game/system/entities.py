@@ -8,127 +8,134 @@ from . import settings, textures
 
 #%start%--------< The Start >--------%start%#
 #--------------------------------------------< Buttons >--------------------------------------------#
-def B_init(
-    self,
-    x = 0,
-    y = 0,
-    width = 1,
-    height = 1,
-    texture_foldername = "buttons\\main menu",
-    texture_filename = "play.png",
-    hover_texture_filename = "play_h.png",
-    completed_texture_filename = None,
-    locked_texture_filename = None,
-    unlocked = True,
-    completed = False
-    ):
-    """create the button"""
+class Button:
+    def __init__(
+        self,
+        x = 0,
+        y = 0,
+        width = 1,
+        height = 1,
+        texture_foldername = "buttons\\main menu",
+        texture_filename = "play.png",
+        hover_texture_filename = "play_h.png",
+        completed_texture_filename = None,
+        locked_texture_filename = None,
+        unlocked = True,
+        completed = False
+        ):
+        """this class is button that you can click it, it can be locked or completed for difrent texturs and click option(can or cant click)
 
-    self.x = x #x pos of the button
-    self.y = y #y pos of the button
-
-    self.starting_width = width #the given width
-    self.starting_height = height #the given height
-
-    self.hover = False #is the mouse hover the button
-    self.unlocked = unlocked
-    self.completed = completed
-
-    self.width = sys.Resize.resize_x(
-        settings.starting_screen_width,
-        width,
-        gf.screen_width
-        )
-    self.height = sys.Resize.resize_y(
-        settings.starting_screen_height,
-        height,
-        gf.screen_height
-        )
+        Args:
+            x (int, optional): the x position of the button. Defaults to 0.
+            y (int, optional): the y position of the button. Defaults to 0.
+            width (int, optional): the width of the button. Defaults to 1.
+            height (int, optional): the height of the button. Defaults to 1.
+            texture_foldername (str, optional): the name of the folder with the files of the texturs. Defaults to "buttons\main menu".
+            texture_filename (str, optional): the name of the file of the button texture(with .png/jpeg/... in the end). Defaults to "play.png".
+            hover_texture_filename (str, optional): the name of the file of the button hover texture(with .png/jpeg/... in the end). Defaults to "play_h.png".
+            completed_texture_filename (str, optional): the name of the file of the button completed texture(with .png/jpeg/... in the end). Defaults to None.
+            completed_texture_filename (str or None, optional): the name of the file of the button completed texture(with .png/jpeg/... in the end). Defaults to None.
+            locked_texture_filename (str or None, optional): the name of the file of the button locked texture(with .png/jpeg/... in the end). Defaults to None.
+            unlocked (bool, optional): is the button locked(Bollian(True or False)). Defaults to True.
+            completed (bool, optional): is the staff that happen when you clicked the button is completed. Defaults to False.
+        """
     
-    self.rect = pygame.Rect( #create a rect for pygame hitbox
-        x,
-        y,
-        self.width,
-        self.height
-        )
+        self.x = x #x pos of the button
+        self.y = y #y pos of the button
     
-    #Textures
-    self.texture = pygame.transform.scale( #change the scale of the given image
-        pygame.image.load(
-            textures.change_texture(
-                foldername = texture_foldername, filename = texture_filename
-                )
-            ),
-        (self.rect.width, self.rect.height)
-        )
-    self.hover_texture = pygame.transform.scale( #change the scale of the given hover image
-        pygame.image.load(
-            textures.change_texture(
-                foldername = texture_foldername, filename = hover_texture_filename
-                )
-            ),
-        (self.rect.width, self.rect.height)
-        )
-
-    if locked_texture_filename != None:
-        self.locked_texture = pygame.transform.scale( #change the scale of the given image
+        self.starting_width = width #the given width
+        self.starting_height = height #the given height
+    
+        self.hover = False #is the mouse hover the button
+        self.unlocked = unlocked
+        self.completed = completed
+    
+        self.width = sys.Resize.resize_x(
+            settings.starting_screen_width,
+            width,
+            gf.screen_width
+            )
+        self.height = sys.Resize.resize_y(
+            settings.starting_screen_height,
+            height,
+            gf.screen_height
+            )
+        
+        self.rect = pygame.Rect( #create a rect for pygame hitbox
+            x,
+            y,
+            self.width,
+            self.height
+            )
+        
+        #Textures
+        self.texture = pygame.transform.scale( #change the scale of the given image
             pygame.image.load(
                 textures.change_texture(
-                    foldername = texture_foldername, filename = locked_texture_filename
+                    foldername = texture_foldername, filename = texture_filename
+                    )
+                ),
+            (self.rect.width, self.rect.height)
+            )
+        self.hover_texture = pygame.transform.scale( #change the scale of the given hover image
+            pygame.image.load(
+                textures.change_texture(
+                    foldername = texture_foldername, filename = hover_texture_filename
                     )
                 ),
             (self.rect.width, self.rect.height)
             )
     
-    if completed_texture_filename != None:
-        self.completed_texture = pygame.transform.scale( #change the scale of the given hover image
-            pygame.image.load(
-                textures.change_texture(
-                    foldername = texture_foldername, filename = completed_texture_filename
-                    )
-                ),
-            (self.rect.width, self.rect.height)
-            )
-
-def B_update(self):
-    """update self and draw him on the screen"""
-    self.mouse_hover() #go to the func hover
-    self.draw() #go to the func draw
-
-def B_draw(self):
-    if self.unlocked == False:
-        gf.screen.blit(self.locked_texture, (self.x, self.y)) #show the locked texture
-
-    elif self.hover: #if the mouse is on the button
-        gf.screen.blit(self.hover_texture, (self.x, self.y)) #show the hover texture
-
-    elif self.completed:
-        gf.screen.blit(self.completed_texture, (self.x, self.y)) #show the completed texture
-
-    else:
-        gf.screen.blit(self.texture, (self.x, self.y)) #show the regular texture
-
-def B_mh(self):
-    if self.rect.collidepoint(gf.mouse_x, gf.mouse_y): #if the mouse is on the button
-        self.hover = True
-    else:
-        self.hover = False
-
-def B_click(self):
-    if self.hover and gf.click and self.unlocked: #if click on the button
-        gf.click = False
-        return True
-    else:
-        return False 
-
-#!=-------------------------------< Class Creation >-------------------------------!=#
-Button = type("Button", (), {
-    "__init__": B_init,
-    "update": B_update,
-    "mouse_hover": B_mh,
-    "draw": B_draw,
-    "click": B_click
-})
+        if locked_texture_filename != None:
+            self.locked_texture = pygame.transform.scale( #change the scale of the given image
+                pygame.image.load(
+                    textures.change_texture(
+                        foldername = texture_foldername, filename = locked_texture_filename
+                        )
+                    ),
+                (self.rect.width, self.rect.height)
+                )
+        
+        if completed_texture_filename != None:
+            self.completed_texture = pygame.transform.scale( #change the scale of the given hover image
+                pygame.image.load(
+                    textures.change_texture(
+                        foldername = texture_foldername, filename = completed_texture_filename
+                        )
+                    ),
+                (self.rect.width, self.rect.height)
+                )
+    
+    def update(self):
+        """update self and draw him on the screen"""
+        self.mouse_hover() #go to the func hover
+        self.draw() #go to the func draw
+    
+    def draw(self):
+        if self.unlocked == False:
+            gf.screen.blit(self.locked_texture, (self.x, self.y)) #show the locked texture
+    
+        elif self.hover: #if the mouse is on the button
+            gf.screen.blit(self.hover_texture, (self.x, self.y)) #show the hover texture
+    
+        elif self.completed:
+            gf.screen.blit(self.completed_texture, (self.x, self.y)) #show the completed texture
+    
+        else:
+            gf.screen.blit(self.texture, (self.x, self.y)) #show the regular texture
+    
+    def mouse_hover(self):
+        if self.rect.collidepoint(gf.mouse_x, gf.mouse_y): #if the mouse is on the button
+            self.hover = True
+        else:
+            self.hover = False
+    
+    def click(self):
+        if self.hover and gf.click and self.unlocked: #if click on the button
+            gf.click = False
+            return True
+        else:
+            return False
 
 #----------------------------------< Clickable Invisible Object >----------------------------------#
 def CIO_init(

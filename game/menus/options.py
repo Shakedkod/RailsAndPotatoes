@@ -20,10 +20,6 @@ keymap_image = en.Just_an_image(
     "keymap.png"
 )
 
-#music and sounds
-# TODO
-#*-----------------------#functions#--------------------------*#
-# TODO
 #*-----------------------#main#--------------------------*#
 def options():
     #-------------------------------------------------------------------------------------------#
@@ -43,9 +39,57 @@ def options():
     #-------------------------------------------------------------------------------------------#
     #                                           other                                           #
     #-------------------------------------------------------------------------------------------#
-    #*create
+    #*arguments:
+    volume_controller_down_button_kwargs = {
+        "x": gf.screen_width // 1.5,
+        "y": gf.screen_height // 1.5,
+        "width": 100,
+        "height": 100,
+        "texture_foldername": "buttons\\options",
+        "texture_filename": "down.png",
+        "hover_texture_filename": "down_h.png"
+    } 
+    volume_controller_up_button_kwargs = {
+        "x": gf.screen_width // 1.5,
+        "y": gf.screen_height // 3.5,
+        "width": 100,
+        "height": 100,
+        "texture_foldername": "buttons\\options",
+        "texture_filename": "up.png",
+        "hover_texture_filename": "up_h.png"
+    }
+
+    res_now_button_kwargs = {
+        "x": gf.screen_width // 1.9,
+        "y": gf.screen_height // 3,
+        "width": 100,
+        "height": 50,
+        "texture_foldername": "buttons\\options",
+        "texture_filename": "change res.png",
+        "hover_texture_filename": "change res h.png"
+    }
     
-    volume_option = en.Clickable_Text_object(
+    res_start_button_kwargs = {
+        "x": gf.screen_width // 1.9,
+        "y": gf.screen_height // 1.3,
+        "width": 100,
+        "height": 50,
+        "texture_foldername": "buttons\\options",
+        "texture_filename": "change res.png",
+        "hover_texture_filename": "change res h.png"
+    }
+
+    back_button_kwargs = {
+        "x": gf.screen_width // 100,
+        "y": gf.screen_height // 100,
+        "width": 168.75,
+        "height": 75,
+        "texture_foldername": "buttons\\other",
+        "texture_filename": "back.png",
+        "hover_texture_filename": "back h.png"
+    }
+
+    volume_option_entity_args = [
         gf.screen_width // 100,
         gf.screen_height // 3,
         300,
@@ -55,9 +99,9 @@ def options():
         gf.screen_width // 25,
         "fonts",
         "Livingst.ttf"
-    )
+    ]
 
-    control_option = en.Clickable_Text_object(
+    control_option_entity_args = [
         gf.screen_width // 100,
         gf.screen_height // 2,
         300,
@@ -67,9 +111,9 @@ def options():
         gf.screen_width // 25,
         "fonts",
         "Livingst.ttf"
-    )
+    ]
 
-    res_option = en.Clickable_Text_object(
+    res_option_entity_args = [
         gf.screen_width // 100,
         gf.screen_height // 1.5,
         300,
@@ -79,8 +123,16 @@ def options():
         gf.screen_width // 25,
         "fonts",
         "Livingst.ttf"
-    )
-    rp_option = en.Clickable_Text_object(
+    ]
+    
+    #*create:
+    volume_option = en.Clickable_Text_object(*volume_option_entity_args)
+
+    control_option = en.Clickable_Text_object(*control_option_entity_args)
+
+    res_option = en.Clickable_Text_object(*res_option_entity_args)
+
+    rp_option_entity_args = [
         gf.screen_width // 100,
         (res_option.y + res_option.height) + (gf.screen_height // 10),
         300,
@@ -90,52 +142,26 @@ def options():
         gf.screen_width // 25,
         "fonts",
         "Livingst.ttf"
-    )
+    ]
+
+    rp_option = en.Clickable_Text_object(*rp_option_entity_args)
 
     #voulume and music
     if gf.what_option == "v":
-        volume_controler_down = en.Button(
-            gf.screen_width // 1.5,
-            gf.screen_height // 1.5,
-            100,
-            100,
-            texture_filename = "down.png",
-            hover_texture_filename = "down_h.png"
-        )
-        volume_controler_up = en.Button(
-            gf.screen_width // 1.5,
-            gf.screen_height // 3.5,
-            100,
-            100,
-            texture_filename = "up.png",
-            hover_texture_filename = "up_h.png"
-        )
+        volume_controller_down = en.Button(**volume_controller_down_button_kwargs)
+        volume_controller_up = en.Button(**volume_controller_up_button_kwargs)
         
         #the text that show what the voulume is
         volume_text = title_font.render(str(int(settings.volume * 100)), 1, gf.WHITE)
         gf.screen.blit(volume_text, (
-            volume_controler_up.x,
-            volume_controler_up.y + volume_controler_up.width
+            volume_controller_up.x,
+            volume_controller_up.y + volume_controller_up.width
             ))
     #resolution
     elif gf.what_option == "r":
         #buttons
-        res_now_button = en.Button(
-            gf.screen_width // 1.9,
-            gf.screen_height // 3,
-            100,
-            50,
-            texture_filename = "change res.png",
-            hover_texture_filename = "change res h.png"
-        )
-        res_start_button = en.Button(
-            gf.screen_width // 1.9,
-            gf.screen_height // 1.3,
-            100,
-            50,
-            texture_filename = "change res.png",
-            hover_texture_filename = "change res h.png"
-        )
+        res_now_button = en.Button(**res_now_button_kwargs)
+        res_start_button = en.Button(**res_start_button_kwargs)
         
         #render the text
             #now
@@ -181,20 +207,12 @@ def options():
 
 
     #back to the main menu
-    back = en.Button(
-        gf.screen_width // 100,
-        gf.screen_height // 100,
-        168.75,
-        75,
-        texture_foldername = "buttons\\other",
-        texture_filename = "back.png",
-        hover_texture_filename = "back h.png"
-        )
+    back = en.Button(**back_button_kwargs)
 
     #update
     if gf.what_option == "v":
-        volume_controler_down.update()
-        volume_controler_up.update()
+        volume_controller_down.update()
+        volume_controller_up.update()
     elif gf.what_option == "k":
         keymap_image.update(
             gf.screen_width // 3,
@@ -219,9 +237,9 @@ def options():
         gf.where = "main menu"
     
     if gf.what_option == "v":
-        if volume_controler_down.click():
+        if volume_controller_down.click():
             sys.Music_and_SFX.change_volume("down")
-        elif volume_controler_up.click():
+        elif volume_controller_up.click():
             sys.Music_and_SFX.change_volume("up")
     if gf.what_option == "r":
         if res_now_button.click():
