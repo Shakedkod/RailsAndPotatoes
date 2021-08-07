@@ -1,7 +1,7 @@
 import pygame
 from pygame.locals import *
-from game.system import textures, entities as en, map_s as ms
-from game import globals_file as gf, system as s_sys
+from game.system import textures, map_s as ms
+from game import globals_file as gf, system as sys
 #*-----------------------#init#--------------------------*#
 pygame.init() #init pygame
 pygame.font.init() #init
@@ -48,7 +48,7 @@ def map():
     }
 
     #create
-    back = en.Button(**back_button_kwargs)
+    back = sys.Entities.Button(**back_button_kwargs)
 
     #update
     back.update()

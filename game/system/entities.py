@@ -23,14 +23,14 @@ class Button:
         unlocked = True,
         completed = False
         ):
-        """this class is button that you can click it, it can be locked or completed for difrent texturs and click option(can or cant click)
+        """this class is button that you can click it, it can be locked or completed for different textures and click option(can or cant click)
 
         Args:
             x (int, optional): the x position of the button. Defaults to 0.
             y (int, optional): the y position of the button. Defaults to 0.
             width (int, optional): the width of the button. Defaults to 1.
             height (int, optional): the height of the button. Defaults to 1.
-            texture_foldername (str, optional): the name of the folder with the files of the texturs. Defaults to "buttons\main menu".
+            texture_foldername (str, optional): the name of the folder with the files of the textures. Defaults to "buttons\main menu".
             texture_filename (str, optional): the name of the file of the button texture(with .png/jpeg/... in the end). Defaults to "play.png".
             hover_texture_filename (str, optional): the name of the file of the button hover texture(with .png/jpeg/... in the end). Defaults to "play_h.png".
             completed_texture_filename (str, optional): the name of the file of the button completed texture(with .png/jpeg/... in the end). Defaults to None.
@@ -107,11 +107,14 @@ class Button:
                 )
     
     def update(self):
-        """update self and draw him on the screen"""
+        """update self and draw him on the screen
+        """
         self.mouse_hover() #go to the func hover
         self.draw() #go to the func draw
     
     def draw(self):
+        """draw the right texture on the screen
+        """        
         if self.unlocked == False:
             gf.screen.blit(self.locked_texture, (self.x, self.y)) #show the locked texture
     
@@ -125,12 +128,19 @@ class Button:
             gf.screen.blit(self.texture, (self.x, self.y)) #show the regular texture
     
     def mouse_hover(self):
+        """change the hover var of the entity if the mouse is hover the button
+        """        
         if self.rect.collidepoint(gf.mouse_x, gf.mouse_y): #if the mouse is on the button
             self.hover = True
         else:
             self.hover = False
     
     def click(self):
+        """check if the user clicked on the entity
+
+        Returns:
+            bool: is the button clicked
+        """
         if self.hover and gf.click and self.unlocked: #if click on the button
             gf.click = False
             return True

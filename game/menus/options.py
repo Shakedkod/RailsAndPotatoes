@@ -2,7 +2,7 @@ import pygame
 from pygame import key
 from pygame.locals import *
 from game import system as sys, globals_file as gf
-from game.system import textures, entities as en, settings, tkinter_windows as tk
+from game.system import textures, settings, tkinter_windows as tk
 #%start%-------------------------------------------------------------------%start%#
 
 #*-----------------------#init#--------------------------*#
@@ -11,7 +11,7 @@ pygame.font.init() #init
 #*-----------------------#pygame input#--------------------------*#
 #images
 bg_img = pygame.image.load(textures.change_texture(filename = "options background.png", foldername = "bg"))
-keymap_image = en.Just_an_image(
+keymap_image = sys.Entities.Just_an_image(
     10,
     20,
     600,
@@ -126,11 +126,11 @@ def options():
     ]
     
     #*create:
-    volume_option = en.Clickable_Text_object(*volume_option_entity_args)
+    volume_option = sys.Entities.Clickable_Text_object(*volume_option_entity_args)
 
-    control_option = en.Clickable_Text_object(*control_option_entity_args)
+    control_option = sys.Entities.Clickable_Text_object(*control_option_entity_args)
 
-    res_option = en.Clickable_Text_object(*res_option_entity_args)
+    res_option = sys.Entities.Clickable_Text_object(*res_option_entity_args)
 
     rp_option_entity_args = [
         gf.screen_width // 100,
@@ -144,12 +144,12 @@ def options():
         "Livingst.ttf"
     ]
 
-    rp_option = en.Clickable_Text_object(*rp_option_entity_args)
+    rp_option = sys.Entities.Clickable_Text_object(*rp_option_entity_args)
 
     #voulume and music
     if gf.what_option == "v":
-        volume_controller_down = en.Button(**volume_controller_down_button_kwargs)
-        volume_controller_up = en.Button(**volume_controller_up_button_kwargs)
+        volume_controller_down = sys.Entities.Button(**volume_controller_down_button_kwargs)
+        volume_controller_up = sys.Entities.Button(**volume_controller_up_button_kwargs)
         
         #the text that show what the voulume is
         volume_text = title_font.render(str(int(settings.volume * 100)), 1, gf.WHITE)
@@ -160,8 +160,8 @@ def options():
     #resolution
     elif gf.what_option == "r":
         #buttons
-        res_now_button = en.Button(**res_now_button_kwargs)
-        res_start_button = en.Button(**res_start_button_kwargs)
+        res_now_button = sys.Entities.Button(**res_now_button_kwargs)
+        res_start_button = sys.Entities.Button(**res_start_button_kwargs)
         
         #render the text
             #now
@@ -207,7 +207,7 @@ def options():
 
 
     #back to the main menu
-    back = en.Button(**back_button_kwargs)
+    back = sys.Entities.Button(**back_button_kwargs)
 
     #update
     if gf.what_option == "v":

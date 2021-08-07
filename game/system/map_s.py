@@ -2,7 +2,7 @@ import pygame, json
 from os import getenv
 from pygame.locals import *
 from game import system as sys, globals_file as gf
-from . import entities as en, textures as t, settings as s
+from . import textures as t, settings as s
 #*-----------------------#init#--------------------------*#
 pygame.init() #init pygame
 pygame.mixer.pre_init(44100, -16, 2, 512)
@@ -721,13 +721,13 @@ class Map:
             )
 
         #buttons#
-        self.buttons.next_button = en.Button(
+        self.buttons.next_button = sys.Entities.Button(
             gf.screen_width - (gf.screen_width // 5),
             gf.screen_height // 100,
             168.75,
             75
         )
-        self.buttons.back_button = en.Button(
+        self.buttons.back_button = sys.Entities.Button(
             gf.screen_width // 100,
             gf.screen_height - (gf.screen_height // 8),
             168.75,
@@ -859,7 +859,7 @@ class Map:
 
         if self.x == 0: #(page 0: levels: 0 - 4)  #0CUTSCENE, 1, 2, 3, 4
             #create buttons
-            self.buttons.c_0 = en.Button(
+            self.buttons.c_0 = sys.Entities.Button(
                 gf.screen_width // 50,
                 gf.screen_width // 7,
                 250 // 1.5,
@@ -870,7 +870,7 @@ class Map:
                 "0_comp.png",
                 completed = self.buttons.c_0_completed
             )
-            self.buttons.l_1 = en.Button(
+            self.buttons.l_1 = sys.Entities.Button(
                 (self.buttons.c_0.x + self.buttons.c_0.width) + gf.screen_width // 100,
                 gf.screen_width // 7,
                 250 // 1.5,
@@ -883,7 +883,7 @@ class Map:
                 unlocked = self.buttons.l_1_unlocked,
                 completed = self.buttons.l_1_completed
             )
-            self.buttons.l_2 = en.Button(
+            self.buttons.l_2 = sys.Entities.Button(
                 (self.buttons.l_1.x + self.buttons.l_1.width) + gf.screen_width // 100,
                 gf.screen_width // 7,
                 250 // 1.5,
@@ -896,7 +896,7 @@ class Map:
                 unlocked = self.buttons.l_2_unlocked,
                 completed = self.buttons.l_2_completed
             )
-            self.buttons.l_3 = en.Button(
+            self.buttons.l_3 = sys.Entities.Button(
                 (self.buttons.l_2.x + self.buttons.l_2.width) + gf.screen_width // 100,
                 gf.screen_width // 7,
                 250 // 1.5,
@@ -909,7 +909,7 @@ class Map:
                 unlocked = self.buttons.l_3_unlocked,
                 completed = self.buttons.l_3_completed
             )
-            self.buttons.l_4 = en.Button(
+            self.buttons.l_4 = sys.Entities.Button(
                 (self.buttons.l_3.x + self.buttons.l_3.width) + gf.screen_width // 100,
                 gf.screen_width // 7,
                 250 // 1.5,
@@ -935,7 +935,7 @@ class Map:
             #%end%#
         elif self.x == 1: #(page 1: levels: 5 - 9)#5, 6, 7, 8, 9
             #create buttons
-            self.buttons.l_5 = en.Button(
+            self.buttons.l_5 = sys.Entities.Button(
                 gf.screen_width // 50,
                 gf.screen_width // 7,
                 250 // 1.5,
@@ -949,7 +949,7 @@ class Map:
                 completed = self.buttons.l_5_completed
                 
             )
-            self.buttons.l_6 = en.Button(
+            self.buttons.l_6 = sys.Entities.Button(
                 (self.buttons.l_5.x + self.buttons.l_5.width) + gf.screen_width // 100,
                 gf.screen_width // 7,
                 250 // 1.5,
@@ -963,7 +963,7 @@ class Map:
                 completed = self.buttons.l_6_completed
                 
             )
-            self.buttons.l_7 = en.Button(
+            self.buttons.l_7 = sys.Entities.Button(
                 (self.buttons.l_6.x + self.buttons.l_6.width) + gf.screen_width // 100,
                 gf.screen_width // 7,
                 250 // 1.5,
@@ -977,7 +977,7 @@ class Map:
                 completed = self.buttons.l_7_completed
                 
             )
-            self.buttons.l_8 = en.Button(
+            self.buttons.l_8 = sys.Entities.Button(
                 (self.buttons.l_7.x + self.buttons.l_7.width) + gf.screen_width // 100,
                 gf.screen_width // 7,
                 250 // 1.5,
@@ -991,7 +991,7 @@ class Map:
                 completed = self.buttons.l_8_completed
                 
             )
-            self.buttons.l_9 = en.Button(
+            self.buttons.l_9 = sys.Entities.Button(
                 (self.buttons.l_8.x + self.buttons.l_8.width) + gf.screen_width // 100,
                 gf.screen_width // 7,
                 250 // 1.5,
@@ -1017,7 +1017,7 @@ class Map:
             #%end%#
         elif self.x == 2: #(page 2: levels: 10 - 14)#10, 11, 12, 13, 14
             #create buttons
-            self.buttons.l_10 = en.Button(
+            self.buttons.l_10 = sys.Entities.Button(
                 gf.screen_width // 50,
                 gf.screen_width // 7,
                 250 // 1.5,
@@ -1031,7 +1031,7 @@ class Map:
                 completed = self.buttons.l_10_completed
                 
             )
-            self.buttons.l_11 = en.Button(
+            self.buttons.l_11 = sys.Entities.Button(
                 (self.buttons.l_10.x + self.buttons.l_10.width) + gf.screen_width // 100,
                 gf.screen_width // 7,
                 250 // 1.5,
@@ -1045,7 +1045,7 @@ class Map:
                 completed = self.buttons.l_11_completed
                 
             )
-            self.buttons.l_12 = en.Button(
+            self.buttons.l_12 = sys.Entities.Button(
                 (self.buttons.l_11.x + self.buttons.l_11.width) + gf.screen_width // 100,
                 gf.screen_width // 7,
                 250 // 1.5,
@@ -1059,7 +1059,7 @@ class Map:
                 completed = self.buttons.l_12_completed
                 
             )
-            self.buttons.l_13 = en.Button(
+            self.buttons.l_13 = sys.Entities.Button(
                 (self.buttons.l_12.x + self.buttons.l_12.width) + gf.screen_width // 100,
                 gf.screen_width // 7,
                 250 // 1.5,
@@ -1073,7 +1073,7 @@ class Map:
                 completed = self.buttons.l_13_completed
                 
             )
-            self.buttons.l_14 = en.Button(
+            self.buttons.l_14 = sys.Entities.Button(
                 (self.buttons.l_13.x + self.buttons.l_13.width) + gf.screen_width // 100,
                 gf.screen_width // 7,
                 250 // 1.5,
@@ -1099,7 +1099,7 @@ class Map:
             #%end%#
         elif self.x == 3: #(page 3: levels: 15 - 19)#15, 16, 17, 18, 19
             #create buttons
-            self.buttons.l_15 = en.Button(
+            self.buttons.l_15 = sys.Entities.Button(
                 gf.screen_width // 50,
                 gf.screen_width // 7,
                 250 // 1.5,
@@ -1113,7 +1113,7 @@ class Map:
                 completed = self.buttons.l_15_completed
                 
             )
-            self.buttons.l_16 = en.Button(
+            self.buttons.l_16 = sys.Entities.Button(
                 (self.buttons.l_15.x + self.buttons.l_15.width) + gf.screen_width // 100,
                 gf.screen_width // 7,
                 250 // 1.5,
@@ -1127,7 +1127,7 @@ class Map:
                 completed = self.buttons.l_16_completed
                 
             )
-            self.buttons.l_17 = en.Button(
+            self.buttons.l_17 = sys.Entities.Button(
                 (self.buttons.l_16.x + self.buttons.l_16.width) + gf.screen_width // 100,
                 gf.screen_width // 7,
                 250 // 1.5,
@@ -1141,7 +1141,7 @@ class Map:
                 completed = self.buttons.l_17_completed
                 
             )
-            self.buttons.l_18 = en.Button(
+            self.buttons.l_18 = sys.Entities.Button(
                 (self.buttons.l_17.x + self.buttons.l_17.width) + gf.screen_width // 100,
                 gf.screen_width // 7,
                 250 // 1.5,
@@ -1155,7 +1155,7 @@ class Map:
                 completed = self.buttons.l_18_completed
                 
             )
-            self.buttons.l_19 = en.Button(
+            self.buttons.l_19 = sys.Entities.Button(
                 (self.buttons.l_18.x + self.buttons.l_18.width) + gf.screen_width // 100,
                 gf.screen_width // 7,
                 250 // 1.5,
@@ -1181,7 +1181,7 @@ class Map:
             #%end%#
         elif self.x == 4: #(page 4: levels: 20 - 24)#20, 21, 22, 23, 24
             #create buttons
-            self.buttons.l_20 = en.Button(
+            self.buttons.l_20 = sys.Entities.Button(
                 gf.screen_width // 50,
                 gf.screen_width // 7,
                 250 // 1.5,
@@ -1195,7 +1195,7 @@ class Map:
                 completed = self.buttons.l_20_completed
                 
             )
-            self.buttons.l_21 = en.Button(
+            self.buttons.l_21 = sys.Entities.Button(
                 (self.buttons.l_20.x + self.buttons.l_20.width) + gf.screen_width // 100,
                 gf.screen_width // 7,
                 250 // 1.5,
@@ -1209,7 +1209,7 @@ class Map:
                 completed = self.buttons.l_21_completed
                 
             )
-            self.buttons.l_22 = en.Button(
+            self.buttons.l_22 = sys.Entities.Button(
                 (self.buttons.l_21.x + self.buttons.l_21.width) + gf.screen_width // 100,
                 gf.screen_width // 7,
                 250 // 1.5,
@@ -1223,7 +1223,7 @@ class Map:
                 completed = self.buttons.l_22_completed
                 
             )
-            self.buttons.l_23 = en.Button(
+            self.buttons.l_23 = sys.Entities.Button(
                 (self.buttons.l_22.x + self.buttons.l_22.width) + gf.screen_width // 100,
                 gf.screen_width // 7,
                 250 // 1.5,
@@ -1237,7 +1237,7 @@ class Map:
                 completed = self.buttons.l_23_completed
                 
             )
-            self.buttons.l_24 = en.Button(
+            self.buttons.l_24 = sys.Entities.Button(
                 (self.buttons.l_23.x + self.buttons.l_23.width) + gf.screen_width // 100,
                 gf.screen_width // 7,
                 250 // 1.5,
@@ -1263,7 +1263,7 @@ class Map:
             #%end%#
         elif self.x == 5: #(page 5: levels: 25 - 29)#25, 26, 27CUTSCENE, 28, 29
             #create buttons
-            self.buttons.l_25 = en.Button(
+            self.buttons.l_25 = sys.Entities.Button(
                 gf.screen_width // 50,
                 gf.screen_width // 7,
                 250 // 1.5,
@@ -1277,7 +1277,7 @@ class Map:
                 completed = self.buttons.l_25_completed
                 
             )
-            self.buttons.l_26 = en.Button(
+            self.buttons.l_26 = sys.Entities.Button(
                 (self.buttons.l_25.x + self.buttons.l_25.width) + gf.screen_width // 100,
                 gf.screen_width // 7,
                 250 // 1.5,
@@ -1291,7 +1291,7 @@ class Map:
                 completed = self.buttons.l_26_completed
                 
             )
-            self.buttons.c_27 = en.Button(
+            self.buttons.c_27 = sys.Entities.Button(
                 (self.buttons.l_26.x + self.buttons.l_26.width) + gf.screen_width // 100,
                 gf.screen_width // 7,
                 250 // 1.5,
@@ -1305,7 +1305,7 @@ class Map:
                 completed = self.buttons.c_27_completed
                 
             )
-            self.buttons.l_28 = en.Button(
+            self.buttons.l_28 = sys.Entities.Button(
                 (self.buttons.c_27.x + self.buttons.c_27.width) + gf.screen_width // 100,
                 gf.screen_width // 7,
                 250 // 1.5,
@@ -1319,7 +1319,7 @@ class Map:
                 completed = self.buttons.l_28_completed
                 
             )
-            self.buttons.l_29 = en.Button(
+            self.buttons.l_29 = sys.Entities.Button(
                 (self.buttons.l_28.x + self.buttons.l_28.width) + gf.screen_width // 100,
                 gf.screen_width // 7,
                 250 // 1.5,
@@ -1345,7 +1345,7 @@ class Map:
             #%end%#
         elif self.x == 6: #(page 6: levels: 30 - 34)#30, 31, 32, 33, 34
             #create buttons
-            self.buttons.l_30 = en.Button(
+            self.buttons.l_30 = sys.Entities.Button(
                 gf.screen_width // 50,
                 gf.screen_width // 7,
                 250 // 1.5,
@@ -1359,7 +1359,7 @@ class Map:
                 completed = self.buttons.l_30_completed
                 
             )
-            self.buttons.l_31 = en.Button(
+            self.buttons.l_31 = sys.Entities.Button(
                 (self.buttons.l_30.x + self.buttons.l_30.width) + gf.screen_width // 100,
                 gf.screen_width // 7,
                 250 // 1.5,
@@ -1373,7 +1373,7 @@ class Map:
                 completed = self.buttons.l_31_completed
                 
             )
-            self.buttons.l_32 = en.Button(
+            self.buttons.l_32 = sys.Entities.Button(
                 (self.buttons.l_31.x + self.buttons.l_31.width) + gf.screen_width // 100,
                 gf.screen_width // 7,
                 250 // 1.5,
@@ -1387,7 +1387,7 @@ class Map:
                 completed = self.buttons.l_32_completed
                 
             )
-            self.buttons.l_33 = en.Button(
+            self.buttons.l_33 = sys.Entities.Button(
                 (self.buttons.l_32.x + self.buttons.l_32.width) + gf.screen_width // 100,
                 gf.screen_width // 7,
                 250 // 1.5,
@@ -1401,7 +1401,7 @@ class Map:
                 completed = self.buttons.l_33_completed
                 
             )
-            self.buttons.l_34 = en.Button(
+            self.buttons.l_34 = sys.Entities.Button(
                 (self.buttons.l_33.x + self.buttons.l_33.width) + gf.screen_width // 100,
                 gf.screen_width // 7,
                 250 // 1.5,
@@ -1427,7 +1427,7 @@ class Map:
             #%end%#
         elif self.x == 7: #(page 7: levels: 35 - 39)#35, 36, 37, 38, 39
             #create buttons
-            self.buttons.l_35 = en.Button(
+            self.buttons.l_35 = sys.Entities.Button(
                 gf.screen_width // 50,
                 gf.screen_width // 7,
                 250 // 1.5,
@@ -1441,7 +1441,7 @@ class Map:
                 completed = self.buttons.l_35_completed
                 
             )
-            self.buttons.l_36 = en.Button(
+            self.buttons.l_36 = sys.Entities.Button(
                 (self.buttons.l_35.x + self.buttons.l_35.width) + gf.screen_width // 100,
                 gf.screen_width // 7,
                 250 // 1.5,
@@ -1455,7 +1455,7 @@ class Map:
                 completed = self.buttons.l_36_completed
                 
             )
-            self.buttons.l_37 = en.Button(
+            self.buttons.l_37 = sys.Entities.Button(
                 (self.buttons.l_36.x + self.buttons.l_36.width) + gf.screen_width // 100,
                 gf.screen_width // 7,
                 250 // 1.5,
@@ -1469,7 +1469,7 @@ class Map:
                 completed = self.buttons.l_37_completed
                 
             )
-            self.buttons.l_38 = en.Button(
+            self.buttons.l_38 = sys.Entities.Button(
                 (self.buttons.l_37.x + self.buttons.l_37.width) + gf.screen_width // 100,
                 gf.screen_width // 7,
                 250 // 1.5,
@@ -1483,7 +1483,7 @@ class Map:
                 completed = self.buttons.l_38_completed
                 
             )
-            self.buttons.l_39 = en.Button(
+            self.buttons.l_39 = sys.Entities.Button(
                 (self.buttons.l_38.x + self.buttons.l_38.width) + gf.screen_width // 100,
                 gf.screen_width // 7,
                 250 // 1.5,
@@ -1509,7 +1509,7 @@ class Map:
             #%end%#
         elif self.x == 8: #(page 8: levels: 40 - 44)#40, 41, 42, 43, 44
             #create buttons
-            self.buttons.l_40 = en.Button(
+            self.buttons.l_40 = sys.Entities.Button(
                 gf.screen_width // 50,
                 gf.screen_width // 7,
                 250 // 1.5,
@@ -1523,7 +1523,7 @@ class Map:
                 completed = self.buttons.l_40_completed
                 
             )
-            self.buttons.l_41 = en.Button(
+            self.buttons.l_41 = sys.Entities.Button(
                 (self.buttons.l_40.x + self.buttons.l_40.width) + gf.screen_width // 100,
                 gf.screen_width // 7,
                 250 // 1.5,
@@ -1537,7 +1537,7 @@ class Map:
                 completed = self.buttons.l_41_completed
                 
             )
-            self.buttons.l_42 = en.Button(
+            self.buttons.l_42 = sys.Entities.Button(
                 (self.buttons.l_41.x + self.buttons.l_41.width) + gf.screen_width // 100,
                 gf.screen_width // 7,
                 250 // 1.5,
@@ -1551,7 +1551,7 @@ class Map:
                 completed = self.buttons.l_42_completed
                 
             )
-            self.buttons.l_43 = en.Button(
+            self.buttons.l_43 = sys.Entities.Button(
                 (self.buttons.l_42.x + self.buttons.l_42.width) + gf.screen_width // 100,
                 gf.screen_width // 7,
                 250 // 1.5,
@@ -1565,7 +1565,7 @@ class Map:
                 completed = self.buttons.l_43_completed
                 
             )
-            self.buttons.l_44 = en.Button(
+            self.buttons.l_44 = sys.Entities.Button(
                 (self.buttons.l_43.x + self.buttons.l_43.width) + gf.screen_width // 100,
                 gf.screen_width // 7,
                 250 // 1.5,
@@ -1591,7 +1591,7 @@ class Map:
             #%end%#
         elif self.x == 9: #(page 9: levels: 45 - 49)#45, 46, 47, 48, 49
             #create buttons
-            self.buttons.l_45 = en.Button(
+            self.buttons.l_45 = sys.Entities.Button(
                 gf.screen_width // 50,
                 gf.screen_width // 7,
                 250 // 1.5,
@@ -1605,7 +1605,7 @@ class Map:
                 completed = self.buttons.l_45_completed
                 
             )
-            self.buttons.l_46 = en.Button(
+            self.buttons.l_46 = sys.Entities.Button(
                 (self.buttons.l_45.x + self.buttons.l_45.width) + gf.screen_width // 100,
                 gf.screen_width // 7,
                 250 // 1.5,
@@ -1619,7 +1619,7 @@ class Map:
                 completed = self.buttons.l_46_completed
                 
             )
-            self.buttons.l_47 = en.Button(
+            self.buttons.l_47 = sys.Entities.Button(
                 (self.buttons.l_46.x + self.buttons.l_46.width) + gf.screen_width // 100,
                 gf.screen_width // 7,
                 250 // 1.5,
@@ -1633,7 +1633,7 @@ class Map:
                 completed = self.buttons.l_47_completed
                 
             )
-            self.buttons.l_48 = en.Button(
+            self.buttons.l_48 = sys.Entities.Button(
                 (self.buttons.l_47.x + self.buttons.l_47.width) + gf.screen_width // 100,
                 gf.screen_width // 7,
                 250 // 1.5,
@@ -1647,7 +1647,7 @@ class Map:
                 completed = self.buttons.l_48_completed
                 
             )
-            self.buttons.l_49 = en.Button(
+            self.buttons.l_49 = sys.Entities.Button(
                 (self.buttons.l_48.x + self.buttons.l_48.width) + gf.screen_width // 100,
                 gf.screen_width // 7,
                 250 // 1.5,
@@ -1673,7 +1673,7 @@ class Map:
             #%end%#
         elif self.x == 10: #(page 8: levels: 50 - 54)#50, 51, 52, 53, 54CUTSCENE
             #create buttons
-            self.buttons.l_50 = en.Button(
+            self.buttons.l_50 = sys.Entities.Button(
                 gf.screen_width // 50,
                 gf.screen_width // 7,
                 250 // 1.5,
@@ -1687,7 +1687,7 @@ class Map:
                 completed = self.buttons.l_50_completed
                 
             )
-            self.buttons.l_51 = en.Button(
+            self.buttons.l_51 = sys.Entities.Button(
                 (self.buttons.l_50.x + self.buttons.l_50.width) + gf.screen_width // 100,
                 gf.screen_width // 7,
                 250 // 1.5,
@@ -1701,7 +1701,7 @@ class Map:
                 completed = self.buttons.l_51_completed
                 
             )
-            self.buttons.l_52 = en.Button(
+            self.buttons.l_52 = sys.Entities.Button(
                 (self.buttons.l_51.x + self.buttons.l_51.width) + gf.screen_width // 100,
                 gf.screen_width // 7,
                 250 // 1.5,
@@ -1715,7 +1715,7 @@ class Map:
                 completed = self.buttons.l_52_completed
                 
             )
-            self.buttons.l_53 = en.Button(
+            self.buttons.l_53 = sys.Entities.Button(
                 (self.buttons.l_52.x + self.buttons.l_52.width) + gf.screen_width // 100,
                 gf.screen_width // 7,
                 250 // 1.5,
@@ -1729,7 +1729,7 @@ class Map:
                 completed = self.buttons.l_53_completed
                 
             )
-            self.buttons.c_54 = en.Button(
+            self.buttons.c_54 = sys.Entities.Button(
                 (self.buttons.l_53.x + self.buttons.l_53.width) + gf.screen_width // 100,
                 gf.screen_width // 7,
                 250 // 1.5,

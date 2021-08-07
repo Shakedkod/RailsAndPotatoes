@@ -1,7 +1,7 @@
 import pygame
 from pygame.locals import *
-from game.system import textures, entities as en
-from game import globals_file as gf
+from game.system import textures
+from game import globals_file as gf, system as sys
 #*-----------------------#init#--------------------------*#
 pygame.init() #init pygame
 pygame.font.init() #init
@@ -63,11 +63,11 @@ def main_menu():
     }
     
     #create
-    play = en.Button(**play_button_kwargs)
+    play = sys.Entities.Button(**play_button_kwargs)
 
-    options = en.Button(**options_button_kwargs)
+    options = sys.Entities.Button(**options_button_kwargs)
     
-    exit = en.Button(**exit_button_kwargs)
+    exit = sys.Entities.Button(**exit_button_kwargs)
 
     #update
     play.update()

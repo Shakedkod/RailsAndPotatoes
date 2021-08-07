@@ -4,6 +4,7 @@
         "blit",
         "cutscence",
         "getenv",
+        "moviepy",
         "pygame",
         "shakedkod",
         "tqdm",
