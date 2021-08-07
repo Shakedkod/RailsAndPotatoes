@@ -310,7 +310,6 @@ def add_resource_pack_option(filessss, bty): #📚
                     #@#############################################################################@#
                     with open(APPDATA + "\\.rails_and_potatoes\\Resource pack\\UlBNanager.cnAtbG9hZGVy", "r") as j_file:
                         data = json.load(j_file) #load the file of the data of the Resource Packs (why?🙃)
-                        j_file.close() #close the file
 
                     data["dW56aXBlZCBmaWxlcw=="].append(the_chossen_one_var) #add this file into the data of the Resource Packs
 

@@ -16,7 +16,6 @@ class Player_Maker(object):
         APPDATA = os.getenv("APPDATA")
         with open(APPDATA + "\\.rails_and_potatoes\index\\player.os.dt", "r") as d_day:
             data = json.load(d_day)
-            d_day.close()
         
         self.open_levels = []
         self.completed_levels = []
@@ -31,11 +30,9 @@ class Player_Maker(object):
 def init():
     with open("game/system/settings.os.dt", "r") as seting:
         data = json.load(seting)
-        seting.close()
     APPDATA = os.getenv("APPDATA")
     with open(APPDATA + "\\.rails_and_potatoes\index\\player.os.dt", "r") as seting:
         open_data = json.load(seting)
-        seting.close()
     
     global game_name, by, version, lang, teamNames, assets_folder_name, description, other, game_start, starting_screen_width, starting_screen_height, volume
 
@@ -65,7 +62,6 @@ def save_settings():
     global game_start, volume
     with open("game/system/settings.json", 'r') as seting:
         data = json.load(seting)
-        seting.close()
     data["game start"]["voulume"] = volume
     data["game start"]["screen width"] = game_start.start_width
     data["game start"]["screen height"] = game_start.start_height
