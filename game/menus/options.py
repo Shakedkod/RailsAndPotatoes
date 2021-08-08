@@ -146,7 +146,7 @@ def options():
 
     rp_option = sys.Entities.Clickable_Text_object(*rp_option_entity_args)
 
-    #voulume and music
+    #volume and music
     if gf.what_option == "v":
         volume_controller_down = sys.Entities.Button(**volume_controller_down_button_kwargs)
         volume_controller_up = sys.Entities.Button(**volume_controller_up_button_kwargs)

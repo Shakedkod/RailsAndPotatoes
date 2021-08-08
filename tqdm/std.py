@@ -601,6 +601,7 @@ class tqdm(Comparable):
             if not instance.gui:
                 last = (instance.nrows or 20) - 1
                 # find unfixed (`pos >= 0`) overflow (`pos >= nrows - 1`)
+                # file deepcode ignore useCompehensions: <please specify a reason of ignoring this>
                 instances = list(filter(
                     lambda i: hasattr(i, "pos") and last <= i.pos,
                     cls._instances))
@@ -824,6 +825,7 @@ class tqdm(Comparable):
         DataFrameGroupBy.progress_apply = inner_generator()
         DataFrame.progress_applymap = inner_generator('applymap')
 
+        # file deepcode ignore PythonSameEvalBinaryExpressionfalse: <in the other file>
         if Panel is not None:
             Panel.progress_apply = inner_generator()
         if PanelGroupBy is not None:

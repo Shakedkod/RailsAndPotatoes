@@ -86,7 +86,7 @@ class Button:
             (self.rect.width, self.rect.height)
             )
     
-        if locked_texture_filename != None:
+        if locked_texture_filename is not None:
             self.locked_texture = pygame.transform.scale( #change the scale of the given image
                 pygame.image.load(
                     textures.change_texture(
@@ -96,7 +96,7 @@ class Button:
                 (self.rect.width, self.rect.height)
                 )
         
-        if completed_texture_filename != None:
+        if completed_texture_filename is not None:
             self.completed_texture = pygame.transform.scale( #change the scale of the given hover image
                 pygame.image.load(
                     textures.change_texture(

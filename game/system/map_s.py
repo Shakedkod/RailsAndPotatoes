@@ -22,7 +22,6 @@ class battons_for_later:
         APPDATA = getenv("APPDATA")
         with open(APPDATA + "\\.rails_and_potatoes\\index\\player.os.dt", "r") as oort_studios_data_file:
             data = json.load(oort_studios_data_file)
-            oort_studios_data_file.close()
         
         data = data["levels&cutscenes"]
 
@@ -1761,7 +1760,6 @@ class Map:
         APPDATA = getenv("APPDATA")
         with open(APPDATA + "\\.rails_and_potatoes\\index\\player.os.dt", "r") as oort_studios_data_file:
             dt = json.load(oort_studios_data_file)
-            oort_studios_data_file.close()
         
         data = dt["levels&cutscenes"]
 
@@ -2262,6 +2260,5 @@ class Map:
 
         with open(APPDATA + "\\.rails_and_potatoes\\index\\player.os.dt", "w") as oort_studios_data_file:
             json.dump(dt, oort_studios_data_file, indent=2)
-            oort_studios_data_file.close()
 
     #%end%-------------------------------------------------------------------%end%#

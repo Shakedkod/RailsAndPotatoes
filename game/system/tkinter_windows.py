@@ -316,7 +316,6 @@ def add_resource_pack_option(filessss, bty): #📚
 
                     with open(APPDATA + "\\.rails_and_potatoes\\Resource pack\\UlBNanager.cnAtbG9hZGVy", "w")  as j_file:
                         json.dump(data, j_file, indent=2) #return the updated data of the Resource Packs to its file
-                        j_file.close() #close the file
                     
                     #@#############################################################################@#
                     #@                               activate the RP                               @#
@@ -382,19 +381,16 @@ def add_resource_pack_option(filessss, bty): #📚
             #@#############################################################################@#
             with open(APPDATA + "\\.rails_and_potatoes\\Resource pack\\UlBNanager.cnAtbG9hZGVy", "r") as j_file:
                 data = json.load(j_file) #load the file of the data of the Resource Packs (why?🙃)
-                j_file.close() #close the file
             
             data["emlwIGZpbGVz"].append(file[0]) #add this file into the data of the Resource Packs
 
             with open(APPDATA + "\\.rails_and_potatoes\\Resource pack\\UlBNanager.cnAtbG9hZGVy", "w") as j_file:
                 json.dump(data, j_file, indent=2) #return the updated data of the Resource Packs to its file
-                j_file.close() #close the file
     #?---------------------------------------------End of FUNC---------------------------------------------?#
 
     #Json -> find the name of the active RP
     with open(path_of_path, "r") as file:
         data = json.load(file)
-        file.close()
     
     path_to_the_image = data["bG9hZGVk"]
     if path_to_the_image == "default":

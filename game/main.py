@@ -43,6 +43,7 @@ pygame.display.set_icon(icon) #put the icon on the window
 
 #?-------------------------------------------< Main >-------------------------------------------?#
 def Main(): #main
+    
     from .menus import main_menu as menu, options as opt, map as play, power_level as tp #import 2.0 because of settings
 
     gf.where = "main menu" #what panel are we on? ho right, its the <main menu>
@@ -181,7 +182,6 @@ def Main(): #main
         
         pygame.quit()
     #%end%-------------------------------------------------------------------%end%#
-
 
 if __name__ == "__main__":
     Main()

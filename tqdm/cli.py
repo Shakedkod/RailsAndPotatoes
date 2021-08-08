@@ -79,6 +79,7 @@ def posix_pipe(fin, fout, delim=b'\\n', buf_size=256,
                     # n += 1 + buf.count(delim)
                     callback(1 + buf.count(delim))
                 else:
+                    # file deepcode ignore BadMixOfStrAndBytes: <no change is needed at the tqdm package because i didn't create it>
                     for i in buf.split(delim):
                         callback(i)
             getattr(fout, 'flush', lambda: None)()

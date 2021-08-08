@@ -68,4 +68,3 @@ def save_settings():
     data["Active RP"] = gf.what_is_rp
     with open("game/system/settings.json", "w") as sett:
         json.dump(data, sett, indent=2)
-        sett.close()
