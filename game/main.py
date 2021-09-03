@@ -160,7 +160,7 @@ def Main(): #main
                     gf.click = False
 
         #------------------------------------------------------------------------#
-        pygame.display.update() #the display needs to update so we can show staf on the screen
+        pygame.display.update() #the display needs to update so we can show staff on the screen
         gf.Clock.tick(60)
         #%end%-------------------------------------------------------------------%end%#
 

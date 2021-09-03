@@ -4747,8 +4747,14 @@ class Tiles(tile):
 
         if true_or_false: #to rail
             ##up
-            if self.tiles[self.tiles[id].up].rail:
-                pass
+            if self.tiles[self.tiles[id].up].rail in [1, 3]:
+                if self.tiles[self.tiles[id].up].rail == 1:
+                    if [self.tiles[self.tiles[id].up].right].rail == 0:
+                        pass
+                    else:
+                        pass
+                else:
+                    pass
             else:
                 pass
 

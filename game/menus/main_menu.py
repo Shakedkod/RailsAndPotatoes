@@ -21,7 +21,7 @@ def main_menu():
     title_font = pygame.font.Font(textures.change_texture("Blackwood Castle.ttf", "fonts"), gf.screen_width // 10)
     
     #------------------------------------------------------------------------------------------#
-    #                                        backgrownd                                        #
+    #                                        background                                        #
     #------------------------------------------------------------------------------------------#
     bg = pygame.transform.scale(bg_img, (gf.screen_width, gf.screen_height)) #change size
     gf.screen.blit(bg, (0, 0))
