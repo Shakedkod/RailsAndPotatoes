@@ -47,7 +47,7 @@ def init():
 
     other = open_data["settings"]["other"]
 
-    volume = open_data["settings"]["game start"]["volume"]
+    volume = open_data["settings"]["game start"]["volume"] / 100.0
 
     game_start = Game_Start(data["game start"], open_data["settings"]["game start"])
 

@@ -21,9 +21,9 @@ class Entities:
     from .entities import Just_an_image
 
 #?----------------------------------------------------------------------------------------?#
-#?--------------------------------------< Cutscene >--------------------------------------?#
+#?--------------------------------------< Cutscence >--------------------------------------?#
 #?----------------------------------------------------------------------------------------?#
-class Cutscene:
+class Cutscence:
 
     @staticmethod
     def regular(name, path):
@@ -137,6 +137,11 @@ class Music_and_SFX:
         give a dict of all of the sounds and sound efects and it will set the voulume to the voulume that is inserted,
         -> return the dict <-
         """
+        if (volume < 0.0):
+            volume = 0.0
+        elif (volume > 1.0):
+            volume = 1.0
+        
         for key in songs_and_sfx:
             pygame.mixer.Sound.set_volume(songs_and_sfx[key], volume)
         return songs_and_sfx

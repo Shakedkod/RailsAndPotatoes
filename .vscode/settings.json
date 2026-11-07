@@ -66,22 +66,22 @@
             "italic": true
         },
         {
-        "tag": "%start%",
-        "color": "#FF00F3",
-        "strikethrough": false,
-        "underline": false,
-        "backgroundColor": "black",
-        "bold": false,
-        "italic": true
+            "tag": "%start%",
+            "color": "#FF00F3",
+            "strikethrough": false,
+            "underline": false,
+            "backgroundColor": "black",
+            "bold": false,
+            "italic": true
         },
         {
-        "tag": "%end%",
-        "color": "#00027D",
-        "strikethrough": false,
-        "underline": true,
-        "backgroundColor": "black",
-        "bold": false,
-        "italic": true
+            "tag": "%end%",
+            "color": "#00027D",
+            "strikethrough": false,
+            "underline": true,
+            "backgroundColor": "black",
+            "bold": false,
+            "italic": true
         }
     ]
 }
